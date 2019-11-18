@@ -1,12 +1,17 @@
 package com.springcloud.api;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.springcloud.bean.dos.CompanyDict;
 import com.springcloud.service.CompanyDictService;
+import com.springcloud.util.RequestPage;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @ClassName : DataLineController
@@ -32,6 +37,18 @@ public class CompanyDictController {
         }
         return  bool;
     }
+
+   /* @ApiOperation(value = "根据条件分页查询列表companydict:page", notes = "根据条件分页查询记录列表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageIndex", required = true, dataType = "int", paramType = "query"),
+            @ApiImplicitParam(name = "pageSize", required = true, dataType = "int", paramType = "query")
+    })
+    @GetMapping("/page")
+    Page<CompanyDictVO> getOriginStudentPageList(RequestPage request, HttpServletRequest httpServletRequest) {
+        Page page = new Page<CompanyDictQuery>(request.getPageIndex(), request.getPageSize());
+        page.setCondition();
+        return originstudentService.getPage(page);
+    }*/
 
 
 }
