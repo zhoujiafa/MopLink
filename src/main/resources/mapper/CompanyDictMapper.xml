@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.CompanyDictMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.CompanyDict">
+
+        <!--<id property="id" column="iD"></id>-->
+        <result property="companyCode" column="companyCode"></result>
+        <result property="companyName" column="companyName"></result>
+        <result property="distributorName" column="distributorName"></result>
+        <result property="mopDeptCode" column="mopDeptCode"></result>
+        <result property="customerCode" column="customerCode"></result>
+        <result property="customerName" column="customerName"></result>
+        <result property="xunsoftDeptCode" column="xunsoftDeptCode"></result>
+    </resultMap>
+
+    <insert id="batchInsert" parameterType="List">
+        insert into companyDict
+        (companyCode,companyName,mopDeptCode,customerCode,customerName,xunsoftDeptCode)
+        values
+        <foreach collection="list" item="item"  separator=",">
+            (
+            #{item.companyCode},
+            #{item.companyName},
+            #{item.mopDeptCode},
+            #{item.customerCode},
+            #{item.customerName},
+            #{item.xunsoftDeptCode}
+            )
+        </foreach>
+    </insert>
+
+</mapper>
