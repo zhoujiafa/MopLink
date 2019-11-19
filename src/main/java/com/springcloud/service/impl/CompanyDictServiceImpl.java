@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 /**
 * @ClassName : CompanyDictServiceImpl
-* @Description : 公司信息
+* @Description : 公司目录
 * @Author : Joe
 * @Date: 2019/11/18 10:51
 */
