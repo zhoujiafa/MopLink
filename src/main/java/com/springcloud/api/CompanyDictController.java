@@ -1,17 +1,15 @@
 package com.springcloud.api;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.query.CompanyDictQuery;
+import com.springcloud.bean.vo.CompanyDictVO;
 import com.springcloud.service.CompanyDictService;
-import com.springcloud.util.RequestPage;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
+import com.springcloud.util.PageResult;
+import com.springcloud.util.ResponseBean;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @ClassName : DataLineController
@@ -26,8 +24,9 @@ public class CompanyDictController {
     @Autowired
     CompanyDictService companyDictService;
 
+    @ApiOperation(value = "导入公司商品信息" , notes = "导入公司商品信息")
     @PostMapping("/import")
-    public boolean importCompanyDict(@RequestParam("file") MultipartFile file) {
+    public ResponseBean<Boolean> importCompanyDict(@RequestParam("file") MultipartFile file) {
         boolean bool = false;
         String fileName = file.getOriginalFilename();
         try {
@@ -35,20 +34,14 @@ public class CompanyDictController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return  bool;
+        return  ResponseBean.ok(bool);
     }
 
-   /* @ApiOperation(value = "根据条件分页查询列表companydict:page", notes = "根据条件分页查询记录列表")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "pageIndex", required = true, dataType = "int", paramType = "query"),
-            @ApiImplicitParam(name = "pageSize", required = true, dataType = "int", paramType = "query")
-    })
-    @GetMapping("/page")
-    Page<CompanyDictVO> getOriginStudentPageList(RequestPage request, HttpServletRequest httpServletRequest) {
-        Page page = new Page<CompanyDictQuery>(request.getPageIndex(), request.getPageSize());
-        page.setCondition();
-        return originstudentService.getPage(page);
-    }*/
+    @ApiOperation(value = "分页查询" , notes = "分页查询")
+    @PostMapping("/page")
+    public ResponseBean<PageResult<CompanyDictVO>> page(CompanyDictQuery companyDictQuery) {
 
+        return  ResponseBean.ok(companyDictService.page(companyDictQuery));
+    }
 
 }

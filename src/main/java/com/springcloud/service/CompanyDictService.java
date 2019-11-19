@@ -2,6 +2,9 @@ package com.springcloud.service;
 
 
 import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.query.CompanyDictQuery;
+import com.springcloud.bean.vo.CompanyDictVO;
+import com.springcloud.util.PageResult;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -16,11 +19,11 @@ public interface CompanyDictService {
 
 
     /**
-     *  列表查询
-     * @param companyDict
+     * 分页模糊查询
+     * @param companyDictQuery
      * @return
      */
-    List<CompanyDict> listCompanyDict(CompanyDict companyDict);
+    PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery);
 
     /**
      * 导入excel文件

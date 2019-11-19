@@ -30,12 +30,12 @@ public class DataLineServiceImpl implements DataLineService {
     }
 
 
-    @PostConstruct
+    /*@PostConstruct
     private Boolean insert() {
         DataLineVO dataLineVO = OrderDetail.DataLineVO();
         DataLine addDataLine = new DataLine();
         BeanUtils.copyProperties(dataLineVO,addDataLine);
         addDataLine.setDocNum(OrderDetail.getMopPrimaryKey());
         return dataLineMapper.insert(addDataLine) > 0;
-    }
+    }*/
 }

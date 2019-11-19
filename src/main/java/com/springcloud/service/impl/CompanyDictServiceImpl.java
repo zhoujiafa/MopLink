@@ -3,16 +3,23 @@ package com.springcloud.service.impl;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.result.ExcelImportResult;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.query.CompanyDictQuery;
+import com.springcloud.bean.vo.CompanyDictVO;
 import com.springcloud.mapper.CompanyDictMapper;
 import com.springcloud.service.CompanyDictService;
+import com.springcloud.util.PageResult;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 /**
 * @ClassName : CompanyDictServiceImpl
@@ -30,11 +37,26 @@ public class CompanyDictServiceImpl implements CompanyDictService {
 
 
     @Override
-    public List<CompanyDict> listCompanyDict(CompanyDict companyDict) {
-        QueryWrapper<CompanyDict> query = new QueryWrapper<>();
-        query.like(StringUtils.isNotBlank(companyDict.getCompanyName()),"companyName",companyDict.getCompanyName());
-        return companyDictMapper.selectList(query);
+    public PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery) {
+        PageHelper.startPage(companyDictQuery.getNum(),companyDictQuery.getSize());
+        HashMap<String,Object> map = new HashMap<>(16);
+        if(StringUtils.isNotBlank(companyDictQuery.getCompanyName())){
+            map.put("companyName",companyDictQuery.getCompanyName());
+        }
+        List<CompanyDict> responseList = companyDictMapper.getPageCompanyDict(map);
+        PageInfo page = new PageInfo(responseList);
+        List<CompanyDictVO> listVO = new ArrayList<>();
+        if(responseList!=null && responseList.size()>0){
+            for(CompanyDict companyDict:responseList){
+                CompanyDictVO companyDictVO = new CompanyDictVO();
+                BeanUtils.copyProperties(companyDict,companyDictVO);
+                listVO.add(companyDictVO);
+            }
+        }
+        return new PageResult<CompanyDictVO>(page,listVO);
     }
+
+
 
     @Transactional(readOnly = false,rollbackFor = Exception.class)
     @Override

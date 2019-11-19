@@ -6,6 +6,7 @@ import com.springcloud.bean.dos.CompanyDict;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -18,6 +19,19 @@ import java.util.List;
 @Mapper
 public interface CompanyDictMapper extends BaseMapper<CompanyDict> {
 
+    /**
+     * 批量新增
+     * @param companyDictList
+     * @return
+     */
     Boolean batchInsert(List<CompanyDict> companyDictList);
+
+    /**
+     * 分页查询
+     * @param map
+     * @return
+     */
+    List<CompanyDict> getPageCompanyDict(Map<String,Object> map);
+
 
 }

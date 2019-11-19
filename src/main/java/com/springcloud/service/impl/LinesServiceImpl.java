@@ -28,7 +28,7 @@ public class LinesServiceImpl implements LinesService {
     }
 
 
-    @PostConstruct
+    /*@PostConstruct
     private Boolean insert() {
         DataLineVO dataLineVO = OrderDetail.DataLineVO();
         List<LinesItem> linesItems = dataLineVO.getLines();
@@ -54,8 +54,7 @@ public class LinesServiceImpl implements LinesService {
             addList.add(addBean);
         }
         return linesItemMapper.batchInsert(addList);
-        //return linesItemMapper.insert(addBean);
-    }
+    }*/
 
 
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.springcloud.mapper.CompanyDictMapper">
-    <resultMap id="userMap" type="com.springcloud.bean.dos.CompanyDict">
-
+    <resultMap id="BaseResultMap" type="com.springcloud.bean.dos.CompanyDict">
         <!--<id property="id" column="iD"></id>-->
         <result property="companyCode" column="companyCode"></result>
         <result property="companyName" column="companyName"></result>
@@ -12,6 +11,10 @@
         <result property="customerName" column="customerName"></result>
         <result property="xunsoftDeptCode" column="xunsoftDeptCode"></result>
     </resultMap>
+
+    <sql id="Base_Columns">
+        companyCode,companyName,distributorName,mopDeptCode,customerCode,customerName,xunsoftDeptCode
+    </sql>
 
     <insert id="batchInsert" parameterType="List">
         insert into companyDict
@@ -28,5 +31,16 @@
             )
         </foreach>
     </insert>
+
+    <select id="getPageCompanyDict" parameterType="map" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Columns" />
+        from
+          companyDict
+        where
+          <if test="companyName !=null and companyName != ''">
+              companyName like '%'+#{companyName}+'%'
+          </if>
+    </select>
 
 </mapper>
