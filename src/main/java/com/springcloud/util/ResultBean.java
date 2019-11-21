@@ -1,4 +1,4 @@
-package com.rocky.mp.web;
+package com.springcloud.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

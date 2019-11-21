@@ -3,6 +3,7 @@ package com.springcloud.service.impl;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.result.ExcelImportResult;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.springcloud.bean.dos.CompanyDict;
@@ -36,28 +37,6 @@ public class CompanyDictServiceImpl implements CompanyDictService {
     CompanyDictMapper companyDictMapper;
 
 
-    @Override
-    public PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery) {
-        PageHelper.startPage(companyDictQuery.getNum(),companyDictQuery.getSize());
-        HashMap<String,Object> map = new HashMap<>(16);
-        if(StringUtils.isNotBlank(companyDictQuery.getCompanyName())){
-            map.put("companyName",companyDictQuery.getCompanyName());
-        }
-        List<CompanyDict> responseList = companyDictMapper.getPageCompanyDict(map);
-        PageInfo page = new PageInfo(responseList);
-        List<CompanyDictVO> listVO = new ArrayList<>();
-        if(responseList!=null && responseList.size()>0){
-            for(CompanyDict companyDict:responseList){
-                CompanyDictVO companyDictVO = new CompanyDictVO();
-                BeanUtils.copyProperties(companyDict,companyDictVO);
-                listVO.add(companyDictVO);
-            }
-        }
-        return new PageResult<CompanyDictVO>(page,listVO);
-    }
-
-
-
     @Transactional(readOnly = false,rollbackFor = Exception.class)
     @Override
     public boolean batchImport(String fileName, MultipartFile file) throws Exception {
@@ -71,6 +50,50 @@ public class CompanyDictServiceImpl implements CompanyDictService {
             List<CompanyDict> commpanyList = result.getList();
             boolean bool = companyDictMapper.batchInsert(commpanyList);
         return bool;
+    }
+
+
+    @Override
+    public PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery) {
+        PageHelper.startPage(companyDictQuery.getNum(),companyDictQuery.getSize());
+        HashMap<String,Object> map = new HashMap<>(16);
+        if(StringUtils.isNotBlank(companyDictQuery.getCompanyName())){
+            map.put("companyName",companyDictQuery.getCompanyName());
+        }
+        List<CompanyDict> responseList = companyDictMapper.getPageCompanyDict(map);
+        PageInfo page = new PageInfo(responseList);
+        List<CompanyDictVO> listVO = new ArrayList<>();
+        listVO =  DtoToBean(responseList);
+        return new PageResult<CompanyDictVO>(page,listVO);
+    }
+
+    @Override
+    public List<CompanyDictVO> list(CompanyDictQuery query) {
+        QueryWrapper<CompanyDict> queryWrapper = new QueryWrapper<>();
+        if(StringUtils.isNotBlank(query.getCompanyCode())){
+            queryWrapper.like("companyCode",query.getCompanyCode());
+        }
+        if(StringUtils.isNotBlank(query.getCompanyName())){
+            queryWrapper.like("companyName",query.getCompanyName());
+        }
+        if(StringUtils.isNotBlank(query.getMopDeptCode())){
+            queryWrapper.like("mopDeptCode",query.getMopDeptCode());
+        }
+        List<CompanyDict> listFromData = companyDictMapper.selectList(queryWrapper);
+
+        return DtoToBean(listFromData);
+    }
+
+    private List<CompanyDictVO> DtoToBean(List<CompanyDict> list){
+        List<CompanyDictVO> listVo = new ArrayList<>();
+        if(list!=null && list.size()>0){
+            for(CompanyDict companyDict:list){
+                CompanyDictVO companyDictVO = new CompanyDictVO();
+                BeanUtils.copyProperties(companyDict,companyDictVO);
+                listVo.add(companyDictVO);
+            }
+        }
+        return listVo;
     }
 
 

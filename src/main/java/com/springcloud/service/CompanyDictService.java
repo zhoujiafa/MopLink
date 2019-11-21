@@ -17,6 +17,14 @@ import java.util.List;
 */
 public interface CompanyDictService {
 
+    /**
+     * 导入excel文件
+     * @param fileName
+     * @param file
+     * @return
+     * @throws Exception
+     */
+    boolean batchImport(String fileName, MultipartFile file) throws Exception;
 
     /**
      * 分页模糊查询
@@ -26,12 +34,10 @@ public interface CompanyDictService {
     PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery);
 
     /**
-     * 导入excel文件
-     * @param fileName
-     * @param file
+     * 列表查询
+     * @param companyDictQuery
      * @return
-     * @throws Exception
      */
-    boolean batchImport(String fileName, MultipartFile file) throws Exception;
+    List<CompanyDictVO> list(CompanyDictQuery companyDictQuery);
 
 }

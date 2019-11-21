@@ -1,15 +1,18 @@
 package com.springcloud.api;
 
-import com.springcloud.bean.dos.CompanyDict;
-import com.springcloud.bean.query.CompanyDictQuery;
-import com.springcloud.bean.vo.CompanyDictVO;
-import com.springcloud.service.CompanyDictService;
-import com.springcloud.util.PageResult;
-import com.springcloud.util.ResponseBean;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.springcloud.bean.dos.AssociateCompany;
+import com.springcloud.bean.query.AssociateCompanyQuery;
+import com.springcloud.service.AssociateCompanyService;
+import com.springcloud.util.QueryResultBean;
+import com.springcloud.util.ResultBean;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @ClassName : DataLineController
@@ -18,33 +21,27 @@ import org.springframework.web.multipart.MultipartFile;
  * @Date: 2019-11-18 09:38
  */
 @RestController
-@RequestMapping("/companydict")
-public class CompanyDictController {
+@RequestMapping("/associatecompany")
+public class AssociateCompanyController {
 
     @Autowired
-    CompanyDictService companyDictService;
+    AssociateCompanyService associateCompanyService;
 
-    @ApiOperation(value = "导入公司商品信息" , notes = "导入公司商品信息")
-    @PostMapping("/import")
-    public ResponseBean<Boolean> importCompanyDict(@RequestParam("file") MultipartFile file) {
-        boolean bool = false;
-        String fileName = file.getOriginalFilename();
-        try {
-            bool = companyDictService.batchImport(fileName, file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return  ResponseBean.ok(bool);
-    }
 
     @ApiOperation(value = "分页查询" , notes = "分页查询")
-    @PostMapping("/page")
-    public ResponseBean<PageResult<CompanyDictVO>> page(CompanyDictQuery companyDictQuery) {
-
-        return  ResponseBean.ok(companyDictService.page(companyDictQuery));
+    @GetMapping("/page")
+    public ResultBean page(AssociateCompanyQuery query) {
+        IPage<AssociateCompany> ipage = associateCompanyService.page(1, 6, query);
+        QueryResultBean queryResultBean = new QueryResultBean();
+        queryResultBean.setRecords(ipage.getRecords());
+        queryResultBean.setTotal(ipage.getTotal());
+        return new ResultBean(100, "成功", queryResultBean);
     }
 
+    @GetMapping("/list")
+    public List<AssociateCompany> list(AssociateCompanyQuery query){
 
-
+        return associateCompanyService.list(query);
+    }
 
 }

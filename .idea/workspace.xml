@@ -2,54 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/openapi_sdk_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/enums/ResponseEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/BasePageQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/ResponseBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/AssociateCompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/AssociateCompany.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/AssociateCompanyQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/AssociateCompanyVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/AssociateCompanyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/AssociateCompanyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/AssociateCompanyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/QueryResultBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/ResultBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AssociateCompanyMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DataLineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DataLineMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/LinesItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/LinesItemMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DataLineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DataLineServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/LinesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/LinesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/util/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/util/RequestPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/MopApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/MopApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDictController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/CompanyDict.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/CompanyDict.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/DataLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/DataLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/LinesItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/LinesItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/DataLineVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/DataLineVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/ReturnObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/ReturnObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDictMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDictMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/LinesItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/LinesItemMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/order/AnalyticalData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/order/AnalyticalData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/order/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/order/OrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/CompanyDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/CompanyDictService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/DataLineService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/DataLineService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/LinesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/LinesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDictMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/CompanyDictServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/DataLineServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/DataLineServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/LinesServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/SuperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/SuperMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CompanyDictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CompanyDictMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,33 +37,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CompanyDictService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java">
+    <leaf>
+      <file leaf-file-name="AssociateCompanyController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/AssociateCompanyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+            <state relative-caret-position="281">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyDictServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java">
+      <file leaf-file-name="CompanyDictController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyDictMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="26" column="59" lean-forward="true" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+            <state relative-caret-position="351">
+              <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -94,35 +68,28 @@
       <file leaf-file-name="CompanyDictMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="335">
+              <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageResult.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/PageResult.java">
+      <file leaf-file-name="CompanyDictService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="456">
+              <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasePageQuery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/BasePageQuery.java">
+      <file leaf-file-name="CompanyDictServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="634">
+              <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#536#537#0" expanded="true" />
-                <element signature="e#597#598#0" expanded="true" />
-                <element signature="e#631#632#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,11 +98,38 @@
       <file leaf-file-name="CompanyDictQuery.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+            <state relative-caret-position="304">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyDictVO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssociateCompanyQuery.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/AssociateCompanyQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -146,6 +140,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -162,23 +157,38 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/RequestPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/CompanyDict.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/enums/ResponseEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/ResponseBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/BasePageQuery.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/ExcelUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DataLineServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/LinesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/PageResult.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/DataLineController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/AssociateCompanyVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/AssociateCompany.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/ResultBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/util/QueryResultBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/AssociateCompany.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DataLineMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/LinesItemMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/AssociateCompanyMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/AssociateCompanyService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/AssociateCompanyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/AssociateCompanyController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/AssociateCompanyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/AssociateCompanyQuery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -238,18 +248,19 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-31" />
-    <option name="y" value="39" />
-    <option name="width" value="1400" />
-    <option name="height" value="820" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,48 +358,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,9 +383,10 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://G:/MopLink/src/main/java/com/springcloud/service/CompanyDictService.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/openapi-sdk-1.0.0.jar!/" />
+    <property name="last_opened_file_path" value="D:/ideaProject/hrserver" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -407,10 +395,21 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springcloud.mapper" />
+      <recent name="com.springcloud.service" />
+      <recent name="com.springcloud.bean.query" />
+      <recent name="com.springcloud.bean.vo" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.springcloud.util" />
+      <recent name="com.springcloud.service.impl" />
+      <recent name="com.springcloud.api" />
       <recent name="com.springcloud.bean.vo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\MopLink\src\main\resources" />
+      <recent name="G:\MopLink\src\main\resources\mapper" />
       <recent name="G:\MopLink\src\main\java\com\springcloud\enums" />
       <recent name="G:\MopLink\src\main\java\com\springcloud\util" />
     </key>
@@ -419,10 +418,10 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 2 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 5 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 2 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 5 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="MOP" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
@@ -500,21 +499,33 @@
       <updated>1574125316843</updated>
       <workItem from="1574125322033" duration="1046000" />
       <workItem from="1574129660952" duration="3640000" />
-      <workItem from="1574133351055" duration="12046000" />
+      <workItem from="1574133351055" duration="17065000" />
+      <workItem from="1574210911264" duration="13358000" />
+      <workItem from="1574236022506" duration="2231000" />
+      <workItem from="1574238666011" duration="3997000" />
+      <workItem from="1574296865890" duration="14561000" />
     </task>
+    <task id="LOCAL-00001" summary="实现分页数据查询">
+      <created>1574150386919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574150386919</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16732000" />
+    <option name="totallyTimeSpent" value="55898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info active="true" anchor="right" id="RestServices" order="4" visible="true" weight="0.26289397" />
+      <window_info active="true" anchor="right" id="RestServices" order="4" visible="true" weight="0.27077365" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.23567335" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.23487544" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Word Book" order="3" side_tool="true" />
       <window_info id="Capture Tool" order="2" />
@@ -523,18 +534,18 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.24525745" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.20596206" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.3387534" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3387534" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.13956639" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25609756" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23710601" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.254298" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -544,7 +555,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.4403794" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,73 +564,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="实现分页数据查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现分页数据查询" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/CompanyDict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/PageResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2147">
-          <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -644,20 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar!/org/apache/commons/lang3/StringUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -665,68 +605,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/ExcelUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/BasePageQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="73" column="48" lean-forward="true" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/ResponseBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -744,23 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/rocky-mp/src/main/java/com/rocky/mp/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/com/baomidou/mybatis-plus-core/3.0.1/mybatis-plus-core-3.0.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/rocky-mp/src/main/java/com/rocky/mp/service/UserService.java" />
     <entry file="jar://$USER_HOME$/.m2/repository/com/github/pagehelper/pagehelper/5.1.8/pagehelper-5.1.8.jar!/com/github/pagehelper/PageInfo.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -768,37 +634,300 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java">
+    <entry file="jar://$USER_HOME$/.m2/repository/com/baomidou/mybatis-plus-core/3.0.1/mybatis-plus-core-3.0.1.jar!/com/baomidou/mybatisplus/core/metadata/IPage.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="57">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.080.1125/HZ$D.080.1126/src/main/java/com/rocky/mp/service/UserService.java" />
+    <entry file="file://$USER_HOME$/Desktop/UserService.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.643.4460/HZ$D.643.4461/rocky-mp/src/main/java/com/rocky/mp/service/UserService.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.643.4460/HZ$D.643.4462/rocky-mp/src/main/java/com/rocky/mp/entity/User.java" />
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/5.2.1.RELEASE/spring-aop-5.2.1.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8227">
+          <caret line="481" selection-start-line="481" selection-end-line="481" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="533" selection-start-line="533" selection-end-line="533" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="491" selection-start-line="491" selection-end-line="491" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/BasePageQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/ResponseBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="26" column="59" lean-forward="true" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="263">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/AssociateCompanyVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/PageResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="337">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/ResultBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/com/baomidou/mybatis-plus-extension/3.0.1/mybatis-plus-extension-3.0.1.jar!/com/baomidou/mybatisplus/extension/plugins/pagination/Page.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/com/baomidou/mybatis-plus-core/3.0.1/mybatis-plus-core-3.0.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/util/QueryResultBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/LinesItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DataLineMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/CompanyDictMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/AssociateCompanyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/AssociateCompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LinesItemMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DataLineMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AssociateCompanyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/AssociateCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/AssociateCompanyQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/AssociateCompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DataLineController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/AssociateCompanyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="50" column="55" lean-forward="true" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/CompanyDictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/CompanyDictVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/CompanyDictQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CompanyDictMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/CompanyDictServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

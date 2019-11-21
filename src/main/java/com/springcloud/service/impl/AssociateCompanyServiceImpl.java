@@ -1,26 +1,20 @@
 package com.springcloud.service.impl;
 
-import cn.afterturn.easypoi.excel.ExcelImportUtil;
-import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.afterturn.easypoi.excel.entity.result.ExcelImportResult;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.springcloud.bean.dos.CompanyDict;
-import com.springcloud.bean.query.CompanyDictQuery;
-import com.springcloud.bean.vo.CompanyDictVO;
-import com.springcloud.mapper.CompanyDictMapper;
-import com.springcloud.service.CompanyDictService;
-import com.springcloud.util.PageResult;
-import org.apache.commons.lang3.StringUtils;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.springcloud.bean.dos.AssociateCompany;
+import com.springcloud.bean.query.AssociateCompanyQuery;
+import com.springcloud.mapper.AssociateCompanyMapper;
+import com.springcloud.service.AssociateCompanyService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+
+
 /**
 * @ClassName : CompanyDictServiceImpl
 * @Description : 公司目录
@@ -30,47 +24,31 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class CompanyDictServiceImpl implements CompanyDictService {
+public class AssociateCompanyServiceImpl implements AssociateCompanyService {
 
     @Autowired
-    CompanyDictMapper companyDictMapper;
-
-
-    @Override
-    public PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery) {
-        PageHelper.startPage(companyDictQuery.getNum(),companyDictQuery.getSize());
-        HashMap<String,Object> map = new HashMap<>(16);
-        if(StringUtils.isNotBlank(companyDictQuery.getCompanyName())){
-            map.put("companyName",companyDictQuery.getCompanyName());
-        }
-        List<CompanyDict> responseList = companyDictMapper.getPageCompanyDict(map);
-        PageInfo page = new PageInfo(responseList);
-        List<CompanyDictVO> listVO = new ArrayList<>();
-        if(responseList!=null && responseList.size()>0){
-            for(CompanyDict companyDict:responseList){
-                CompanyDictVO companyDictVO = new CompanyDictVO();
-                BeanUtils.copyProperties(companyDict,companyDictVO);
-                listVO.add(companyDictVO);
-            }
-        }
-        return new PageResult<CompanyDictVO>(page,listVO);
-    }
-
-
+    AssociateCompanyMapper associateCompanyMapper;
 
     @Transactional(readOnly = false,rollbackFor = Exception.class)
     @Override
-    public boolean batchImport(String fileName, MultipartFile file) throws Exception {
-        ImportParams importParams = new ImportParams();
-        // 数据处理
-        importParams.setHeadRows(1);
-        importParams.setTitleRows(1);
-        // 需要验证
-        importParams.setNeedVerfiy(false);
-            ExcelImportResult<CompanyDict> result = ExcelImportUtil.importExcelMore(file.getInputStream(), CompanyDict.class,importParams);
-            List<CompanyDict> commpanyList = result.getList();
-            boolean bool = companyDictMapper.batchInsert(commpanyList);
-        return bool;
+    public IPage<AssociateCompany> page(int page, int size, AssociateCompanyQuery query) {
+
+        Page<AssociateCompany> pageInfo = new Page<>(page, size);
+        //是否查询总数据行
+        /** pageInfo.setSearchCount(true); */
+        QueryWrapper<AssociateCompany> queryWrapper = new QueryWrapper<>();
+        //查询参数处理
+        queryWrapper.like("customerName",query.getCustomerName());
+        //其他的请参照SelectTest 类的      queryWrapper的测试方法，更详细的使用
+        IPage<AssociateCompany> iPage = associateCompanyMapper.selectPage(pageInfo, queryWrapper);
+        return iPage;
+    }
+
+    @Override
+    public List<AssociateCompany> list(AssociateCompanyQuery query) {
+        AssociateCompany searchBean = new AssociateCompany();
+        BeanUtils.copyProperties(query,searchBean);
+        return associateCompanyMapper.list(searchBean);
     }
 
 

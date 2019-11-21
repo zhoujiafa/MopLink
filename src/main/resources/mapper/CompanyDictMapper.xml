@@ -37,9 +37,8 @@
           <include refid="Base_Columns" />
         from
           companyDict
-        where
           <if test="companyName !=null and companyName != ''">
-              companyName like '%'+#{companyName}+'%'
+              where  companyName like '%'+#{companyName}+'%'
           </if>
     </select>
 

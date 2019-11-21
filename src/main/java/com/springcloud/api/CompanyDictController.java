@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 /**
  * @ClassName : DataLineController
  * @Description : 数据访问接口
@@ -26,15 +28,9 @@ public class CompanyDictController {
 
     @ApiOperation(value = "导入公司商品信息" , notes = "导入公司商品信息")
     @PostMapping("/import")
-    public ResponseBean<Boolean> importCompanyDict(@RequestParam("file") MultipartFile file) {
-        boolean bool = false;
+    public ResponseBean<Boolean> importCompanyDict(@RequestParam("file") MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();
-        try {
-            bool = companyDictService.batchImport(fileName, file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return  ResponseBean.ok(bool);
+        return  ResponseBean.ok(companyDictService.batchImport(fileName, file));
     }
 
     @ApiOperation(value = "分页查询" , notes = "分页查询")
@@ -42,6 +38,13 @@ public class CompanyDictController {
     public ResponseBean<PageResult<CompanyDictVO>> page(CompanyDictQuery companyDictQuery) {
 
         return  ResponseBean.ok(companyDictService.page(companyDictQuery));
+    }
+
+    @ApiOperation(value = "分页查询" , notes = "分页查询")
+    @GetMapping("/list")
+    public ResponseBean<List<CompanyDictVO>> list(CompanyDictQuery companyDictQuery) {
+
+        return  ResponseBean.ok(companyDictService.list(companyDictQuery));
     }
 
 }

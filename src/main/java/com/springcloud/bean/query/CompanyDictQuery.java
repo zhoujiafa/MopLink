@@ -12,5 +12,8 @@ import lombok.Data;
 @Data
 public class CompanyDictQuery extends BasePageQuery {
 
-    String CompanyName;
+    String companyCode;
+    String companyName;
+    String mopDeptCode;
+
 }
