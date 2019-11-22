@@ -13,8 +13,8 @@
     </sql>
 
     <select id="list" parameterType="map" resultMap="BaseResultMap">
-      select REPLACE(xtwldm,' ','')as customerCode,REPLACE(xtbmdm,' ','')as xunsoftDeptCode,
-      REPLACE(xtwlmc,' ','')as customerName from xtm14 as AssociateCompany
+        select REPLACE(xtwldm,' ','')as customerCode,REPLACE(xtbmdm,' ','')as xunsoftDeptCode,
+        REPLACE(xtwlmc,' ','')as customerName from xtm14 as AssociateCompany
         <if test="customerCode !=null and customerCode !=''">
             where xtwldm like '%'+#{customerCode}+'%'
         </if>
@@ -26,5 +26,15 @@
         </if>
 
     </select>
+
+    <select id="getOneByCustomerCode" parameterType="String" resultMap="BaseResultMap">
+        select REPLACE(xtwldm,' ','')as customerCode,REPLACE(xtbmdm,' ','')as xunsoftDeptCode,
+        REPLACE(xtwlmc,' ','')as customerName from xtm14 as AssociateCompany
+        <if test="customerCode !=null and customerCode !=''">
+            where xtwldm = #{customerCode}
+        </if>
+
+    </select>
+
 
 </mapper>

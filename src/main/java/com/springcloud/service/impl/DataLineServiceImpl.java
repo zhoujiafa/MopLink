@@ -1,15 +1,11 @@
 package com.springcloud.service.impl;
 
 import com.springcloud.bean.dos.DataLine;
-import com.springcloud.bean.vo.DataLineVO;
 import com.springcloud.mapper.DataLineMapper;
-import com.springcloud.order.OrderDetail;
 import com.springcloud.service.DataLineService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 /**
 * @ClassName : DataLineServiceImpl
 * @Description :

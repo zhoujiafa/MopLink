@@ -15,8 +15,27 @@ import java.util.List;
 
 public interface AssociateCompanyService {
 
+    /**
+     * 分页
+     * @param page
+     * @param size
+     * @param query
+     * @return
+     */
     IPage<AssociateCompany> page(int page, int size, AssociateCompanyQuery query);
 
-
+    /**
+     * 列表
+     * @param query
+     * @return
+     */
     List<AssociateCompany> list(AssociateCompanyQuery query);
+
+    /**
+     * 个体
+     * @param customerCode
+     * @return
+     */
+    AssociateCompany getOneBycustomerCode(String customerCode);
+
 }

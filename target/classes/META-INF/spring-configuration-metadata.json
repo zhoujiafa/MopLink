@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.druid.db2",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.springcloud.config.MybatisPlusConfig",
+      "sourceMethod": "db2()"
+    },
+    {
+      "name": "spring.datasource.druid.stock",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.springcloud.config.MybatisPlusConfig",
+      "sourceMethod": "db1()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

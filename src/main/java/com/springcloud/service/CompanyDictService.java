@@ -1,7 +1,7 @@
 package com.springcloud.service;
 
 
-import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.dos.AssociateCompany;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.vo.CompanyDictVO;
 import com.springcloud.util.PageResult;
@@ -39,5 +39,13 @@ public interface CompanyDictService {
      * @return
      */
     List<CompanyDictVO> list(CompanyDictQuery companyDictQuery);
+
+    /**
+     * 更新
+     * @param associateCompany
+     * @param companyDictID
+     * @return
+     */
+    Boolean update(Integer companyDictID, AssociateCompany associateCompany);
 
 }

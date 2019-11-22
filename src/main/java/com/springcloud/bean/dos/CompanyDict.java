@@ -16,6 +16,7 @@ import java.io.Serializable;
 @TableName("companyDict")
 public class CompanyDict implements Serializable {
 
+    Long iD;
     @Excel(name = "companyCode")
     String companyCode;
     @Excel(name = "companyName")

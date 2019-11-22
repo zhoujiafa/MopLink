@@ -1,5 +1,6 @@
 package com.springcloud.api;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.springcloud.bean.dos.AssociateCompany;
 import com.springcloud.bean.query.AssociateCompanyQuery;
@@ -42,6 +43,12 @@ public class AssociateCompanyController {
     public List<AssociateCompany> list(AssociateCompanyQuery query){
 
         return associateCompanyService.list(query);
+    }
+
+    @GetMapping("/one")
+    public AssociateCompany getOneBycustomerCode(String customerCode){
+
+        return associateCompanyService.getOneBycustomerCode(customerCode);
     }
 
 }

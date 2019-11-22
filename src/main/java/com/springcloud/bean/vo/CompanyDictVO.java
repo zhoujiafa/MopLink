@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class CompanyDictVO {
 
-
+    private Long iD;
     private String companyCode;
     private String companyName;
     private String mopDeptCode;

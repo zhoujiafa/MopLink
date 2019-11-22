@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.springcloud.mapper.CompanyDictMapper">
     <resultMap id="BaseResultMap" type="com.springcloud.bean.dos.CompanyDict">
-        <!--<id property="id" column="iD"></id>-->
+        <id property="iD" column="iD"></id>
         <result property="companyCode" column="companyCode"></result>
         <result property="companyName" column="companyName"></result>
         <result property="distributorName" column="distributorName"></result>
@@ -18,12 +18,13 @@
 
     <insert id="batchInsert" parameterType="List">
         insert into companyDict
-        (companyCode,companyName,mopDeptCode,customerCode,customerName,xunsoftDeptCode)
+        (companyCode,companyName,distributorName,mopDeptCode,customerCode,customerName,xunsoftDeptCode)
         values
         <foreach collection="list" item="item"  separator=",">
             (
             #{item.companyCode},
             #{item.companyName},
+            #{item.distributorName},
             #{item.mopDeptCode},
             #{item.customerCode},
             #{item.customerName},

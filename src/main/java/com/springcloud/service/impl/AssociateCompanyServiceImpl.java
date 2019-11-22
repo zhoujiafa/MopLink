@@ -1,5 +1,6 @@
 package com.springcloud.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -49,6 +50,12 @@ public class AssociateCompanyServiceImpl implements AssociateCompanyService {
         AssociateCompany searchBean = new AssociateCompany();
         BeanUtils.copyProperties(query,searchBean);
         return associateCompanyMapper.list(searchBean);
+    }
+    @DS("jzn_wms_test")
+    @Override
+    public AssociateCompany getOneBycustomerCode(String customerCode) {
+
+        return associateCompanyMapper.getOneByCustomerCode(customerCode);
     }
 
 
