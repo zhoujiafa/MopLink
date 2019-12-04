@@ -18,15 +18,13 @@ public class BasePageQuery {
 
     @ApiModelProperty("分页查询页数")
     @Setter
-    private Integer num;
+    private Integer page;
 
     @ApiModelProperty("分页查询每页条数")
     @Setter
     private Integer size;
 
-    public Integer getNum(){
-        return num == null || num<MIN_NUM?MIN_NUM:num;
-    }
+
 
     public Integer getSize(){
         return size == null || size<MIN_SIZE?MIN_SIZE:size;

@@ -14,6 +14,7 @@ public class DataLine {
     private String ntypeCode;
     private String ntypeName;
     private String companyName;
+    private String companyCode;
     private String remark;
     private String createName;
     private String needStatus;

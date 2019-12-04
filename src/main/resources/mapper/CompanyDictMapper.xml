@@ -5,30 +5,33 @@
         <id property="iD" column="iD"></id>
         <result property="companyCode" column="companyCode"></result>
         <result property="companyName" column="companyName"></result>
-        <result property="distributorName" column="distributorName"></result>
+        <!--<result property="distributorName" column="distributorName"></result>-->
         <result property="mopDeptCode" column="mopDeptCode"></result>
+        <result property="mopDeptName" column="mopDeptName"></result>
         <result property="customerCode" column="customerCode"></result>
         <result property="customerName" column="customerName"></result>
         <result property="xunsoftDeptCode" column="xunsoftDeptCode"></result>
+        <result property="xunsoftDeptName" column="xunsoftDeptName"></result>
     </resultMap>
 
     <sql id="Base_Columns">
-        companyCode,companyName,distributorName,mopDeptCode,customerCode,customerName,xunsoftDeptCode
+        companyCode,companyName,mopDeptCode,mopDeptName,customerCode,customerName,xunsoftDeptCode,xunsoftDeptName
     </sql>
 
     <insert id="batchInsert" parameterType="List">
         insert into companyDict
-        (companyCode,companyName,distributorName,mopDeptCode,customerCode,customerName,xunsoftDeptCode)
+        (companyCode,companyName,mopDeptCode,mopDeptName,customerCode,customerName,xunsoftDeptCode,xunsoftDeptName)
         values
         <foreach collection="list" item="item"  separator=",">
             (
             #{item.companyCode},
             #{item.companyName},
-            #{item.distributorName},
             #{item.mopDeptCode},
+            #{item.mopDeptName},
             #{item.customerCode},
             #{item.customerName},
-            #{item.xunsoftDeptCode}
+            #{item.xunsoftDeptCode},
+            #{item.xunsoftDeptName}
             )
         </foreach>
     </insert>

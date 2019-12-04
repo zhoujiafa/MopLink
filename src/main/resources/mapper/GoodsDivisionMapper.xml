@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.GoodsDivisionMapper">
+    <resultMap id="BaseResultMap" type="com.springcloud.bean.dos.GoodsDivision">
+        <result property="barCode" column="barCode"></result>
+        <result property="barName" column="barName"></result>
+        <result property="price" column="price"></result>
+    </resultMap>
+
+    <sql id="Base_Columns">
+        barCode,barName,price
+    </sql>
+
+    <select id="getOneBybarCode" parameterType="String" resultMap="BaseResultMap">
+        select REPLACE(xtwpdm,' ','')as barCode ,REPLACE(xtwpmc,' ','')as barName ,REPLACE(wpxsdj,' ','')as price
+        from xtm12
+        <if test="barCode !=null and barCode !=''">
+            where xtwpdm = #{barCode}
+        </if>
+    </select>
+
+    <select id="list" parameterType="map" resultMap="BaseResultMap">
+        select top 100 REPLACE(xtwpdm,' ','')as barCode,REPLACE(xtwpmc,' ','') as barName,REPLACE(wpxsdj,' ','')as price
+        from xtm12
+        <if test="barName !=null and barName !=''">
+            where xtwpmc = #{barName}
+        </if>
+    </select>
+
+</mapper>

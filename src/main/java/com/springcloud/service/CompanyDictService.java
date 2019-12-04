@@ -1,10 +1,11 @@
 package com.springcloud.service;
 
 
-import com.springcloud.bean.dos.AssociateCompany;
+import com.springcloud.bean.dos.CompanyDivision;
+import com.springcloud.bean.dos.CompanyDict;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.vo.CompanyDictVO;
-import com.springcloud.util.PageResult;
+import com.springcloud.util.QueryResult;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -28,10 +29,13 @@ public interface CompanyDictService {
 
     /**
      * 分页模糊查询
+     *
+     * @param page
+     * @param size
      * @param companyDictQuery
      * @return
      */
-    PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery);
+    QueryResult<CompanyDict> page(long page, long size, CompanyDictQuery companyDictQuery);
 
     /**
      * 列表查询
@@ -42,10 +46,25 @@ public interface CompanyDictService {
 
     /**
      * 更新
-     * @param associateCompany
+     * @param companyDivision
      * @param companyDictID
      * @return
      */
-    Boolean update(Integer companyDictID, AssociateCompany associateCompany);
+    Boolean update(Integer companyDictID, CompanyDivision companyDivision);
+
+    /**
+     * 更新
+     * @param companyDivision
+     * @param companyDictID
+     * @return
+     */
+    Boolean update(List<Integer> companyDictID, CompanyDivision companyDivision);
+
+    /**
+     * 单体查询
+     * @param companyDictId
+     * @return
+     */
+    Boolean getOneByCompanyDictId(Integer companyDictId);
 
 }

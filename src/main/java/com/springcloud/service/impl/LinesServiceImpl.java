@@ -22,7 +22,6 @@ public class LinesServiceImpl implements LinesService {
         return linesItemMapper.batchInsert(linesItemList);
     }
 
-
     /*@PostConstruct
     private Boolean insert() {
         DataLineVO dataLineVO = OrderDetail.DataLineVO();

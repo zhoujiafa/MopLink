@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="@14.17.96.21" uuid="8ffee87c-c389-4fdb-b070-d36a2d2f707b">
+      <database-info product="Microsoft SQL Server" version="10.50.1600" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 7.4 for SQL Server" driver-version="7.4.1.0">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>reabam</user-name>
+      <introspection-schemas>*:*|BaseData:|JZN_FX:|JZN_MD:|ReportServer:|ReportServerTempDB:|UFDATA_001_2019:|UFDATA_002_2019:|UFMeta_001:|UFMeta_002:|UFSystem:|UTU:|fy_acct:|jzn_old:|jzn_wms:|jzn_wms_test:|master:guest|model:|msdb:|stock:|tempdb:</introspection-schemas>
+    </data-source>
+  </component>
+</project>

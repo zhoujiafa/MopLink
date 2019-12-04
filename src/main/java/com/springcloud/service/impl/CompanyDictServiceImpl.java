@@ -3,19 +3,19 @@ package com.springcloud.service.impl;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.result.ExcelImportResult;
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.springcloud.bean.dos.AssociateCompany;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.springcloud.bean.dos.CompanyDivision;
 import com.springcloud.bean.dos.CompanyDict;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.vo.CompanyDictVO;
 import com.springcloud.exceptions.ServiceException;
-import com.springcloud.mapper.AssociateCompanyMapper;
+import com.springcloud.mapper.CompanyDivisionMapper;
 import com.springcloud.mapper.CompanyDictMapper;
 import com.springcloud.service.CompanyDictService;
-import com.springcloud.util.PageResult;
+import com.springcloud.util.QueryResult;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -36,12 +35,12 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class CompanyDictServiceImpl implements CompanyDictService {
+public class CompanyDictServiceImpl extends ServiceImpl<CompanyDictMapper, CompanyDict> implements CompanyDictService {
 
     @Autowired
     CompanyDictMapper companyDictMapper;
     @Autowired
-    AssociateCompanyMapper associateCompanyMapper;
+    CompanyDivisionMapper companyDivisionMapper;
 
     @Transactional(readOnly = false, rollbackFor = Exception.class)
     @Override
@@ -60,17 +59,22 @@ public class CompanyDictServiceImpl implements CompanyDictService {
 
 
     @Override
-    public PageResult<CompanyDictVO> page(CompanyDictQuery companyDictQuery) {
-        PageHelper.startPage(companyDictQuery.getNum(), companyDictQuery.getSize());
-        HashMap<String, Object> map = new HashMap<>(16);
-        if (StringUtils.isNotBlank(companyDictQuery.getCompanyName())) {
-            map.put("companyName", companyDictQuery.getCompanyName());
-        }
-        List<CompanyDict> responseList = companyDictMapper.getPageCompanyDict(map);
-        PageInfo page = new PageInfo(responseList);
-        List<CompanyDictVO> listVO = new ArrayList<>();
-        listVO = DtoToBean(responseList);
-        return new PageResult<CompanyDictVO>(page, listVO);
+    public QueryResult<CompanyDict> page(long page, long size, CompanyDictQuery companyDictQuery) {
+
+        QueryWrapper<CompanyDict> queryWrapper = new QueryWrapper<>();
+        queryWrapper = queryEntity(companyDictQuery, queryWrapper);
+
+        Page<CompanyDict> pageinfo = new Page(page, size);
+        pageinfo.setSearchCount(true);
+        IPage<CompanyDict> ipage = companyDictMapper.selectPage(pageinfo, queryWrapper);
+
+        QueryResult queryResult = new QueryResult<CompanyDict>();
+        BeanUtils.copyProperties(ipage, queryResult);
+
+//        queryResult.setRecords(ipage.getRecords());
+//        queryResult.setTotal(ipage.getTotal());
+
+        return queryResult;
     }
 
     @Override
@@ -91,14 +95,14 @@ public class CompanyDictServiceImpl implements CompanyDictService {
     }
 
     @Override
-    public Boolean update(Integer companyDictID, AssociateCompany searchModel) {
+    public Boolean update(Integer companyDictID, CompanyDivision searchModel) {
         CompanyDict updateModel = null;
         if (companyDictID != null) {
-
             updateModel = companyDictMapper.selectById(companyDictID);
             if (updateModel == null) {
                 throw new ServiceException("当前公司ID为" + companyDictID + "：暂无此公司查询信息，关联失败！");
             }
+            updateModel.setXunsoftDeptName(searchModel.getXunsoftDeptName());
             updateModel.setCustomerCode(searchModel.getCustomerCode());
             updateModel.setCustomerName(searchModel.getCustomerName());
             updateModel.setXunsoftDeptCode(searchModel.getXunsoftDeptCode());
@@ -106,8 +110,19 @@ public class CompanyDictServiceImpl implements CompanyDictService {
         return companyDictMapper.updateById(updateModel) > 0;
     }
 
+    @Override
+    public Boolean update(List<Integer> companyDictID, CompanyDivision companyDivision) {
+        return null;
+    }
 
-
+    @Override
+    public Boolean getOneByCompanyDictId(Integer companyDictId) {
+        CompanyDict companyDict = companyDictMapper.selectById(companyDictId);
+        if (companyDict != null && StringUtils.isNotBlank(companyDict.getCustomerName())) {
+            throw new ServiceException("已存在");
+        }
+        return true;
+    }
 
 
     private List<CompanyDictVO> DtoToBean(List<CompanyDict> list) {
@@ -120,6 +135,27 @@ public class CompanyDictServiceImpl implements CompanyDictService {
             }
         }
         return listVo;
+    }
+
+
+    /**
+     * 查询实体处理
+     *
+     * @param
+     * @param queryWrapper
+     * @return
+     */
+    private QueryWrapper<CompanyDict> queryEntity(CompanyDictQuery companyDictQuery, QueryWrapper<CompanyDict> queryWrapper) {
+        if (companyDictQuery != null) {
+            if (!StringUtils.isEmpty(companyDictQuery.getCompanyName())) {
+                queryWrapper.like("companyName", companyDictQuery.getCompanyName());
+            }
+            if (!StringUtils.isEmpty(companyDictQuery.getCompanyCode())) {
+                queryWrapper.like("companyCode",companyDictQuery.getCompanyCode());
+            }
+            return queryWrapper;
+        }
+        return queryWrapper;
     }
 
 }

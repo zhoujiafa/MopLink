@@ -8,7 +8,7 @@ import lombok.Data;
 @TableName("LinesItem")
 public class LinesItem {
 
-
+    private String docNum;
     public String purchasingQuantity ;
     public String itemName ;
     public String unit ;

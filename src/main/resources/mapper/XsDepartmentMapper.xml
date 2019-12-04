@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.XsDepartmentMapper">
+    <resultMap id="BaseResultMap" type="com.springcloud.bean.dos.XsDepartment">
+        <result property="customerCode" column="customerCode"></result>
+        <result property="xsDepartmentCode" column="XsDepartmentCode"></result>
+        <result property="xsDepartmentName" column="XsDepartmentName"></result>
+    </resultMap>
+
+    <sql id="Base_Columns">
+        companyCode,XsDepartmentCode,XsDepartmentName
+    </sql>
+
+    <select id="getOneByXsDeptCode" parameterType="map" resultMap="BaseResultMap">
+        select DISTINCT REPLACE(xtwldm,' ','') AS customerCode,
+        REPLACE(xtm06.xtbmdm,' ','') AS xsDepartmentCode,
+        REPLACE(xtbmmc,' ','') As xsDepartmentName
+        from xtm14 inner join xtm06 on xtm14.xtbmdm=xtm06.xtbmdm
+        where xtm14.xtwldm = #{customerCode}
+    </select>
+
+</mapper>

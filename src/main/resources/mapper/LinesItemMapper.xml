@@ -3,6 +3,8 @@
 <mapper namespace="com.springcloud.mapper.LinesItemMapper">
 
     <resultMap id="ResultMap" type="com.springcloud.bean.dos.LinesItem">
+        <id property="iD" column="iD"></id>
+        <result property="docNum" column="docNum"></result>
         <result property="purchasingQuantity" column="purchasingQuantity"></result>
         <result property="itemName" column="itemName"></result>
         <result property="unit" column="unit"></result>
@@ -19,11 +21,12 @@
 
     <insert id="batchInsert" parameterType="List">
         insert into LinesItem
-        (purchasingQuantity,itemName,unit,itemQuantity,quantity,
+        (docNum,purchasingQuantity,itemName,unit,itemQuantity,quantity,
         specName,specCode,itemUnit,itemCode,remark,skuBarcode,allocationQuantity)
         values
         <foreach collection="list" item="item"  separator=",">
             (
+            #{item.docNum},
             #{item.purchasingQuantity},
             #{item.itemName},
             #{item.unit},

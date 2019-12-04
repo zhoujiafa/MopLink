@@ -16,10 +16,11 @@
 
 
     <!--<insert id="insert" parameterType="com.springcloud.bean.dos.DataLine">-->
-        <!--insert into dataline ( needStatusName, needNo, needDate, ntypeCode , ntypeName, remark-->
-        <!--, createName, needStatus, createDate) values (#{needStatusName}, #{needNo}, #{needDate}, #{ntypeCode }, #{ntypeName}, #{remark},-->
-        <!--#{createName}, #{needStatus}, #{createDate})-->
+    <!--insert into dataline ( needStatusName, needNo, needDate, ntypeCode , ntypeName, remark-->
+    <!--, createName, needStatus, createDate) values (#{needStatusName}, #{needNo}, #{needDate}, #{ntypeCode }, #{ntypeName}, #{remark},-->
+    <!--#{createName}, #{needStatus}, #{createDate})-->
     <!--</insert>-->
+
 
 
 </mapper>

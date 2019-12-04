@@ -21,10 +21,13 @@ import java.util.Random;
 
 public class OrderDetail {
 
+    public static void main(String[] args) {
+        DataLineVO dataLineVO = OrderDetail.DataLineVO();
+    }
 
     static final String appId = "BC7CEC0171504DF799CB4972541C0FXS";
     static final String key = "285e11c1e83a4094b35cc3cf320ad820";
-    static final String companyCode = "0144";
+    static final String companyCode = "0324";
     private static final String url = "http://test.try-shopping.com/ts-openapi";
 
     public static DataLineVO DataLineVO()  {
@@ -33,13 +36,13 @@ public class OrderDetail {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("appId", appId);
         //params.put("taskId", "20180125165130");
-        params.put("companyCode", "0324");
+        params.put("companyCode", companyCode);
         // 具体业务参数
         Map<String, Object> dataJson = new HashMap<String, Object>();
 
-        //dataJson.put("needOrderNo", "301445621412");
-        params.put("dataJson", "{\"needOrderNo\":\"303248530001\"}");
-        //params.put("dataJson", dataJson);
+        dataJson.put("needOrderNo", "301445621412");
+        params.put("dataJson", dataJson);
+        //params.put("dataJson", "{\"needOrderNo\":\"303248530001\"}");
         String paramsJson = JSON.toJSON(SignUtil.sign(params, key)).toString();
         //System.out.println(paramsJson);
         String requsetUrl = url + "/openapi/needOrder/detail";
@@ -54,7 +57,7 @@ public class OrderDetail {
         JSONObject jsonObj = JSONObject.parseObject(resultJson);
         JSONObject dataLine = jsonObj.getJSONObject("DataLine");
 
-        bean.setLines(a.getJsonToBeanThird(dataLine));
+        //bean.setLines(a.getJsonToBeanThird(dataLine));
 
         return bean;
     }

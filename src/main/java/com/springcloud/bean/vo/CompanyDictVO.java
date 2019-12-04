@@ -1,6 +1,5 @@
 package com.springcloud.bean.vo;
 
-import com.springcloud.bean.dos.LinesItem;
 import lombok.Data;
 /**
 * @ClassName : CompanyDictVO
@@ -18,10 +17,7 @@ public class CompanyDictVO {
     private String companyCode;
     private String companyName;
     private String mopDeptCode;
-
-
-
-
+    private String xunsoftDeptName;
 
 
 }

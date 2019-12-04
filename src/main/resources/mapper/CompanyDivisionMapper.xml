@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.CompanyDivisionMapper">
+
+    <resultMap id="BaseResultMap" type="com.springcloud.bean.dos.CompanyDivision">
+        <result property="customerName" column="customerName"></result>
+        <result property="customerCode" column="customerCode"></result>
+        <result property="xunsoftDeptCode" column="xunsoftDeptCode"></result>
+    </resultMap>
+
+    <sql id="Base_Columns">
+        customerName,customerCode,xunsoftDeptCode
+    </sql>
+
+    <select id="list" parameterType="map" resultMap="BaseResultMap">
+        select REPLACE(xtwldm,' ','')as customerCode,REPLACE(xtbmdm,' ','')as xunsoftDeptCode,
+        REPLACE(xtwlmc,' ','')as customerName from xtm14 as AssociateCompany
+        <if test="customerCode !=null and customerCode !=''">
+            where xtwldm like '%'+#{customerCode}+'%'
+        </if>
+        <if test="xunsoftDeptCode !=null and xunsoftDeptCode !=''">
+            where xtbmdm like '%'+#{xunsoftDeptCode}+'%'
+        </if>
+        <if test="customerName !=null and customerName !=''">
+            where xtwlmc like '%'+#{customerName}+'%'
+        </if>
+    </select>
+
+    <select id="getOneByCustomerCode" parameterType="String" resultMap="BaseResultMap">
+        select DISTINCT REPLACE(xtwldm,' ','') AS customerCode,
+        REPLACE(xtm06.xtbmdm,' ','') AS xunsoftDeptCode,
+        REPLACE(xtbmmc,' ','') As xunsoftDeptName,
+        REPLACE(xtwlmc,' ','') As customerName
+        from xtm14 inner join xtm06 on xtm14.xtbmdm=xtm06.xtbmdm
+        where xtm14.xtwldm = #{customerCode}
+    </select>
+
+
+</mapper>

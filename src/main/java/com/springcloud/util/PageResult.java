@@ -1,12 +1,9 @@
 package com.springcloud.util;
 
-import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.poi.ss.formula.functions.T;
-
 import java.util.List;
 
 /**
@@ -30,15 +27,5 @@ public class PageResult<T> {
     @ApiModelProperty("数据")
     private List<T> list;
 
-    public PageResult(PageInfo pageInfo, List<T> list){
-        this(pageInfo);
-        this.list=list;
-    }
 
-    public PageResult(PageInfo pageInfo) {
-        this.total = pageInfo.getTotal();
-        this.pageIndex = pageInfo.getPageNum();
-        this.size = pageInfo.getSize();
-        this.list = pageInfo.getList();
-    }
 }

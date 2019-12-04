@@ -15,11 +15,17 @@ public class DataLineVO {
     private String ntypeCode;
     private String ntypeName;
     private String companyName;
+    private String companyCode;
     private String remark;
     private String createName;
     private String needStatus;
     private String createDate;
-    public List<LinesItem> lines;
+    private List<LinesItem> lines;
+
+    private Boolean IsRetransmit;
+    private Boolean IsCompulsorySubmission;
+
+
 
 
 }

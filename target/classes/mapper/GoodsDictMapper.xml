@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.GoodsDictMapper">
+    <resultMap id="BaseResultMap" type="com.springcloud.bean.dos.GoodsDict">
+        <id property="iD" column="iD"></id>
+        <result property="skuBarcode" column="skuBarcode"></result>
+        <result property="itemCode" column="itemCode"></result>
+        <result property="specName" column="specName"></result>
+        <result property="barCode" column="barCode"></result>
+        <result property="barName" column="barName"></result>
+        <result property="price" column="price"></result>
+    </resultMap>
+
+    <sql id="Base_Columns">
+        skuBarcode,itemCode,specName,barCode,barName,price
+    </sql>
+
+    <insert id="batchInsert" parameterType="List">
+        insert into goodsDict
+        ( skuBarcode,itemCode,specName,barCode,barName,price)
+        values
+        <foreach collection="list" item="item"  separator=",">
+            (
+            #{item.skuBarcode},
+            #{item.itemCode},
+            #{item.specName},
+            #{item.barCode},
+            #{item.barName},
+            #{item.price}
+            )
+        </foreach>
+    </insert>
+
+   <!-- <select id="getPagegoodsDict" parameterType="map" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Columns" />
+        from
+          companyDict
+          <if test="companyName !=null and companyName != ''">
+              where  companyName like '%'+#{companyName}+'%'
+          </if>
+    </select>-->
+
+</mapper>

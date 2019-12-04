@@ -1,11 +1,9 @@
 package com.springcloud.api;
 
-import com.springcloud.bean.dos.AssociateCompany;
-import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.dos.CompanyDivision;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.vo.CompanyDictVO;
-import com.springcloud.exceptions.ServiceException;
-import com.springcloud.service.AssociateCompanyService;
+import com.springcloud.service.CompanyDivisionService;
 import com.springcloud.service.CompanyDictService;
 import com.springcloud.util.PageResult;
 import com.springcloud.util.ResponseBean;
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName : DataLineController
@@ -30,37 +29,48 @@ public class CompanyDictController {
     @Autowired
     CompanyDictService companyDictService;
     @Autowired
-    AssociateCompanyService associateCompanyService;
+    CompanyDivisionService companyDivisionService;
 
-    @ApiOperation(value = "导入公司商品信息" , notes = "导入公司商品信息")
+    @ApiOperation(value = "导入公司商品信息", notes = "导入公司商品信息")
     @PostMapping("/import")
     public ResponseBean<Boolean> importCompanyDict(@RequestParam("file") MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();
-        return  ResponseBean.ok(companyDictService.batchImport(fileName, file));
+        return ResponseBean.ok(companyDictService.batchImport(fileName, file));
     }
 
-    @ApiOperation(value = "分页查询" , notes = "分页查询")
-    @PostMapping("/page")
-    public ResponseBean<PageResult<CompanyDictVO>> page(CompanyDictQuery companyDictQuery) {
+    @ApiOperation(value = "分页查询", notes = "分页查询")
+    @GetMapping("/page/{page}/{size}")
+    public ResponseBean<PageResult<CompanyDictVO>> page(@PathVariable int page, @PathVariable int size, CompanyDictQuery companyDictQuery) {
 
-        return  ResponseBean.ok(companyDictService.page(companyDictQuery));
+        return ResponseBean.ok(companyDictService.page(page,size,companyDictQuery));
     }
 
-    @ApiOperation(value = "分页查询" , notes = "分页查询")
+    @ApiOperation(value = "列表查询", notes = "列表查询")
     @GetMapping("/list")
     public ResponseBean<List<CompanyDictVO>> list(CompanyDictQuery companyDictQuery) {
 
-        return  ResponseBean.ok(companyDictService.list(companyDictQuery));
+        return ResponseBean.ok(companyDictService.list(companyDictQuery));
     }
 
-    @ApiOperation(value = "更新信息（公司关联）" , notes = "更新信息（公司关联）")
+    @ApiOperation(value = "更新信息（公司关联经销商信息）", notes = "更新信息（公司关联经销商信息）")
     @PostMapping("/update")
-    public ResponseBean<Boolean> update(Integer companyDictID,String customerCode) {
-        if(StringUtils.isBlank(customerCode)){
-           return ResponseBean.fail("客户编码【customerCode】不能为空！");
+    public ResponseBean<Boolean> update(@RequestBody Map data) {
+        if (StringUtils.isBlank(data.get("companyDictID").toString())) {
+            return ResponseBean.fail("客户编码customerCode不能为空！");
         }
-        AssociateCompany associateCompany = associateCompanyService.getOneBycustomerCode(customerCode);
-        return  ResponseBean.ok(companyDictService.update(companyDictID,associateCompany));
+        CompanyDivision companyDivision = companyDivisionService.getOneBycustomerCode(data.get("customerCode").toString());
+        return ResponseBean.ok(companyDictService.update(Integer.valueOf(data.get("companyDictID").toString()), companyDivision));
     }
+
+
+//    @ApiOperation(value = "更新信息（公司关联）", notes = "更新信息（公司关联）")
+//    @PostMapping("/update")
+//    public ResponseBean<Boolean> update(@RequestParam("companyDictID") Integer companyDictID,@RequestParam("customerCode")  String customerCode) {
+//        if (StringUtils.isBlank(customerCode)) {
+//            return ResponseBean.fail("客户编码【customerCode】不能为空！");
+//        }
+//        AssociateCompany associateCompany = associateCompanyService.getOneBycustomerCode(customerCode);
+//        return ResponseBean.ok(companyDictService.update(companyDictID, associateCompany));
+//    }
 
 }

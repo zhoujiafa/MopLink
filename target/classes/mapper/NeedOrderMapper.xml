@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.NeedOrderMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.NeedOrder">
+        <result property="docNum" column="docNum"></result>
+        <result property="needNo" column="needNo"></result>
+        <result property="companyCode" column="companyCode"></result>
+        <result property="companyName" column="companyName"></result>
+        <result property="remark" column="remark"></result>
+        <result property="createName" column="createName"></result>
+        <result property="needStatus" column="needStatus"></result>
+        <result property="createDate" column="createDate"></result>
+        <result property="downLoadMark" column="downLoadMark"></result>
+        <result property="upLoadMark" column="upLoadMark"></result>
+        <result property="upLoadDate" column="upLoadDate"></result>
+        <result property="docQtyTotal" column="docQtyTotal"></result>
+        <result property="docTotal" column="docTotal"></result>
+        <result property="cardCode" column="cardCode"></result>
+        <result property="cardName" column="cardName"></result>
+        <result property="department" column="department"></result>
+        <result property="saleCode" column="saleCode"></result>
+        <result property="baseDocNum" column="baseDocNum"></result>
+    </resultMap>
+
+    <select id="saveNeedOrder" statementType="CALLABLE" parameterType="java.util.Map"
+            resultType="com.springcloud.bean.vo.SaveResult">
+          {call
+            Insert_needOrder(
+            #{companyCode,mode=IN,jdbcType=VARCHAR},
+            #{docNum,mode=IN,jdbcType=VARCHAR},
+            #{createName,jdbcType=INTEGER},
+            #{IsRetransmit,jdbcType=BIT},
+            #{IsCompulsorySubmission,jdbcType=BIT},
+            #{ResultInt,jdbcType=INTEGER},
+            #{ResultString,jdbcType=VARCHAR}
+        )}
+    </select>
+
+    <!--<select   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO"
+              resultType="com.springcloud.bean.vo.SaveResult">
+    Declare @companyCode varchar(20)
+    Declare @Mopdocnum varchar(20)
+    Declare @createName varchar(20)
+    Declare @IsRetransmit bit
+    Declare @IsCompulsorySubmission bit
+    Declare @ResultInt int
+    Declare @ResultString varchar(20)
+    EXEC Insert_needOrder
+    #{companyCode,mode=IN,jdbcType=VARCHAR},
+    #{docNum,mode=IN,jdbcType=VARCHAR},
+    #{createName,jdbcType=VARCHAR},
+    #{IsRetransmit,jdbcType=BIT},
+    #{IsCompulsorySubmission,jdbcType=BIT},
+    #{ResultInt,jdbcType=INTEGER},
+    #{ResultString,jdbcType=VARCHAR}
+    </select  >-->
+
+
+     <!--<insert   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO">
+    Declare @companyCode varchar(20)
+    Declare @Mopdocnum varchar(20)
+    Declare @createName varchar(20)
+    Declare @IsRetransmit bit
+    Declare @IsCompulsorySubmission bit
+    Declare @ResultInt int
+    Declare @ResultString varchar(20)
+    EXEC Insert_needOrder
+    #{companyCode,mode=IN,jdbcType=VARCHAR},
+    #{docnum,mode=IN,jdbcType=VARCHAR},
+    #{createName,jdbcType=VARCHAR},
+    #{IsRetransmit,jdbcType=BIT},
+    #{IsCompulsorySubmission,jdbcType=BIT},
+    #{ResultInt,jdbcType=INTEGER},
+    #{ResultString,jdbcType=VARCHAR}
+    </insert  >-->
+
+    <!--<select   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO"
+              resultType="com.springcloud.bean.vo.SaveResult">
+    Declare @companyCode varchar(20)
+    Declare @docNum varchar(20)
+    Declare @createName varchar(20)
+    Declare @IsRetransmit bit
+    Declare @IsCompulsorySubmission bit
+    Declare @ResultInt int
+    Declare @ResultString varchar(20)
+    EXEC Insert_needOrder
+    @companyCode=${companyCode},
+    @Mopdocnum=${docNum},
+    @createName=${createName},
+    @IsRetransmit=${IsRetransmit},
+    @IsCompulsorySubmission=${IsCompulsorySubmission},
+    @ResultInt=${ResultInt},
+    @ResultString=${ResultString}
+    </select  >-->
+
+
+
+   <!-- <insert   id="saveNeedOrder" statementType="CALLABLE" parameterType="java.util.Map">
+    Declare @companyCode varchar(20)
+    Declare @docNum varchar(20)
+    Declare @createName varchar(20)
+    Declare @IsRetransmit bit
+    Declare @IsCompulsorySubmission bit
+    Declare @ResultInt int
+    Declare @ResultString varchar(20)
+    EXEC Insert_needOrder
+    #{companyCode,mode=IN,jdbcType=VARCHAR},
+    #{docNum,mode=IN,jdbcType=VARCHAR},
+    #{createName,jdbcType=VARCHAR},
+    #{IsRetransmit,jdbcType=BIT},
+    #{IsCompulsorySubmission,jdbcType=BIT},
+    #{ResultInt,jdbcType=INTEGER},
+    #{ResultString,jdbcType=VARCHAR}
+    </insert  >-->
+
+
+
+
+
+
+
+</mapper>

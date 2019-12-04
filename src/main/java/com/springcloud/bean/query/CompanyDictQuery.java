@@ -10,7 +10,7 @@ import lombok.Data;
  * @Date: 2019-11-19 11:10
  */
 @Data
-public class CompanyDictQuery extends BasePageQuery {
+public class CompanyDictQuery{
 
     String companyCode;
     String companyName;

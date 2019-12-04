@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 @TableName("needOrder")
 public class NeedOrder {
-
+    Long  iD;
     String docNum;
-    String ntypeName;
+    String needNo;
     String companyCode;
     String companyName;
     String remark;
@@ -20,9 +20,10 @@ public class NeedOrder {
     String upLoadMark;
     String upLoadDate;
     Integer docQtyTotal;
-    Double  vdocTotal;
+    Double  docTotal;
     String cardCode;
     String cardName;
     String department;
     String saleCode;
+    String baseDocNum;
 }
