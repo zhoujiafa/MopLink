@@ -19,5 +19,6 @@ import java.util.Map;
 @Mapper
 public interface NeedOrderMapper extends BaseMapper<NeedOrder>{
 
-    public SaveResult saveNeedOrder(Map<String, Object> map);
+
+    SaveResult saveNeedOrder(Map<String, Object> map);
 }

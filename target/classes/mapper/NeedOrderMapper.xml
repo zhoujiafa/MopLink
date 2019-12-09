@@ -36,9 +36,9 @@
         )}
     </select>
 
-    <!--<select   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO"
+   <!-- <select   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO"
               resultType="com.springcloud.bean.vo.SaveResult">
-    Declare @companyCode varchar(20)
+    Declare @CompanyCode varchar(20)
     Declare @Mopdocnum varchar(20)
     Declare @createName varchar(20)
     Declare @IsRetransmit bit
@@ -57,7 +57,7 @@
 
 
      <!--<insert   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO">
-    Declare @companyCode varchar(20)
+    Declare @CompanyCode varchar(20)
     Declare @Mopdocnum varchar(20)
     Declare @createName varchar(20)
     Declare @IsRetransmit bit
@@ -66,13 +66,32 @@
     Declare @ResultString varchar(20)
     EXEC Insert_needOrder
     #{companyCode,mode=IN,jdbcType=VARCHAR},
-    #{docnum,mode=IN,jdbcType=VARCHAR},
+    #{docNum,mode=IN,jdbcType=VARCHAR},
     #{createName,jdbcType=VARCHAR},
     #{IsRetransmit,jdbcType=BIT},
     #{IsCompulsorySubmission,jdbcType=BIT},
     #{ResultInt,jdbcType=INTEGER},
     #{ResultString,jdbcType=VARCHAR}
     </insert  >-->
+
+    <!--<select   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO"
+              resultType="com.springcloud.bean.vo.SaveResult">
+    Declare @CompanyCode varchar(20)
+    Declare @Mopdocnum varchar(20)
+    Declare @createName varchar(20)
+    Declare @IsRetransmit bit
+    Declare @IsCompulsorySubmission bit
+    Declare @ResultInt int
+    Declare @ResultString varchar(20)
+    EXEC Insert_needOrder
+    @CompanyCode=${companyCode},
+    @Mopdocnum=${docNum},
+    @createName=${createName},
+    @IsRetransmit=${IsRetransmit},
+    @IsCompulsorySubmission=${IsCompulsorySubmission},
+    @ResultInt=${ResultInt},
+    @ResultString=${ResultString}
+    </select  >-->
 
     <!--<select   id="saveNeedOrder" statementType="CALLABLE" parameterType="com.springcloud.bean.ao.NeedOrderSaveAO"
               resultType="com.springcloud.bean.vo.SaveResult">
@@ -84,13 +103,13 @@
     Declare @ResultInt int
     Declare @ResultString varchar(20)
     EXEC Insert_needOrder
-    @companyCode=${companyCode},
-    @Mopdocnum=${docNum},
-    @createName=${createName},
-    @IsRetransmit=${IsRetransmit},
-    @IsCompulsorySubmission=${IsCompulsorySubmission},
-    @ResultInt=${ResultInt},
-    @ResultString=${ResultString}
+    @companyCode=#{companyCode},
+    @Mopdocnum=#{docNum},
+    @createName=#{createName},
+    @IsRetransmit=#{IsRetransmit},
+    @IsCompulsorySubmission=#{IsCompulsorySubmission},
+    @ResultInt=#{ResultInt},
+    @ResultString=#{ResultString}
     </select  >-->
 
 

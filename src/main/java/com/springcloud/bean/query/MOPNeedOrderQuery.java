@@ -10,7 +10,7 @@ import lombok.Data;
  * @Create: $Date $Time
  */
 @Data
-public class DataLineQuery {
+public class MOPNeedOrderQuery {
 
     String companyCode;
     String needOrderNo;

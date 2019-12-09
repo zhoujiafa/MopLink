@@ -1,9 +1,9 @@
-package com.springcloud.order;
+package com.springcloud.analyticalData;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.reabam.sign.SignUtil;
-import com.springcloud.bean.vo.DataLineVO;
+import com.springcloud.bean.vo.MOPNeedOrderVO;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -22,7 +22,7 @@ import java.util.Random;
 public class OrderDetail {
 
     public static void main(String[] args) {
-        DataLineVO dataLineVO = OrderDetail.DataLineVO();
+        MOPNeedOrderVO MOPNeedOrderVO = OrderDetail.DataLineVO();
     }
 
     static final String appId = "BC7CEC0171504DF799CB4972541C0FXS";
@@ -30,7 +30,7 @@ public class OrderDetail {
     static final String companyCode = "0324";
     private static final String url = "http://test.try-shopping.com/ts-openapi";
 
-    public static DataLineVO DataLineVO()  {
+    public static MOPNeedOrderVO DataLineVO()  {
 
         // 测试签名结果
         Map<String, Object> params = new HashMap<String, Object>();
@@ -50,26 +50,25 @@ public class OrderDetail {
 
         System.out.println(resultJson);
 
-        AnalyticalData a = new AnalyticalData();
-        DataLineVO bean = a.getJsonToBeanSecond(resultJson);
+        MOPNeedOrderAD a = new MOPNeedOrderAD();
+        MOPNeedOrderVO bean = a.getJsonToBeanSecond(resultJson);
 
 
         JSONObject jsonObj = JSONObject.parseObject(resultJson);
         JSONObject dataLine = jsonObj.getJSONObject("DataLine");
 
         //bean.setLines(a.getJsonToBeanThird(dataLine));
-
         return bean;
     }
 
 
     /**
-     * 生成主键(年月日+ 4位随机数)
+     * 生成主键(年月日+ 4位随机数) 公司
      */
     public static String getMopPrimaryKey(){
 
         String str = new SimpleDateFormat("yyyyMMdd").format(new Date());
-        // 获取4位随机数
+        // 获取4位随机数 brand
         int ranNum = (int) (new Random().nextDouble() * (9999 - 1000 + 1)) + 1000;
         return str+ranNum;
     }

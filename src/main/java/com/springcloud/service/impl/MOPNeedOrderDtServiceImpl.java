@@ -1,8 +1,8 @@
 package com.springcloud.service.impl;
 
-import com.springcloud.bean.dos.LinesItem;
-import com.springcloud.mapper.LinesItemMapper;
-import com.springcloud.service.LinesService;
+import com.springcloud.bean.dos.MOPNeedOrderDt;
+import com.springcloud.mapper.MOPNeedOrderDtMapper;
+import com.springcloud.service.MOPNeedOrderDtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,14 +12,14 @@ import java.util.List;
  * @author Joe
  */
 @Service
-public class LinesServiceImpl implements LinesService {
+public class MOPNeedOrderDtServiceImpl implements MOPNeedOrderDtService {
 
     @Autowired
-    LinesItemMapper linesItemMapper;
+    MOPNeedOrderDtMapper MOPNeedOrderDtMapper;
 
     @Override
-    public Boolean batchInsert(List<LinesItem> linesItemList) {
-        return linesItemMapper.batchInsert(linesItemList);
+    public Boolean batchInsert(List<MOPNeedOrderDt> MOPNeedOrderDtList) {
+        return MOPNeedOrderDtMapper.batchInsert(MOPNeedOrderDtList);
     }
 
     /*@PostConstruct

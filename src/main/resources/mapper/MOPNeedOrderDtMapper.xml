@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.springcloud.mapper.LinesItemMapper">
+<mapper namespace="com.springcloud.mapper.MOPNeedOrderDtMapper">
 
-    <resultMap id="ResultMap" type="com.springcloud.bean.dos.LinesItem">
+    <resultMap id="ResultMap" type="com.springcloud.bean.dos.MOPNeedOrderDt">
         <id property="iD" column="iD"></id>
         <result property="docNum" column="docNum"></result>
         <result property="purchasingQuantity" column="purchasingQuantity"></result>
@@ -20,7 +20,7 @@
     </resultMap>
 
     <insert id="batchInsert" parameterType="List">
-        insert into LinesItem
+        insert into mopNeedOrderDt
         (docNum,purchasingQuantity,itemName,unit,itemQuantity,quantity,
         specName,specCode,itemUnit,itemCode,remark,skuBarcode,allocationQuantity)
         values

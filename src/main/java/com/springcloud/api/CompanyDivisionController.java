@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @ClassName : DataLineController
- * @Description : 数据访问接口
+ * @Description : 门店信息(关联)数据访问接口
  * @Author : Joe
  * @Date: 2019-11-18 09:38
  */

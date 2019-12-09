@@ -15,5 +15,4 @@ public class SaveResult {
     String docNum;
     Integer resultInt;
     String resultString;
-    Boolean IsRetransmit;
 }

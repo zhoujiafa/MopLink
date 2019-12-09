@@ -1,10 +1,9 @@
 package com.springcloud.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.springcloud.bean.ao.NeedOrderSaveAO;
-import com.springcloud.bean.dos.DataLine;
+import com.springcloud.bean.dos.MOPNeedOrder;
 import com.springcloud.bean.dos.NeedOrder;
-import com.springcloud.bean.query.DataLineQuery;
+import com.springcloud.bean.query.MOPNeedOrderQuery;
 import com.springcloud.bean.query.NeedOrderQuery;
 import com.springcloud.bean.vo.NeedOrderVO;
 import com.springcloud.bean.vo.SaveResult;
@@ -19,7 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 /**
- * @ClassName : DataLineServiceImpl
+ * @ClassName : MOPNeedOrderServiceImpl
  * @Description :
  * @Author : Joe
  * @Date: 2019/11/18 17:22
@@ -35,7 +34,7 @@ public class NeedOrderServiceImpl implements NeedOrderService {
     public SaveResult saveNeedOrder(Map<String, Object> map) {
         Map<String, Object> maps = new HashMap<String, Object>();
         maps.put("companyCode", "0324");
-        maps.put("docnum", "303248530001");
+        maps.put("docNum", "303248530001");
         maps.put("createName", new Date());
         maps.put("IsRetransmit", false);
         maps.put("IsCompulsorySubmission", false);
@@ -82,7 +81,7 @@ public class NeedOrderServiceImpl implements NeedOrderService {
      * @param queryWrapper
      * @return
      */
-    private QueryWrapper<DataLine> queryEntity(DataLineQuery query, QueryWrapper<DataLine> queryWrapper) {
+    private QueryWrapper<MOPNeedOrder> queryEntity(MOPNeedOrderQuery query, QueryWrapper<MOPNeedOrder> queryWrapper) {
         if (query != null) {
             if (!StringUtils.isEmpty(query.getCompanyCode())) {
                 queryWrapper.eq("companyCode", query.getCompanyCode());

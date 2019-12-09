@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.springcloud.mapper.DataLineMapper">
-    <resultMap id="userMap" type="com.springcloud.bean.dos.DataLine">
+<mapper namespace="com.springcloud.mapper.MOPNeedOrderMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.MOPNeedOrder">
         <id property="docNum" column="docNum"></id>
         <result property="needStatusName" column="needStatusName"></result>
         <result property="needNo" column="needNo"></result>
@@ -15,7 +15,7 @@
     </resultMap>
 
 
-    <!--<insert id="insert" parameterType="com.springcloud.bean.dos.DataLine">-->
+    <!--<insert id="insert" parameterType="com.springcloud.bean.dos.MOPNeedOrder">-->
     <!--insert into dataline ( needStatusName, needNo, needDate, ntypeCode , ntypeName, remark-->
     <!--, createName, needStatus, createDate) values (#{needStatusName}, #{needNo}, #{needDate}, #{ntypeCode }, #{ntypeName}, #{remark},-->
     <!--#{createName}, #{needStatus}, #{createDate})-->

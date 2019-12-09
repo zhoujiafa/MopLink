@@ -6,20 +6,18 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.reabam.sign.SignUtil;
-import com.springcloud.bean.dos.CompanyDict;
-import com.springcloud.bean.dos.DataLine;
-import com.springcloud.bean.dos.LinesItem;
+import com.springcloud.bean.dos.MOPNeedOrder;
+import com.springcloud.bean.dos.MOPNeedOrderDt;
 import com.springcloud.bean.dos.NeedOrder;
-import com.springcloud.bean.query.CompanyDictQuery;
-import com.springcloud.bean.query.DataLineQuery;
-import com.springcloud.bean.vo.DataLineVO;
+import com.springcloud.bean.query.MOPNeedOrderQuery;
+import com.springcloud.bean.vo.MOPNeedOrderVO;
 import com.springcloud.bean.vo.SaveResult;
-import com.springcloud.mapper.DataLineMapper;
-import com.springcloud.mapper.LinesItemMapper;
+import com.springcloud.mapper.MOPNeedOrderMapper;
+import com.springcloud.mapper.MOPNeedOrderDtMapper;
 import com.springcloud.mapper.NeedOrderMapper;
-import com.springcloud.order.AnalyticalData;
-import com.springcloud.order.OrderDetail;
-import com.springcloud.service.DataLineService;
+import com.springcloud.analyticalData.MOPNeedOrderAD;
+import com.springcloud.analyticalData.OrderDetail;
+import com.springcloud.service.MOPNeedOrderService;
 import com.springcloud.util.QueryResult;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
@@ -29,6 +27,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,34 +37,36 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @ClassName : DataLineServiceImpl
+ * @ClassName : MOPNeedOrderServiceImpl
  * @Description :
  * @Author : Joe
  * @Date: 2019/11/18 17:22
  */
 
-@Transactional
+
 @Service
-public class DataLineServiceImpl implements DataLineService {
+public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
 
     private static final String url = "http://test.try-shopping.com/ts-openapi";
     private static final String key = "285e11c1e83a4094b35cc3cf320ad820";
 
+
+
     @Autowired
-    DataLineMapper dataLineMapper;
+    MOPNeedOrderMapper MOPNeedOrderMapper;
     @Autowired
-    LinesItemMapper linesItemMapper;
+    MOPNeedOrderDtMapper MOPNeedOrderDtMapper;
     @Autowired
     NeedOrderMapper needOrderMapper;
 
     @Override
-    public Boolean insert(DataLine dataLine) {
-        return dataLineMapper.insert(dataLine) > 0;
+    public Boolean insert(MOPNeedOrder MOPNeedOrder) {
+        return MOPNeedOrderMapper.insert(MOPNeedOrder) > 0;
     }
 
     @Override
-    public List<DataLineVO> getdataline(String companyCode, String needorderNo) {
-        List<DataLineVO> lineVOList = new ArrayList<>();
+    public List<MOPNeedOrderVO> getdataline(String companyCode, String needorderNo) {
+        List<MOPNeedOrderVO> lineVOList = new ArrayList<>();
         Map<String, Object> params = new HashMap<String, Object>();
         //companyCode = "0324";
         params.put("companyCode", companyCode);
@@ -78,8 +79,8 @@ public class DataLineServiceImpl implements DataLineService {
         String paramsJson = JSON.toJSON(SignUtil.sign(params, key)).toString();
         String requsetUrl = url + "/openapi/needOrder/detail";
         String resultJson = sendPost(requsetUrl, paramsJson);
-        AnalyticalData a = new AnalyticalData();
-        DataLineVO bean = a.getJsonToBeanSecond(resultJson);
+        MOPNeedOrderAD a = new MOPNeedOrderAD();
+        MOPNeedOrderVO bean = a.getJsonToBeanSecond(resultJson);
 
 
         JSONObject jsonObj = JSONObject.parseObject(resultJson);
@@ -95,96 +96,93 @@ public class DataLineServiceImpl implements DataLineService {
     }
 
     @Override
-    public List<DataLineVO> getLocalInfo(String companyCode, String needOrderNo) {
-        List<DataLineVO> lineVOList = new ArrayList<>();
-        List<DataLine> dataLineList;
+    public List<MOPNeedOrderVO> getLocalInfo(String companyCode, String needOrderNo) {
+        List<MOPNeedOrderVO> lineVOList = new ArrayList<>();
+        List<MOPNeedOrder> MOPNeedOrderList;
         if (StringUtils.isNotBlank(companyCode) && StringUtils.isNotBlank(needOrderNo)) {
-            QueryWrapper<DataLine> queryWrapper = new QueryWrapper<>();
+            QueryWrapper<MOPNeedOrder> queryWrapper = new QueryWrapper<>();
                 queryWrapper.eq("companyCode", companyCode);
                 queryWrapper.like("needNo", needOrderNo);
-            dataLineList = dataLineMapper.selectList(queryWrapper);
-            for (DataLine dataLine : dataLineList) {
-                DataLineVO dataLineVO = new DataLineVO();
-                BeanUtils.copyProperties(dataLine, dataLineVO);
-                lineVOList.add(dataLineVO);
+            MOPNeedOrderList = MOPNeedOrderMapper.selectList(queryWrapper);
+            for (MOPNeedOrder MOPNeedOrder : MOPNeedOrderList) {
+                MOPNeedOrderVO MOPNeedOrderVO = new MOPNeedOrderVO();
+                BeanUtils.copyProperties(MOPNeedOrder, MOPNeedOrderVO);
+                lineVOList.add(MOPNeedOrderVO);
             }
         }
         return lineVOList;
     }
-
-
+    @Transactional
     @Override
-    public Boolean saveDataLine(DataLineVO dataLineVO) {
-        DataLine addDataLine = new DataLine();
-        BeanUtils.copyProperties(dataLineVO, addDataLine);
-        addDataLine.setDocNum(OrderDetail.getMopPrimaryKey());
+    public Boolean saveDataLine(MOPNeedOrderVO MOPNeedOrderVO){
+        MOPNeedOrder addMOPNeedOrder = new MOPNeedOrder();
+        BeanUtils.copyProperties(MOPNeedOrderVO, addMOPNeedOrder);
+        addMOPNeedOrder.setDocNum(OrderDetail.getMopPrimaryKey());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        addDataLine.setCreateDate(dateFormat.format(new Date()));
-        List<LinesItem> linesItems = dataLineVO.getLines();
-        if (linesItems.size() > 0 && linesItems != null) {
-            for(LinesItem linesItem : linesItems){
-                linesItem.setDocNum(addDataLine.getDocNum());
+        addMOPNeedOrder.setCreateDate(dateFormat.format(new Date()));
+
+        List<MOPNeedOrderDt> MOPNeedOrderDts = MOPNeedOrderVO.getLines();
+        if (MOPNeedOrderDts.size() > 0 && MOPNeedOrderDts != null) {
+            for(MOPNeedOrderDt MOPNeedOrderDt : MOPNeedOrderDts){
+                MOPNeedOrderDt.setDocNum(addMOPNeedOrder.getDocNum());
                 //测试数据
-                linesItem.setItemQuantity(1);
+                MOPNeedOrderDt.setItemQuantity(1);
             }
-            boolean bool = linesItemMapper.batchInsert(linesItems);
+            boolean bool = MOPNeedOrderDtMapper.batchInsert(MOPNeedOrderDts);
             if(!bool){
                 return false;
             }
         }
         QueryWrapper<NeedOrder> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("needNo",dataLineVO.getNeedNo());
-        queryWrapper.eq("companyCode",dataLineVO.getCompanyCode());
+        queryWrapper.eq("needNo", MOPNeedOrderVO.getNeedNo());
+        queryWrapper.eq("companyCode", MOPNeedOrderVO.getCompanyCode());
         NeedOrder searchModel = needOrderMapper.selectOne(queryWrapper);
-
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("companyCode", dataLineVO.getCompanyCode());
+            map.put("companyCode", MOPNeedOrderVO.getCompanyCode());
             map.put("IsCompulsorySubmission", false);
             map.put("ResultString", "aa");
-            map.put("docNum", addDataLine.getDocNum());
+            map.put("docNum", addMOPNeedOrder.getDocNum());
             map.put("createName", "admin");
             map.put("IsRetransmit", false);
             map.put("ResultInt", 0);
+        MOPNeedOrderMapper.insert(addMOPNeedOrder);
             SaveResult saveResult = needOrderMapper.saveNeedOrder(map);
-            if(saveResult==null){
-                return false;
-            }
+        return saveResult==null;
 
-        return dataLineMapper.insert(addDataLine) > 0;
     }
 
     @Override
-    public List<DataLineVO> list(DataLineQuery query) {
-        List<DataLineVO> lineVOList = new ArrayList<>();
-        List<DataLine> dataLineList;
+    public List<MOPNeedOrderVO> list(MOPNeedOrderQuery query) {
+        List<MOPNeedOrderVO> lineVOList = new ArrayList<>();
+        List<MOPNeedOrder> MOPNeedOrderList;
         if (query != null) {
-            QueryWrapper<DataLine> queryWrapper = new QueryWrapper<>();
+            QueryWrapper<MOPNeedOrder> queryWrapper = new QueryWrapper<>();
             if (StringUtils.isNotBlank(query.getCompanyCode())) {
                 queryWrapper.eq("companyCode", query.getCompanyCode());
             }
             if (StringUtils.isNotBlank(query.getNeedOrderNo())) {
                 queryWrapper.like("needNo", query.getNeedOrderNo());
             }
-            dataLineList = dataLineMapper.selectList(queryWrapper);
-            for (DataLine dataLine : dataLineList) {
-                DataLineVO dataLineVO = new DataLineVO();
-                BeanUtils.copyProperties(dataLine, dataLineVO);
-                lineVOList.add(dataLineVO);
+            MOPNeedOrderList = MOPNeedOrderMapper.selectList(queryWrapper);
+            for (MOPNeedOrder MOPNeedOrder : MOPNeedOrderList) {
+                MOPNeedOrderVO MOPNeedOrderVO = new MOPNeedOrderVO();
+                BeanUtils.copyProperties(MOPNeedOrder, MOPNeedOrderVO);
+                lineVOList.add(MOPNeedOrderVO);
             }
         }
         return lineVOList;
     }
 
     @Override
-    public QueryResult<DataLineVO> page(long page, long size, DataLineQuery query) {
-        QueryWrapper<DataLine> queryWrapper = new QueryWrapper<>();
+    public QueryResult<MOPNeedOrderVO> page(long page, long size, MOPNeedOrderQuery query) {
+        QueryWrapper<MOPNeedOrder> queryWrapper = new QueryWrapper<>();
         queryWrapper = queryEntity(query, queryWrapper);
 
-        Page<DataLine> pageinfo = new Page(page, size);
+        Page<MOPNeedOrder> pageinfo = new Page(page, size);
         pageinfo.setSearchCount(true);
-        IPage<DataLine> ipage = dataLineMapper.selectPage(pageinfo, queryWrapper);
+        IPage<MOPNeedOrder> ipage = MOPNeedOrderMapper.selectPage(pageinfo, queryWrapper);
 
-        QueryResult queryResult = new QueryResult<DataLine>();
+        QueryResult queryResult = new QueryResult<MOPNeedOrder>();
         BeanUtils.copyProperties(ipage, queryResult);
         return queryResult;
     }
@@ -237,15 +235,14 @@ public class DataLineServiceImpl implements DataLineService {
      * @param queryWrapper
      * @return
      */
-    private QueryWrapper<DataLine> queryEntity(DataLineQuery query, QueryWrapper<DataLine> queryWrapper) {
+    private QueryWrapper<MOPNeedOrder> queryEntity(MOPNeedOrderQuery query, QueryWrapper<MOPNeedOrder> queryWrapper) {
         if (query != null) {
             if (!StringUtils.isEmpty(query.getCompanyCode())) {
                 queryWrapper.eq("companyCode", query.getCompanyCode());
             }
             if (!StringUtils.isEmpty(query.getNeedOrderNo())) {
-                queryWrapper.like("needOrderNo", query.getNeedOrderNo());
+                queryWrapper.eq("docNum", query.getNeedOrderNo());
             }
-            return queryWrapper;
         }
         return queryWrapper;
     }

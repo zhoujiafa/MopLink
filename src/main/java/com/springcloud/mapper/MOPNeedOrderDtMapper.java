@@ -3,10 +3,12 @@ package com.springcloud.mapper;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.springcloud.bean.dos.DataLine;
+import com.springcloud.bean.dos.MOPNeedOrderDt;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 /**
-* @ClassName : DataLineMapper
+* @ClassName : LinesItemMapper
 * @Description : 
 * @Author : Joe
 * @Date: 2019/11/22 13:32
@@ -14,7 +16,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 @DS(value = "stock")
 @Mapper
-public interface DataLineMapper extends BaseMapper<DataLine> {
+public interface MOPNeedOrderDtMapper extends BaseMapper<MOPNeedOrderDt> {
 
-    //int insert(DataLine dataLine);
+
+    Boolean batchInsert(List<MOPNeedOrderDt> MOPNeedOrderDtList);
+
+
+
 }

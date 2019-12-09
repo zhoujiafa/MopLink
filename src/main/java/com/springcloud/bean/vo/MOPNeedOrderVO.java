@@ -1,12 +1,12 @@
 package com.springcloud.bean.vo;
 
-import com.springcloud.bean.dos.LinesItem;
+import com.springcloud.bean.dos.MOPNeedOrderDt;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class DataLineVO {
+public class MOPNeedOrderVO {
 
     private String docNum;
     private String needStatusName;
@@ -20,7 +20,7 @@ public class DataLineVO {
     private String createName;
     private String needStatus;
     private String createDate;
-    private List<LinesItem> lines;
+    private List<MOPNeedOrderDt> lines;
 
     private Boolean IsRetransmit;
     private Boolean IsCompulsorySubmission;
