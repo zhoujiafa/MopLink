@@ -7,118 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="实现分页数据查询">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MOP_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPIndentAD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPNeedOrderAD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/ao/MOPIndentAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndentDt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/MOPIndentQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/MOPIndentVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPNeedOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8ffee87c-c389-4fdb-b070-d36a2d2f707b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8ffee87c-c389-4fdb-b070-d36a2d2f707b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/MopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/MopApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDivisionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDivisionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/DataLineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPNeedOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/DataLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPNeedOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/LinesItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPNeedOrderDt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/DataLineQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/MOPNeedOrderQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/DataLineVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/MOPNeedOrderVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/SaveResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/SaveResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DataLineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/MOPNeedOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/LinesItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/MOPNeedOrderDtMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/NeedOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/NeedOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/order/AnalyticalData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/order/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/DataLineService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/LinesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPNeedOrderDtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/NeedOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/NeedOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DataLineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/LinesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderDtServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/NeedOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/NeedOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DataLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MOPNeedOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/LinesItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MOPNeedOrderDtMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/NeedOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/NeedOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/MopApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/MopApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDictController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDivisionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDivisionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/DataLineController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/GoodsDictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/GoodsDictController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/GoodsDivisionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/GoodsDivisionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/NeedOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/NeedOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/CompanyDictAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/CompanyDictAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/GoodsDictAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/GoodsDictAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/NeedOrderSaveAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/NeedOrderSaveAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/CompanyDict.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/CompanyDict.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/CompanyDivision.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/CompanyDivision.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/DataLine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/GoodsDict.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/GoodsDict.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/GoodsDivision.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/GoodsDivision.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/LinesItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/XsDepartment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/XsDepartment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/AssociateCompanyQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/AssociateCompanyQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/CompanyDictQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/CompanyDictQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/DataLineQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/GoodsDictQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/GoodsDictQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/GoodsDivisionQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/GoodsDivisionQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/NeedOrderQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/NeedOrderQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/CompanyDictVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/CompanyDictVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/DataLineVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/GoodsDictVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/GoodsDictVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/NeedOrderVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/NeedOrderVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/ReturnObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/ReturnObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/SaveResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/SaveResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/enums/ResponseEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/enums/ResponseEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/enums/ResponseEnum2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/enums/ResponseEnum2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/exceptions/ServiceException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/exceptions/ServiceException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDictMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDictMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDivisionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/CompanyDivisionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/DataLineMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/GoodsDictMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/GoodsDictMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/GoodsDivisionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/GoodsDivisionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/LinesItemMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/NeedOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/NeedOrderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/XsDepartmentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/mapper/XsDepartmentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/order/AnalyticalData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/order/OrderDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/CompanyDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/CompanyDictService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/CompanyDivisionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/CompanyDivisionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/DataLineService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/GoodsDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/GoodsDictService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/GoodsDivisionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/GoodsDivisionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/LinesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/NeedOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/NeedOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/CompanyDictServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/CompanyDictServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/CompanyDivisionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/CompanyDivisionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/DataLineServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/GoodsDictServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/GoodsDictServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/GoodsDivisionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/GoodsDivisionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/LinesServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/NeedOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/NeedOrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/BasePageQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/BasePageQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/PageResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/PageResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/QueryResult$QueryResultBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/QueryResult$QueryResultBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/QueryResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/QueryResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/QueryResultBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/QueryResultBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/ResponseBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/ResponseBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/ResponseBean2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/ResponseBean2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/ResultBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/ResultBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/util/SuperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/util/SuperMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/DataLineMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/LinesItemMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/NeedOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/NeedOrderMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,7 +60,7 @@
       <file leaf-file-name="MOPIndentAD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPIndentAD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
+            <state relative-caret-position="456">
               <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -182,7 +72,7 @@
       <file leaf-file-name="OrderDetail.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/OrderDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-304">
+            <state relative-caret-position="893">
               <caret line="65" column="26" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="26" />
             </state>
           </provider>
@@ -191,8 +81,8 @@
       <file leaf-file-name="CompanyDictController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="171">
+              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -264,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPNeedOrder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPNeedOrderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/MOPNeedOrderQuery.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDivisionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPNeedOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPNeedOrderDtService.java" />
@@ -286,6 +175,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/OrderDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java" />
       </list>
     </option>
   </component>
@@ -341,8 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -512,11 +400,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="MyBatisLogPluginindexNum" value="4414" />
+    <property name="MyBatisLogPluginindexNum" value="4463" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -688,6 +578,8 @@
       <workItem from="1575419645132" duration="18527000" />
       <workItem from="1575706917493" duration="1715000" />
       <workItem from="1575852802606" duration="6197000" />
+      <workItem from="1575904794527" duration="1505000" />
+      <workItem from="1575938219140" duration="611000" />
     </task>
     <task id="LOCAL-00001" summary="实现分页数据查询">
       <created>1574150386919</created>
@@ -700,7 +592,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329326000" />
+    <option name="totallyTimeSpent" value="331442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,9 +605,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="11" />
-      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.27680966" />
+      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.25201073" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Console" order="19" sideWeight="0.30026808" side_tool="true" weight="0.35185185" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.2627346" />
@@ -728,9 +621,8 @@
       <window_info id="Structure" order="1" sideWeight="0.15384616" side_tool="true" weight="0.25670242" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.6997319" visible="true" weight="0.35897437" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6997319" weight="0.28490028" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.26923078" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32905984" />
@@ -739,7 +631,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.497151" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8455446" visible="true" weight="0.22520107" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8455446" visible="true" weight="0.23123324" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.12868632" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="JRebel" order="9" sideWeight="0.6744186" side_tool="true" weight="0.2841823" />
@@ -753,6 +645,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.00997151" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.26923078" />
       <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.49674478" weight="0.32968536" />
       <window_info anchor="right" id="Word Book" order="7" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1196,9 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1206,9 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1216,15 +1103,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="56" column="70" lean-forward="true" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPIndentAD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="456">
           <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1234,15 +1118,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/OrderDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-304">
+        <state relative-caret-position="893">
           <caret line="65" column="26" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/CompanyDictController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="171">
+          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
         </state>
       </provider>
     </entry>
