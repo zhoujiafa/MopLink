@@ -6,57 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/IndentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/ao/UserAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/Indent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/IndentDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/IndentQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/IndentDtVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/IndentVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/UserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/IndentDetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/IndentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/MOPIndentDtMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/MOPIndentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/IndentDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/IndentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/IndentDetailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/IndentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/util/MD5Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/IndentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MOPIndentDtMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MOPIndentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+    <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="测试Jenkins">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPIndentAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPIndentAD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPNeedOrderAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPNeedOrderAD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPNeedOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPNeedOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/NeedOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/NeedOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/ao/MOPIndentAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/ao/MOPIndentAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndentDt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndentDt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/NeedOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/NeedOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/NeedOrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/NeedOrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/NeedOrderQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/query/NeedOrderQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/MOPNeedOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/mapper/MOPNeedOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/NeedOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/NeedOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MOPNeedOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MOPNeedOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/CompanyDictController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/NeedOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/NeedOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/NeedOrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/NeedOrderQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/query/NeedOrderQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/NeedOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/NeedOrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/IndentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/IndentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/IndentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/IndentController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,7 +61,7 @@
       <file leaf-file-name="IndentServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/IndentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1323">
+            <state relative-caret-position="1843">
               <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -120,8 +73,8 @@
       <file leaf-file-name="Indent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/Indent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="399">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,7 +85,7 @@
       <file leaf-file-name="MOPNeedOrderService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPNeedOrderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="380">
               <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
             </state>
           </provider>
@@ -141,8 +94,8 @@
       <file leaf-file-name="MOPNeedOrderServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+            <state relative-caret-position="627">
+              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -150,8 +103,8 @@
       <file leaf-file-name="IndentMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/IndentMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="380">
+              <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,7 +115,7 @@
       <file leaf-file-name="MOPIndentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="684">
               <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -174,10 +127,10 @@
       <file leaf-file-name="IndentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/IndentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="87" column="64" lean-forward="true" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+            <state relative-caret-position="361">
+              <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
               <folding>
-                <element signature="e#2549#2565#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,8 +139,8 @@
       <file leaf-file-name="MOPIndentServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="80" column="64" lean-forward="true" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+            <state relative-caret-position="1520">
+              <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,7 +151,7 @@
       <file leaf-file-name="MOPIndentService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
+            <state relative-caret-position="285">
               <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
             </state>
           </provider>
@@ -334,7 +287,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -348,159 +301,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
               <item name="MOP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-              <item name="ao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-              <item name="dos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-              <item name="IndentServiceImpl" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
@@ -511,11 +318,11 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="MyBatisLogPluginindexNum" value="6139" />
+    <property name="MyBatisLogPluginindexNum" value="6145" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -694,7 +501,8 @@
       <workItem from="1576162207465" duration="6019000" />
       <workItem from="1576198381790" duration="14435000" />
       <workItem from="1576456351925" duration="24493000" />
-      <workItem from="1576543450155" duration="15377000" />
+      <workItem from="1576543450155" duration="16834000" />
+      <workItem from="1576568748151" duration="3194000" />
     </task>
     <task id="LOCAL-00001" summary="实现分页数据查询">
       <created>1574150386919</created>
@@ -717,11 +525,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575941289553</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="测试Jenkins">
+      <created>1576566357061</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576566357062</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463090000" />
+    <option name="totallyTimeSpent" value="467741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,12 +552,12 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="11" />
-      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.16152816" />
+      <window_info anchor="right" id="RestServices" order="12" weight="0.3686327" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Console" order="19" sideWeight="0.30563003" side_tool="true" weight="0.4017094" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.2627346" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="JRebel Executor" order="18" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="MyBatis Log" order="20" weight="0.32905984" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="设计师" order="3" />
@@ -750,15 +565,15 @@
       <window_info id="Structure" order="1" sideWeight="0.15384616" side_tool="true" weight="0.25670242" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.69437" visible="true" weight="0.32621083" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.69437" visible="true" weight="0.24074075" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.26923078" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32905984" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.6246649" weight="0.32621083" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.497151" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.6246649" weight="0.32621083" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32905984" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.62550604" visible="true" weight="0.23257373" />
@@ -767,20 +582,20 @@
       <window_info id="JRebel" order="9" sideWeight="0.6744186" side_tool="true" weight="0.2841823" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="7" sideWeight="0.37449393" side_tool="true" weight="0.21715818" />
+      <window_info anchor="right" id="数据库" order="1" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="调试" order="16" />
       <window_info id="Designer" order="8" />
       <window_info anchor="right" id="控制板" order="13" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.00997151" />
       <window_info anchor="bottom" id="运行" order="15" sideWeight="0.9036458" weight="0.5471956" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.00997151" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.49674478" weight="0.32968536" />
+      <window_info anchor="bottom" id="消息" order="14" sideWeight="0.49934897" weight="0.26812586" />
       <window_info anchor="right" id="Word Book" order="7" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="消息" order="14" sideWeight="0.49934897" weight="0.26812586" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="数据库" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -897,9 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1026,9 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1099,9 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/IndentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
+        <state relative-caret-position="1843">
           <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1143,9 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1160,9 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,10 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1748">
           <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1642#1650#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1214,15 +1010,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
+        <state relative-caret-position="285">
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="80" column="64" lean-forward="true" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+        <state relative-caret-position="1520">
+          <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1231,8 +1027,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/IndentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        <state relative-caret-position="380">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1241,14 +1037,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+        <state relative-caret-position="627">
+          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPNeedOrderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="380">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
         </state>
       </provider>
@@ -1262,8 +1058,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/Indent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="399">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1272,7 +1068,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="684">
           <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1282,10 +1078,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/IndentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="87" column="64" lean-forward="true" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+        <state relative-caret-position="361">
+          <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding>
-            <element signature="e#2549#2565#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

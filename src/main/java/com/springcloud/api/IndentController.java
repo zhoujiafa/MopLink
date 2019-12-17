@@ -3,20 +3,15 @@ package com.springcloud.api;
 import com.alibaba.fastjson.JSON;
 import com.reabam.sign.SignUtil;
 import com.springcloud.bean.query.IndentQuery;
-import com.springcloud.bean.query.NeedOrderQuery;
 import com.springcloud.bean.vo.IndentVO;
 import com.springcloud.bean.vo.NeedOrderVO;
-import com.springcloud.bean.vo.SaveResult;
 import com.springcloud.service.IndentService;
-import com.springcloud.service.NeedOrderService;
-import com.springcloud.util.MD5Util;
 import com.springcloud.util.PageResult;
 import com.springcloud.util.ResponseBean2;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
@@ -24,7 +19,7 @@ import java.util.Map;
 
 /**
  * @ClassName : NeedOrderController
- * @Description : 数据访问接口
+ * @Description : 数据访问接口2
  * @Author : Joe
  * @Date: 2019-11-18 09:38
  */
@@ -63,7 +58,6 @@ public class IndentController {
         String sign = data.get("sign").toString();
         String key = "A1DF1E59090EAFF035C3091003A05CFC";
         String appId = "94916115E6732C11D5984075C4DB588B";
-
 
         //String sign = "56A08EEA3FDBBDDF2AC026F5C7806774";
         /*String companyCode = "0181";
