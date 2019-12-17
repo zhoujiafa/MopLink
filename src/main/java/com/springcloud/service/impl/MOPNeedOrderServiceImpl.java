@@ -114,19 +114,19 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
     }
     @Transactional
     @Override
-    public Boolean saveDataLine(MOPNeedOrderVO MOPNeedOrderVO){
+    public Boolean saveDataLine(MOPNeedOrderVO mopNeedOrderAO){
         MOPNeedOrder addMOPNeedOrder = new MOPNeedOrder();
-        BeanUtils.copyProperties(MOPNeedOrderVO, addMOPNeedOrder);
+        BeanUtils.copyProperties(mopNeedOrderAO, addMOPNeedOrder);
         addMOPNeedOrder.setDocNum(OrderDetail.getMopPrimaryKey());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         addMOPNeedOrder.setCreateDate(dateFormat.format(new Date()));
 
-        List<MOPNeedOrderDt> MOPNeedOrderDts = MOPNeedOrderVO.getLines();
+        List<MOPNeedOrderDt> MOPNeedOrderDts = mopNeedOrderAO.getLines();
         if (MOPNeedOrderDts.size() > 0 && MOPNeedOrderDts != null) {
             for(MOPNeedOrderDt MOPNeedOrderDt : MOPNeedOrderDts){
                 MOPNeedOrderDt.setDocNum(addMOPNeedOrder.getDocNum());
                 //测试数据
-                MOPNeedOrderDt.setItemQuantity(1);
+                //MOPNeedOrderDt.setItemQuantity(1);
             }
             boolean bool = MOPNeedOrderDtMapper.batchInsert(MOPNeedOrderDts);
             if(!bool){
@@ -134,11 +134,11 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
             }
         }
         QueryWrapper<NeedOrder> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("needNo", MOPNeedOrderVO.getNeedNo());
-        queryWrapper.eq("companyCode", MOPNeedOrderVO.getCompanyCode());
+        queryWrapper.eq("needNo", mopNeedOrderAO.getNeedNo());
+        queryWrapper.eq("companyCode", mopNeedOrderAO.getCompanyCode());
         NeedOrder searchModel = needOrderMapper.selectOne(queryWrapper);
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("companyCode", MOPNeedOrderVO.getCompanyCode());
+            map.put("companyCode", mopNeedOrderAO.getCompanyCode());
             map.put("IsCompulsorySubmission", false);
             map.put("ResultString", "aa");
             map.put("docNum", addMOPNeedOrder.getDocNum());

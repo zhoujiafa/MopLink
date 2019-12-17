@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.MOPIndentMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.MOPIndent">
+        <id property="docNum" column="docNum"></id>
+        <result property="companyCode" column="companyCode"></result>
+        <result property="companyName" column="companyName"></result>
+        <result property="orderNo" column="orderNo"></result>
+        <result property="deliveryDate" column="deliveryDate"></result>
+        <result property="orderType" column="orderType"></result>
+        <result property="orderTypeName" column="orderTypeName"></result>
+        <result property="payStatusName" column="payStatusName"></result>
+        <result property="orderStatus" column="orderStatus"></result>
+        <result property="orderStatusName" column="orderStatusName"></result>
+        <result property="createDate" column="createDate"></result>
+        <result property="createName" column="createName"></result>
+    </resultMap>
+
+
+
+</mapper>

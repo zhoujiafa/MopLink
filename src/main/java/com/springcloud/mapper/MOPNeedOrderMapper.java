@@ -7,7 +7,7 @@ import com.springcloud.bean.dos.MOPNeedOrder;
 import org.apache.ibatis.annotations.Mapper;
 /**
 * @ClassName : DataLineMapper
-* @Description : 
+* @Description : 下载单：要货单
 * @Author : Joe
 * @Date: 2019/11/22 13:32
 */
@@ -16,5 +16,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface MOPNeedOrderMapper extends BaseMapper<MOPNeedOrder> {
 
-    //int insert(DataLine dataLine);
+
 }

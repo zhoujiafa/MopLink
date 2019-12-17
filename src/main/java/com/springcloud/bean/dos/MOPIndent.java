@@ -13,7 +13,7 @@ import lombok.Data;
 @TableName("mopIndent")
 public class MOPIndent {
 
-    /** 主键(生成新单号) */
+    /** (生成新单号) */
     private String docNum;
     /**  门店编号 */
     private String companyCode;

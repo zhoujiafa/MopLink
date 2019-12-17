@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.IndentMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.Indent">
+        <id property="iD" column="iD"></id>
+        <result property="docNum" column="docNum"></result>
+        <result property="orderNo" column="orderNo"></result>
+        <result property="companyCode" column="companyCode"></result>
+        <result property="companyName" column="companyName"></result>
+        <result property="deliveryDate" column="deliveryDate"></result>
+        <result property="orderStatus" column="orderStatus"></result>
+        <result property="orderStatusName" column="orderStatusName"></result>
+        <result property="createDate" column="createDate"></result>
+        <result property="createName" column="createName"></result>
+        <result property="downLoadMark" column="downLoadMark"></result>
+        <result property="upLoadMark" column="upLoadMark"></result>
+        <result property="upLoadDate" column="upLoadDate"></result>
+        <result property="docQtyTotal" column="docQtyTotal"></result>
+        <result property="docTotal" column="docTotal"></result>
+        <result property="cardCode" column="cardCode"></result>
+        <result property="cardName" column="cardName"></result>
+        <result property="department" column="department"></result>
+        <result property="saleCode" column="saleCode"></result>
+        <result property="baseDocNum" column="baseDocNum"></result>
+    </resultMap>
+
+    <select id="saveIndent" statementType="CALLABLE" parameterType="java.util.Map"
+            resultType="com.springcloud.bean.vo.SaveResult">
+          {call
+            Insert_indent(
+            #{companyCode,mode=IN,jdbcType=VARCHAR},
+            #{docNum,mode=IN,jdbcType=VARCHAR},
+            #{createName,jdbcType=INTEGER},
+            #{IsRetransmit,jdbcType=BIT},
+            #{IsCompulsorySubmission,jdbcType=BIT},
+            #{ResultInt,jdbcType=INTEGER},
+            #{ResultString,jdbcType=VARCHAR}
+        )}
+    </select>
+
+</mapper>

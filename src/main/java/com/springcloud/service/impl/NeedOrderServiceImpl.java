@@ -1,6 +1,9 @@
 package com.springcloud.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.springcloud.bean.dos.CompanyDict;
 import com.springcloud.bean.dos.MOPNeedOrder;
 import com.springcloud.bean.dos.NeedOrder;
 import com.springcloud.bean.query.MOPNeedOrderQuery;
@@ -68,6 +71,20 @@ public class NeedOrderServiceImpl implements NeedOrderService {
 
     @Override
     public QueryResult<NeedOrderVO> page(long page, long size, NeedOrderQuery query) {
+        /*QueryWrapper<CompanyDict> queryWrapper = new QueryWrapper<>();
+        queryWrapper = queryEntity(companyDictQuery, queryWrapper);
+
+        Page<CompanyDict> pageinfo = new Page(page, size);
+        pageinfo.setSearchCount(true);
+        IPage<CompanyDict> ipage = companyDictMapper.selectPage(pageinfo, queryWrapper);
+
+        QueryResult queryResult = new QueryResult<CompanyDict>();
+        BeanUtils.copyProperties(ipage, queryResult);
+
+//        queryResult.setRecords(ipage.getRecords());
+//        queryResult.setTotal(ipage.getTotal());
+
+        return queryResult;*/
         return null;
     }
 

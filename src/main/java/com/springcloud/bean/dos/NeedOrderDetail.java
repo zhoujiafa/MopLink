@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @TableName("needOrderDetail")
 public class NeedOrderDetail {
+
     String docNum;
     String itemName;
     String itemQuantity;

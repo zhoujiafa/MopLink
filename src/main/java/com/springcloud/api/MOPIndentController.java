@@ -1,5 +1,6 @@
 package com.springcloud.api;
 
+import com.springcloud.bean.ao.MOPIndentAO;
 import com.springcloud.bean.query.MOPIndentQuery;
 import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.service.MOPIndentService;
@@ -25,37 +26,39 @@ public class MOPIndentController {
     @Autowired
     MOPIndentService mopIndentService;
 
-    @ApiOperation(value = "根据companyCode和appId获取信息", notes = "根据companyCode和appId获取信息")
+    @ApiOperation(value = "根据companyCode和orderNo获取信息", notes = "根据companyCode和orderNo获取信息")
     @PostMapping("/getMOPIndent")
     public ResponseBean<List<MOPIndentVO>> getdataline(@RequestBody Map data) {
-        /*String companyCode = data.get("companyCode").toString();
-        String orderNo = data.get("orderNo").toString();*/
-        String companyCode = "0181";
-        String orderNo = "301812200202";
+        String companyCode = data.get("companyCode").toString();
+        String orderNo = data.get("orderNo").toString();
+        //String companyCode = "0181";
+        //String orderNo = "DO8191209190458085";
+        //String orderNo = "DO6191211170417270";
         List<MOPIndentVO> MOPIndentVO = mopIndentService.getmopIndent(companyCode,orderNo);
         return ResponseBean.ok(MOPIndentVO);
     }
 
- /*   @ApiOperation(value = "分页查询", notes = "分页查询")
+
+    @ApiOperation(value = "保存下载信息", notes = "保存下载信息")
+    @PostMapping("/save")
+    public ResponseBean<Boolean> save(@RequestBody MOPIndentAO mopIndentAO){
+
+        return ResponseBean.ok(mopIndentService.saveMopIndent(mopIndentAO));
+    }
+
+   @ApiOperation(value = "分页查询", notes = "分页查询")
     @GetMapping("/page/{page}/{size}")
     public ResponseBean<PageResult<MOPIndentVO>> page(@PathVariable int page, @PathVariable int size, MOPIndentQuery query) {
 
         return ResponseBean.ok(mopIndentService.page(page,size,query));
     }
-
+/*
     @ApiOperation(value = "列表信息", notes = "列表信息")
     @GetMapping("/list")
     public ResponseBean<List<MOPIndentVO>> list(MOPIndentQuery query) {
 
         return ResponseBean.ok(mopIndentService.list(query));
     }
-
-    @ApiOperation(value = "保存下载信息", notes = "保存下载信息")
-    @PostMapping("/save")
-    public ResponseBean<Boolean> save(@RequestBody MOPIndentVO lineVO){
-
-        return ResponseBean.ok(mopIndentService.saveDataLine(lineVO));
-    }*/
 
     /*@ApiOperation(value = "根据companyCode和appId查询本地信息", notes = "根据companyCode和appId查询本地信息")
     @PostMapping("/getMOPIndentfromLocal")

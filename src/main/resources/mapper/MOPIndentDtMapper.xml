@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.MOPIndentDtMapper">
+
+    <resultMap id="ResultMap" type="com.springcloud.bean.dos.MOPIndentDt">
+        <id property="iD" column="iD"></id>
+        <result property="docNum" column="docNum"></result>
+        <result property="realPrice" column="realPrice"></result>
+        <result property="realPriceLineTotal" column="realPriceLineTotal"></result>
+        <result property="itemName" column="itemName"></result>
+        <result property="itemQuantity" column="itemQuantity"></result>
+        <result property="quantity" column="quantity"></result>
+        <result property="itemCode" column="itemCode"></result>
+        <result property="itemUnit" column="itemUnit"></result>
+        <result property="remark" column="remark"></result>
+        <result property="skuBarcode" column="skuBarcode"></result>
+        <result property="specName" column="specName"></result>
+        <result property="unit" column="unit"></result>
+        <result property="listPrice" column="listPrice"></result>
+        <result property="lineTotal" column="lineTotal"></result>
+        <result property="promotionMoney" column="promotionMoney"></result>
+        <result property="totalExpressFee" column="totalExpressFee"></result>
+    </resultMap>
+
+    <insert id="batchInsert" parameterType="List">
+        insert into mopIndentDt
+        (docNum,realPrice,realPriceLineTotal,itemName,itemQuantity,quantity,
+        itemCode,itemUnit,remark,skuBarcode,specName,unit,listPrice,lineTotal,promotionMoney,totalExpressFee)
+        values
+        <foreach collection="list" item="item"  separator=",">
+            (
+            #{item.docNum},
+            #{item.realPrice},
+            #{item.realPriceLineTotal},
+            #{item.itemName},
+            #{item.itemQuantity},
+            #{item.quantity},
+            #{item.itemCode},
+            #{item.itemUnit},
+            #{item.remark},
+            #{item.skuBarcode},
+            #{item.specName},
+            #{item.unit},
+            #{item.listPrice},
+            #{item.lineTotal},
+            #{item.promotionMoney},
+            #{item.totalExpressFee}
+            )
+        </foreach>
+    </insert>
+
+
+</mapper>

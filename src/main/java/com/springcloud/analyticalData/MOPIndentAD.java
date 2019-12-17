@@ -80,13 +80,13 @@ public class MOPIndentAD {
                 mopIndentDt.setItemCode(jsonObj1.getString("itemCode"));
                 mopIndentDt.setItemUnit(jsonObj1.getString("itemUnit"));
                 mopIndentDt.setRemark(jsonObj1.getString("remark"));
-                mopIndentDt.setSkuBarcode(jsonObj1.getString("unit"));
-                mopIndentDt.setSpecName(jsonObj1.getString("skuBarcode"));
-                mopIndentDt.setUnit(jsonObj1.getDouble("specName"));
+                mopIndentDt.setSkuBarcode(jsonObj1.getString("skuBarcode"));
+                mopIndentDt.setSpecName(jsonObj1.getString("specName"));
+                mopIndentDt.setUnit(jsonObj1.getString("unit"));
                 mopIndentDt.setListPrice(jsonObj1.getDouble("listPrice"));
                 mopIndentDt.setLineTotal(jsonObj1.getDouble("lineTotal"));
-                mopIndentDt.setPromotionMoney(jsonObj1.getString("promotionMoney"));
-                mopIndentDt.setTotalExpressFee(jsonObj1.getString("totalExpressFee"));
+                mopIndentDt.setPromotionMoney(jsonObj1.getDouble("promotionMoney"));
+                mopIndentDt.setTotalExpressFee(jsonObj1.getDouble("totalExpressFee"));
                 mopIndentDts.add(mopIndentDt);
             }
         }

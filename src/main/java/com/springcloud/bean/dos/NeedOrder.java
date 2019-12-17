@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 @TableName("needOrder")
 public class NeedOrder {
+
     Long  iD;
     String docNum;
     String needNo;

@@ -13,6 +13,8 @@ import lombok.Data;
 @TableName("mopIndentDt")
 public class MOPIndentDt {
 
+    /** ID */
+    private Long iD;
     /** 单号  */
     private String docNum;
     /** 实付单价 */
@@ -36,14 +38,14 @@ public class MOPIndentDt {
     /** 商品规格名称 */
     private String specName;
     /** 商品基本单位 */
-    private Double unit;
+    private String unit;
     /** 调拨数量 订货价 */
     private Double listPrice;
     /** 调拨数量	商品总额 */
     private Double lineTotal;
     /** 调拨数量	优惠金额 */
-    private String promotionMoney;
+    private Double promotionMoney;
     /** 运费 */
-    private String totalExpressFee;
+    private Double totalExpressFee;
 
 }

@@ -28,10 +28,10 @@ public class MOPNeedOrderController {
     @ApiOperation(value = "根据companyCode和appId下载信息", notes = "根据companyCode和appId下载信息")
     @PostMapping("/getMopNeedorder")
     public ResponseBean<List<MOPNeedOrderVO>> getdataline(@RequestBody Map data) {
-        String companyCode = data.get("companyCode").toString();
-        String needOrderNo = data.get("needOrderNo").toString();
-        //String companyCode = "0324";
-        //String needOrderNo = "303248530001";
+        /*String companyCode = data.get("companyCode").toString();
+        String needOrderNo = data.get("needOrderNo").toString();*/
+        String companyCode = "0324";
+        String needOrderNo = "303248530001";
         List<MOPNeedOrderVO> MOPNeedOrderVO = MOPNeedOrderService.getdataline(companyCode,needOrderNo);
         return ResponseBean.ok(MOPNeedOrderVO);
     }

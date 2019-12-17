@@ -3,7 +3,6 @@ package com.springcloud.analyticalData;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.springcloud.bean.dos.MOPNeedOrderDt;
-import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.bean.vo.ReturnObject;
 import com.springcloud.bean.vo.MOPNeedOrderVO;
 

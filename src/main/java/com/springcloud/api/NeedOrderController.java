@@ -38,10 +38,10 @@ public class NeedOrderController {
     @ApiOperation(value = "根据companyCode和needOrderNo查询本地信息", notes = "根据companyCode和needOrderNo查询本地信息")
     @PostMapping("/getLocalInfo")
     public ResponseBean2<List<NeedOrderVO>> getLocalInfo(@RequestBody Map data) {
-        String companyCode = data.get("companyCode").toString();
-        String needOrderNo = data.get("needOrderNo").toString();
-        //String companyCode = "0324";
-        //String needOrderNo = "303248530001";
+        //String companyCode = data.get("companyCode").toString();
+        //String needOrderNo = data.get("needOrderNo").toString();
+        String companyCode = "0324";
+        String needOrderNo = "303248530001";
         List<NeedOrderVO> dataLineVO = needOrderService.list(companyCode,needOrderNo);
         return ResponseBean2.ok(dataLineVO);
     }
