@@ -23,7 +23,7 @@ import java.util.Map;
  * @Date: 2019-11-18 09:38
  */
 @RestController
-@RequestMapping("/companydict")
+@RequestMapping("/companyDict")
 public class CompanyDictController {
 
     @Autowired

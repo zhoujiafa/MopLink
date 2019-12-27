@@ -6,10 +6,12 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.reabam.sign.SignUtil;
-import com.springcloud.bean.dos.MOPNeedOrder;
-import com.springcloud.bean.dos.MOPNeedOrderDt;
-import com.springcloud.bean.dos.NeedOrder;
+import com.springcloud.analyticalData.MOPIndentAD;
+import com.springcloud.bean.ao.MOPIndentAO;
+import com.springcloud.bean.ao.MOPNeedOrderAO;
+import com.springcloud.bean.dos.*;
 import com.springcloud.bean.query.MOPNeedOrderQuery;
+import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.bean.vo.MOPNeedOrderVO;
 import com.springcloud.bean.vo.SaveResult;
 import com.springcloud.mapper.MOPNeedOrderMapper;
@@ -19,6 +21,8 @@ import com.springcloud.analyticalData.MOPNeedOrderAD;
 import com.springcloud.analyticalData.OrderDetail;
 import com.springcloud.service.MOPNeedOrderService;
 import com.springcloud.util.QueryResult;
+import com.springcloud.util.ResponseBean;
+import com.springcloud.util.ResponseBean2;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -53,46 +57,50 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
 
 
     @Autowired
-    MOPNeedOrderMapper MOPNeedOrderMapper;
+    MOPNeedOrderMapper mopNeedOrderMapper;
     @Autowired
-    MOPNeedOrderDtMapper MOPNeedOrderDtMapper;
+    MOPNeedOrderDtMapper mopNeedOrderDtMapper;
     @Autowired
     NeedOrderMapper needOrderMapper;
 
     @Override
     public Boolean insert(MOPNeedOrder MOPNeedOrder) {
-        return MOPNeedOrderMapper.insert(MOPNeedOrder) > 0;
+        return mopNeedOrderMapper.insert(MOPNeedOrder) > 0;
     }
 
     @Override
-    public List<MOPNeedOrderVO> getdataline(String companyCode, String needorderNo) {
-        List<MOPNeedOrderVO> lineVOList = new ArrayList<>();
+    public MOPNeedOrderVO getdataline(String companyCode, String needorderNo) {
+        MOPNeedOrderVO response = new MOPNeedOrderVO();
         Map<String, Object> params = new HashMap<String, Object>();
         //companyCode = "0324";
         params.put("companyCode", companyCode);
         params.put("appId", "BC7CEC0171504DF799CB4972541C0FXS");
-
         Map<String, Object> dataJson = new HashMap<String, Object>();
         dataJson.put("needOrderNo", needorderNo);
-
         params.put("dataJson", dataJson);
         String paramsJson = JSON.toJSON(SignUtil.sign(params, key)).toString();
         String requsetUrl = url + "/openapi/needOrder/detail";
         String resultJson = sendPost(requsetUrl, paramsJson);
-        MOPNeedOrderAD a = new MOPNeedOrderAD();
-        MOPNeedOrderVO bean = a.getJsonToBeanSecond(resultJson);
-
-
         JSONObject jsonObj = JSONObject.parseObject(resultJson);
-        JSONObject dataLine = jsonObj.getJSONObject("DataLine");
-        bean.setCompanyCode(companyCode);
-        bean.setLines(a.getJsonToBeanThird(dataLine));
-
-        //DataLine addDataLine = new DataLine();
-        //BeanUtils.copyProperties(bean,addDataLine);
-        //addDataLine.setDocNum(OrderDetail.getMopPrimaryKey());
-        lineVOList.add(bean);
-        return lineVOList;
+        if (!jsonObj.getString("ResultInt").equals("0")) {
+            Integer error;
+            if (jsonObj.getString("ResultString").equals("找不到此要货单")) {
+                error = Integer.valueOf(jsonObj.getString("ErrorCode"));
+            } else {
+                error = Integer.valueOf(jsonObj.getString("code"));
+            }
+            response.setCode(error);
+            String message = jsonObj.getString("ResultString");
+            response.setMessage(message);
+        } else {
+            MOPNeedOrderAD a = new MOPNeedOrderAD();
+            response = a.getJsonToBeanSecond(resultJson);
+            JSONObject jsonObj2 = JSONObject.parseObject(resultJson);
+            JSONObject dataLine = jsonObj2.getJSONObject("DataLine");
+            response.setCompanyCode(companyCode);
+            response.setLines(a.getJsonToBeanThird(dataLine));
+        }
+        return response;
     }
 
     @Override
@@ -103,7 +111,7 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
             QueryWrapper<MOPNeedOrder> queryWrapper = new QueryWrapper<>();
                 queryWrapper.eq("companyCode", companyCode);
                 queryWrapper.like("needNo", needOrderNo);
-            MOPNeedOrderList = MOPNeedOrderMapper.selectList(queryWrapper);
+            MOPNeedOrderList = mopNeedOrderMapper.selectList(queryWrapper);
             for (MOPNeedOrder MOPNeedOrder : MOPNeedOrderList) {
                 MOPNeedOrderVO MOPNeedOrderVO = new MOPNeedOrderVO();
                 BeanUtils.copyProperties(MOPNeedOrder, MOPNeedOrderVO);
@@ -112,11 +120,13 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
         }
         return lineVOList;
     }
-    @Transactional
     @Override
-    public Boolean saveDataLine(MOPNeedOrderVO mopNeedOrderAO){
+    public ResponseBean<SaveResult> saveNeedOrder(MOPNeedOrderVO mopNeedOrderAO){
+
+        SaveResult saveResult;
         MOPNeedOrder addMOPNeedOrder = new MOPNeedOrder();
         BeanUtils.copyProperties(mopNeedOrderAO, addMOPNeedOrder);
+        addMOPNeedOrder.setNeedNo(mopNeedOrderAO.getNeedNo());
         addMOPNeedOrder.setDocNum(OrderDetail.getMopPrimaryKey());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         addMOPNeedOrder.setCreateDate(dateFormat.format(new Date()));
@@ -125,29 +135,53 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
         if (MOPNeedOrderDts.size() > 0 && MOPNeedOrderDts != null) {
             for(MOPNeedOrderDt MOPNeedOrderDt : MOPNeedOrderDts){
                 MOPNeedOrderDt.setDocNum(addMOPNeedOrder.getDocNum());
-                //测试数据
-                //MOPNeedOrderDt.setItemQuantity(1);
             }
-            boolean bool = MOPNeedOrderDtMapper.batchInsert(MOPNeedOrderDts);
+            boolean bool = mopNeedOrderDtMapper.batchInsert(MOPNeedOrderDts);
             if(!bool){
-                return false;
+                return ResponseBean.fail("订单明细数据异常，录入失败!");
             }
+        }else {
+            return ResponseBean.fail("无传入订单明细数据，操作失败!");
         }
+        mopNeedOrderMapper.insert(addMOPNeedOrder);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("companyCode", mopNeedOrderAO.getCompanyCode());
+        map.put("IsCompulsorySubmission", false);
+        map.put("ResultString", "success");
+        map.put("docNum", addMOPNeedOrder.getDocNum());
+        map.put("createName", mopNeedOrderAO.getNewCreateName());
+        map.put("IsRetransmit", false);
+        map.put("ResultInt", 0);
+
         QueryWrapper<NeedOrder> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("needNo", mopNeedOrderAO.getNeedNo());
         queryWrapper.eq("companyCode", mopNeedOrderAO.getCompanyCode());
         NeedOrder searchModel = needOrderMapper.selectOne(queryWrapper);
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("companyCode", mopNeedOrderAO.getCompanyCode());
-            map.put("IsCompulsorySubmission", false);
-            map.put("ResultString", "aa");
-            map.put("docNum", addMOPNeedOrder.getDocNum());
-            map.put("createName", "admin");
-            map.put("IsRetransmit", false);
-            map.put("ResultInt", 0);
-        MOPNeedOrderMapper.insert(addMOPNeedOrder);
-            SaveResult saveResult = needOrderMapper.saveNeedOrder(map);
-        return saveResult==null;
+        //转换已存在的订货单
+        if (searchModel != null) {
+            if (mopNeedOrderAO.getIsRetransmit() == true && mopNeedOrderAO.getIsCompulsorySubmission() == false) {
+                QueryWrapper<MOPNeedOrder> query = new QueryWrapper<>();
+                query.eq("needNo", mopNeedOrderAO.getNeedNo());
+                query.eq("companyCode", mopNeedOrderAO.getCompanyCode());
+                List<MOPNeedOrder> list = mopNeedOrderMapper.selectList(query);
+                map.put("docNum", list.get(0).getDocNum());
+                map.put("IsRetransmit", false);
+                map.put("IsCompulsorySubmission", false);
+            } else if (mopNeedOrderAO.getIsRetransmit() == true && mopNeedOrderAO.getIsCompulsorySubmission() == true) {
+                map.put("IsRetransmit", true);
+                map.put("IsCompulsorySubmission", true);
+            }
+        }
+        saveResult = needOrderMapper.saveNeedOrder(map);
+        if(saveResult.getResultInt()!=0 && saveResult.getResultInt()!=2){
+            QueryWrapper<MOPNeedOrder> query = new QueryWrapper<>();
+            query.eq("docNum", addMOPNeedOrder.getDocNum());
+            mopNeedOrderMapper.delete(query);
+            QueryWrapper<MOPNeedOrderDt> queryDt = new QueryWrapper<>();
+            queryDt.eq("docNum", addMOPNeedOrder.getDocNum());
+            mopNeedOrderDtMapper.delete(queryDt);
+        }
+        return ResponseBean.ok(saveResult);
 
     }
 
@@ -163,7 +197,7 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
             if (StringUtils.isNotBlank(query.getNeedOrderNo())) {
                 queryWrapper.like("needNo", query.getNeedOrderNo());
             }
-            MOPNeedOrderList = MOPNeedOrderMapper.selectList(queryWrapper);
+            MOPNeedOrderList = mopNeedOrderMapper.selectList(queryWrapper);
             for (MOPNeedOrder MOPNeedOrder : MOPNeedOrderList) {
                 MOPNeedOrderVO MOPNeedOrderVO = new MOPNeedOrderVO();
                 BeanUtils.copyProperties(MOPNeedOrder, MOPNeedOrderVO);
@@ -180,11 +214,60 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
 
         Page<MOPNeedOrder> pageinfo = new Page(page, size);
         pageinfo.setSearchCount(true);
-        IPage<MOPNeedOrder> ipage = MOPNeedOrderMapper.selectPage(pageinfo, queryWrapper);
+        IPage<MOPNeedOrder> ipage = mopNeedOrderMapper.selectPage(pageinfo, queryWrapper);
 
         QueryResult queryResult = new QueryResult<MOPNeedOrder>();
         BeanUtils.copyProperties(ipage, queryResult);
         return queryResult;
+    }
+
+
+
+    /**
+     * 第三方接口使用（下单—获取—解析—上传）
+     * @param mopNeedOrderAO
+     * @return
+     */
+    @Transactional
+    @Override
+    public ResponseBean2<SaveResult> thirdPartyUse(MOPNeedOrderAO mopNeedOrderAO) {
+        SaveResult saveResult = new SaveResult();
+        MOPNeedOrder addMOPNeedOrder = new MOPNeedOrder();
+        Map<String, Object> map = new HashMap<String, Object>();
+        addMOPNeedOrder.setDocNum(OrderDetail.getMopPrimaryKey());
+        map.put("companyCode", mopNeedOrderAO.getCompanyCode());
+        map.put("ResultString", "success");
+        map.put("createName", mopNeedOrderAO.getCreateName());
+        map.put("ResultInt", 0);
+        map.put("IsRetransmit", false);
+        map.put("IsCompulsorySubmission", false);
+        map.put("docNum", addMOPNeedOrder.getDocNum());
+        QueryWrapper<NeedOrder> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("needNo", mopNeedOrderAO.getNeedNo());
+        queryWrapper.eq("companyCode", mopNeedOrderAO.getCompanyCode());
+        NeedOrder searchModel = needOrderMapper.selectOne(queryWrapper);
+        //转换已存在的订货单
+        if (searchModel != null) {
+            return ResponseBean2.fail("此要货单已存在，请勿重复操作!");
+            /*saveResult.setResultString("此订单已存在，请勿重复操作!");*/
+        }else{
+            BeanUtils.copyProperties(mopNeedOrderAO, addMOPNeedOrder);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            addMOPNeedOrder.setCreateDate(dateFormat.format(new Date()));
+            mopNeedOrderMapper.insert(addMOPNeedOrder);
+            List<MOPNeedOrderDt> mopNeedOrderDts = mopNeedOrderAO.getLines();
+            if (mopNeedOrderDts.size() > 0 && mopNeedOrderDts != null) {
+                for (MOPNeedOrderDt mopNeedOrderDt : mopNeedOrderDts) {
+                    mopNeedOrderDt.setDocNum(addMOPNeedOrder.getDocNum());
+                }
+                boolean bool = mopNeedOrderDtMapper.batchInsert(mopNeedOrderDts);
+                if (!bool) {
+                    return ResponseBean2.fail("要货单明细数据异常，录入失败!");
+                }
+            }
+        }
+        saveResult = needOrderMapper.saveNeedOrder(map);
+        return ResponseBean2.ok(saveResult.getResultString());
     }
 
     /*@PostConstruct

@@ -13,7 +13,7 @@ public class MOPNeedOrderDt {
     /** 单号 */
     private String docNum;
     /** 采购数量 */
-    private String purchasingQuantity ;
+    private Integer purchasingQuantity ;
     /** 商品名称 */
     private String itemName ;
     /** 商品基本单位 */

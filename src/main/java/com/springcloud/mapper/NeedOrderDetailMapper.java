@@ -2,22 +2,18 @@ package com.springcloud.mapper;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.springcloud.bean.dos.Indent;
-import com.springcloud.bean.vo.SaveResult;
+import com.springcloud.bean.dos.IndentDetail;
+import com.springcloud.bean.dos.NeedOrderDetail;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.Map;
 
 /**
  * @Author darren.zhou
  * @Description:
- * @ClassName: ClassName
- * @Create: Date Time
+ * @ClassName: $ClassName$
+ * @Create: $Date$ $Time$
  */
 @DS(value = "stock")
 @Mapper
-public interface IndentMapper extends BaseMapper<Indent> {
-
-    SaveResult saveIndent(Map<String, Object> map);
+public interface NeedOrderDetailMapper extends BaseMapper<NeedOrderDetail> {
 
 }

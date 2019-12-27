@@ -21,7 +21,7 @@ public interface NeedOrderService {
     SaveResult saveNeedOrder(Map<String, Object> map);
 
 
-    List<NeedOrderVO> list(String companyCode, String needOrderNo);
+    NeedOrderVO getNeedOrderByNeedNo(String companyCode, String needOrderNo);
 
 
     QueryResult<NeedOrderVO> page(long page, long size, NeedOrderQuery query);

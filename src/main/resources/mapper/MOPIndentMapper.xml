@@ -16,6 +16,9 @@
         <result property="createName" column="createName"></result>
     </resultMap>
 
-
+    <select id="getOne" resultMap="userMap" parameterType="string">
+    SELECT Top 1 * FROM mopIndent WHERE
+    (companyCode = #{companyCode} AND orderNo = #{orderNo})order by createDate desc
+    </select>
 
 </mapper>

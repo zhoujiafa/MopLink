@@ -72,7 +72,7 @@ public class MOPNeedOrderAD {
                 MOPNeedOrderDt MOPNeedOrderDt = new MOPNeedOrderDt();
                 String lines = array.getString(i);
                 JSONObject jsonObj1 =  JSONObject.parseObject(lines);
-                MOPNeedOrderDt.setPurchasingQuantity(jsonObj1.getString("purchasingQuantity"));
+                MOPNeedOrderDt.setPurchasingQuantity(jsonObj1.getInteger("purchasingQuantity"));
                 MOPNeedOrderDt.setItemName(jsonObj1.getString("itemName"));
                 MOPNeedOrderDt.setUnit(jsonObj1.getString("unit"));
                 MOPNeedOrderDt.setItemQuantity(jsonObj1.getInteger("itemQuantity"));

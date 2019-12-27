@@ -42,6 +42,6 @@ public class GoodsDict  implements Serializable{
 
     @Excel(name = "price")
     @TableField("price")
-    String price;
+    Double price;
 
 }

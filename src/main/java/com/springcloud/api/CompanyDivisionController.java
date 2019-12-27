@@ -16,12 +16,12 @@ import java.util.List;
 
 /**
  * @ClassName : DataLineController
- * @Description : 门店信息(关联)数据访问接口
+ * @Description : 代理商信息(门店关联)数据访问接口
  * @Author : Joe
  * @Date: 2019-11-18 09:38
  */
 @RestController
-@RequestMapping("/associatecompany")
+@RequestMapping("/associateCompany")
 public class CompanyDivisionController {
 
     @Autowired

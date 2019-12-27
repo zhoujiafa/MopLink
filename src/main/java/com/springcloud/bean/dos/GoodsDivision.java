@@ -16,5 +16,5 @@ public class GoodsDivision {
 
     String barCode;
     String barName;
-    String price;
+    Double price;
 }

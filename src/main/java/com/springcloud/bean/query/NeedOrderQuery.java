@@ -12,6 +12,7 @@ import lombok.Data;
 @Data
 public class NeedOrderQuery {
 
-    String companyCode;
+    String docNum;
+    String needNo;
     String companyName;
 }

@@ -9,9 +9,7 @@ import com.reabam.sign.SignUtil;
 import com.springcloud.analyticalData.MOPIndentAD;
 import com.springcloud.analyticalData.OrderDetail;
 import com.springcloud.bean.ao.MOPIndentAO;
-import com.springcloud.bean.dos.MOPIndent;
-import com.springcloud.bean.dos.MOPIndentDt;
-import com.springcloud.bean.dos.MOPNeedOrder;
+import com.springcloud.bean.dos.*;
 import com.springcloud.bean.query.MOPIndentQuery;
 import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.bean.vo.SaveResult;
@@ -22,7 +20,7 @@ import com.springcloud.mapper.MOPNeedOrderMapper;
 import com.springcloud.service.MOPIndentService;
 import com.springcloud.util.QueryResult;
 import com.springcloud.util.ResponseBean;
-import com.springcloud.bean.dos.Indent;
+import com.springcloud.util.ResponseBean2;
 import com.springcloud.util.ResultBean;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
@@ -35,6 +33,7 @@ import org.apache.http.util.EntityUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -45,7 +44,6 @@ import java.util.*;
  * @Author : Joe
  * @Date: 2019/11/18 17:22
  */
-
 
 @Service
 public class MOPIndentServiceImpl implements MOPIndentService {
@@ -63,82 +61,138 @@ public class MOPIndentServiceImpl implements MOPIndentService {
 
 
     @Override
-    public List<MOPIndentVO> getmopIndent(String companyCode, String orderNo) {
-        List<MOPIndentVO> lineVOList = new ArrayList<>();
+    public MOPIndentVO downloadMOPIndent(String companyCode, String orderNo) {
+        MOPIndentVO response = new MOPIndentVO();
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("companyCode", companyCode);
         params.put("appId", "BC7CEC0171504DF799CB4972541C0FXS");
-
         Map<String, Object> dataJson = new HashMap<String, Object>();
         dataJson.put("orderNo", orderNo);
-
         params.put("dataJson", dataJson);
         String paramsJson = JSON.toJSON(SignUtil.sign(params, key)).toString();
         String requsetUrl = url + "/openapi/order/detail";
         String resultJson = sendPost(requsetUrl, paramsJson);
         JSONObject jsonObj1 = JSONObject.parseObject(resultJson);
-        if(jsonObj1.getString("ResultInt").equals("-1")){
-            String message = jsonObj1.getString("ResultString");
-            Integer error = Integer.valueOf(jsonObj1.getString("code"));
-            ResultBean response = new ResultBean();
+        if (!jsonObj1.getString("ResultInt").equals("0")) {
+            Integer error;
+            if (jsonObj1.getString("ResultString").equals("找不到此订货单")) {
+                error = Integer.valueOf(jsonObj1.getString("ErrorCode"));
+            } else {
+                error = Integer.valueOf(jsonObj1.getString("code"));
+            }
             response.setCode(error);
-            response.setMsg(message);
-            return null;
+            String message = jsonObj1.getString("ResultString");
+            response.setMessage(message);
+        } else {
+            MOPIndentAD a = new MOPIndentAD();
+            response = a.getJsonToBeanSecond(resultJson);
+            JSONObject jsonObj = JSONObject.parseObject(resultJson);
+            JSONObject dataLine = jsonObj.getJSONObject("DataLine");
+            response.setCompanyCode(companyCode);
+            response.setLines(a.getJsonToBeanThird(dataLine));
         }
-        MOPIndentAD a = new MOPIndentAD();
-        MOPIndentVO bean = a.getJsonToBeanSecond(resultJson);
-        JSONObject jsonObj = JSONObject.parseObject(resultJson);
-        JSONObject dataLine = jsonObj.getJSONObject("DataLine");
-        bean.setCompanyCode(companyCode);
-        bean.setLines(a.getJsonToBeanThird(dataLine));
-        lineVOList.add(bean);
-        //return ResponseBean.ok(lineVOList);
-        return lineVOList;
+        return response;
     }
 
     @Override
     public ResponseBean<SaveResult> saveMopIndent(MOPIndentAO mopIndentAO) {
+        //响应消息
         SaveResult saveResult;
         MOPIndent addMOPIndent = new MOPIndent();
-        BeanUtils.copyProperties(mopIndentAO, addMOPIndent);
+        Map<String, Object> map = new HashMap<String, Object>();
         addMOPIndent.setDocNum(OrderDetail.getMopPrimaryKey());
+        map.put("companyCode", mopIndentAO.getCompanyCode());
+        map.put("ResultString", "success");
+        map.put("createName", mopIndentAO.getNewCreateName());
+        map.put("ResultInt", 0);
+        map.put("IsRetransmit", false);
+        map.put("IsCompulsorySubmission", false);
+        map.put("docNum", addMOPIndent.getDocNum());
+        BeanUtils.copyProperties(mopIndentAO, addMOPIndent);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         addMOPIndent.setCreateDate(dateFormat.format(new Date()));
         List<MOPIndentDt> mopIndentDts = mopIndentAO.getLines();
         if (mopIndentDts.size() > 0 && mopIndentDts != null) {
-            for(MOPIndentDt mopIndentDt : mopIndentDts){
+            for (MOPIndentDt mopIndentDt : mopIndentDts) {
                 mopIndentDt.setDocNum(addMOPIndent.getDocNum());
             }
             boolean bool = mopIndentDtMapper.batchInsert(mopIndentDts);
-            if(!bool){
+            if (!bool) {
                 return ResponseBean.fail("订单明细数据异常，录入失败!");
             }
+        }else {
+            return ResponseBean.fail("无传入订单明细数据，操作失败!");
         }
+        mopIndentMapper.insert(addMOPIndent);
         QueryWrapper<Indent> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("orderNo", mopIndentAO.getOrderNo());
         queryWrapper.eq("companyCode", mopIndentAO.getCompanyCode());
         Indent searchModel = indentMapper.selectOne(queryWrapper);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("companyCode",  mopIndentAO.getCompanyCode());
-        map.put("ResultString", "success");
-        map.put("docNum", addMOPIndent.getDocNum());
-        map.put("createName", mopIndentAO.getNewCreateName());
-        map.put("ResultInt", 0);
-        if(searchModel==null){
-            map.put("IsRetransmit", false);
-            map.put("IsCompulsorySubmission", false);
-        }else{
-            if(mopIndentAO.getIsRetransmit()==true && mopIndentAO.getIsCompulsorySubmission()==false){
-                map.put("IsRetransmit", true);
+        //转换已存在的订货单
+        if (searchModel != null) {
+            if (mopIndentAO.getIsRetransmit() == true && mopIndentAO.getIsCompulsorySubmission() == false) {
+                QueryWrapper<MOPIndent> query = new QueryWrapper<>();
+                query.eq("orderNo", mopIndentAO.getOrderNo());
+                query.eq("companyCode", mopIndentAO.getCompanyCode());
+                List<MOPIndent> list = mopIndentMapper.selectList(query);
+                map.put("docNum", list.get(0).getDocNum());
+                map.put("IsRetransmit", false);
                 map.put("IsCompulsorySubmission", false);
-            }else if(mopIndentAO.getIsRetransmit()==true && mopIndentAO.getIsCompulsorySubmission()==true){
+            } else if (mopIndentAO.getIsRetransmit() == true && mopIndentAO.getIsCompulsorySubmission() == true) {
                 map.put("IsRetransmit", true);
                 map.put("IsCompulsorySubmission", true);
             }
+
         }
-        mopIndentMapper.insert(addMOPIndent);
         saveResult = indentMapper.saveIndent(map);
         return ResponseBean.ok(saveResult);
+    }
+
+    /**
+     * 第三方接口使用（下单—获取—解析—上传）
+     * @param mopIndentAO
+     * @return
+     */
+    @Transactional
+    @Override
+    public ResponseBean2<SaveResult> thirdPartyUse(MOPIndentAO mopIndentAO) {
+        SaveResult saveResult = new SaveResult();
+        MOPIndent addMOPIndent = new MOPIndent();
+        Map<String, Object> map = new HashMap<String, Object>();
+        addMOPIndent.setDocNum(OrderDetail.getMopPrimaryKey());
+        map.put("companyCode", mopIndentAO.getCompanyCode());
+        map.put("ResultString", "success");
+        map.put("createName", mopIndentAO.getCreateName());
+        map.put("ResultInt", 0);
+        map.put("IsRetransmit", false);
+        map.put("IsCompulsorySubmission", false);
+        map.put("docNum", addMOPIndent.getDocNum());
+        QueryWrapper<Indent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("orderNo", mopIndentAO.getOrderNo());
+        queryWrapper.eq("companyCode", mopIndentAO.getCompanyCode());
+        Indent searchModel = indentMapper.selectOne(queryWrapper);
+        //转换已存在的订货单
+        if (searchModel != null) {
+            return ResponseBean2.fail("此订单已存在，请勿重复操作!");
+            /*saveResult.setResultString("此订单已存在，请勿重复操作!");*/
+        }else{
+            BeanUtils.copyProperties(mopIndentAO, addMOPIndent);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            addMOPIndent.setCreateDate(dateFormat.format(new Date()));
+            mopIndentMapper.insert(addMOPIndent);
+            List<MOPIndentDt> mopIndentDts = mopIndentAO.getLines();
+            if (mopIndentDts.size() > 0 && mopIndentDts != null) {
+                for (MOPIndentDt mopIndentDt : mopIndentDts) {
+                    mopIndentDt.setDocNum(addMOPIndent.getDocNum());
+                }
+                boolean bool = mopIndentDtMapper.batchInsert(mopIndentDts);
+                if (!bool) {
+                    return ResponseBean2.fail("订单明细数据异常，录入失败!");
+                }
+            }
+        }
+        saveResult = indentMapper.saveIndent(map);
+        return ResponseBean2.ok(saveResult.getResultString());
     }
 
     @Override
@@ -162,6 +216,47 @@ public class MOPIndentServiceImpl implements MOPIndentService {
         return queryResult;
     }
 
+
+    @Override
+    public List<MOPIndentVO> getMOPIndentByOrder(String companyCode, String orderNo) {
+        List<MOPIndentVO> mopIndentVO = new ArrayList<>();
+        if (StringUtils.isNotBlank(companyCode) && StringUtils.isNotBlank(orderNo)) {
+            QueryWrapper<MOPIndent> query = new QueryWrapper<>();
+            query.eq("companyCode", companyCode);
+            query.eq("orderNo", orderNo).orderByDesc("createDate");
+            List<MOPIndent> response = mopIndentMapper.selectList(query);
+            if (response != null) {
+                for (MOPIndent model : response) {
+                    MOPIndentVO vo = new MOPIndentVO();
+                    BeanUtils.copyProperties(model, vo);
+                    mopIndentVO.add(vo);
+                }
+            }
+        }
+        return mopIndentVO;
+    }
+
+
+    @Override
+    public MOPIndentVO getMOPIndentByDocNum(String companyCode, String docNum) {
+        MOPIndentVO mopIndentVO = new MOPIndentVO();
+        if (StringUtils.isNotBlank(companyCode) && StringUtils.isNotBlank(docNum)) {
+            QueryWrapper<MOPIndent> query = new QueryWrapper<>();
+            query.eq("companyCode", companyCode);
+            query.eq("docNum", docNum);
+            MOPIndent response = mopIndentMapper.selectOne(query);
+            if (response != null) {
+                BeanUtils.copyProperties(response, mopIndentVO);
+                QueryWrapper<MOPIndentDt> queryWrapper = new QueryWrapper<>();
+                queryWrapper.eq("docNum", response.getDocNum());
+                List<MOPIndentDt> list = mopIndentDtMapper.selectList(queryWrapper);
+                if (list.size() > 0 && list != null) {
+                    mopIndentVO.setLines(list);
+                }
+            }
+        }
+        return mopIndentVO;
+    }
 
     /**
      * http post请求

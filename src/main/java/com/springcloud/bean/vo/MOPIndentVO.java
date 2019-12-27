@@ -2,6 +2,7 @@ package com.springcloud.bean.vo;
 
 import com.springcloud.bean.dos.MOPIndentDt;
 import com.springcloud.bean.dos.MOPNeedOrderDt;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.List;
@@ -39,6 +40,13 @@ public class MOPIndentVO {
     private String createDate;
     /**  单据创建人 */
     private String createName;
+
+
+    @ApiModelProperty(value = "响应状态码")
+    private int code;
+
+    @ApiModelProperty(value = "响应信息")
+    private String message;
 
     private List<MOPIndentDt> lines;
 

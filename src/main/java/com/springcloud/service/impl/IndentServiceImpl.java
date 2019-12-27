@@ -59,7 +59,7 @@ public class IndentServiceImpl implements IndentService {
         if (StringUtils.isNotBlank(companyCode) && StringUtils.isNotBlank(orderNo)) {
             QueryWrapper<Indent> queryWrapper = new QueryWrapper<>();
                 queryWrapper.eq("companyCode", companyCode);
-                queryWrapper.eq("docNum", orderNo);
+                queryWrapper.eq("orderNo", orderNo);
             indentList = indentMapper.selectList(queryWrapper);
             for (Indent indent : indentList) {
                 IndentVO indentVO = new IndentVO();
@@ -130,7 +130,7 @@ public class IndentServiceImpl implements IndentService {
     private QueryWrapper<Indent> queryEntity(IndentQuery query, QueryWrapper<Indent> queryWrapper) {
         if (query != null) {
             if (!StringUtils.isEmpty(query.getCompanyName())) {
-                queryWrapper.eq("companyName", query.getCompanyName());
+                queryWrapper.like("companyName", query.getCompanyName());
             }
             if (!StringUtils.isEmpty(query.getOrderNo())) {
                 queryWrapper.eq("docNum", query.getOrderNo());

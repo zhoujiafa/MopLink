@@ -48,4 +48,9 @@ public class MOPIndentDt {
     /** 运费 */
     private Double totalExpressFee;
 
+    /** 商品总数量 */
+    private Double needsCount;
+    /** 单据实付金额 */
+    private Double realTotal;
+
 }

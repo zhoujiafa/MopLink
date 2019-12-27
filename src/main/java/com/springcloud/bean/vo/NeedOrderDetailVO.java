@@ -1,15 +1,19 @@
-package com.springcloud.bean.dos;
+package com.springcloud.bean.vo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-@Data
-@TableName("needOrderDetail")
-public class NeedOrderDetail {
+import java.util.List;
 
-    /** ID */
-    private Long iD;
-    /** 单号  */
+/**
+ * @Author darren.zhou
+ * @Description:
+ * @Param: $params
+ * @Return: ${returns}
+ * @Create: $Date $Time
+ */
+@Data
+public class NeedOrderDetailVO {
+
     private String docNum;
     /** 商品名称 */
     private String itemName;
@@ -37,4 +41,5 @@ public class NeedOrderDetail {
     private String lineNum;
     /** 商品编码 */
     private String itemNum;
+
 }

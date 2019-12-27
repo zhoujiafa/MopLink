@@ -15,7 +15,7 @@ import java.util.List;
  * @Date: 2019-11-18 09:38
  */
 @RestController
-@RequestMapping("/goodsdivision")
+@RequestMapping("/goodsDivision")
 public class GoodsDivisionController {
 
     @Autowired

@@ -3,13 +3,14 @@ package com.springcloud.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.springcloud.bean.dos.CompanyDict;
-import com.springcloud.bean.dos.MOPNeedOrder;
-import com.springcloud.bean.dos.NeedOrder;
+import com.springcloud.bean.dos.*;
 import com.springcloud.bean.query.MOPNeedOrderQuery;
 import com.springcloud.bean.query.NeedOrderQuery;
+import com.springcloud.bean.vo.IndentDtVO;
+import com.springcloud.bean.vo.NeedOrderDetailVO;
 import com.springcloud.bean.vo.NeedOrderVO;
 import com.springcloud.bean.vo.SaveResult;
+import com.springcloud.mapper.NeedOrderDetailMapper;
 import com.springcloud.mapper.NeedOrderMapper;
 import com.springcloud.service.NeedOrderService;
 import com.springcloud.util.QueryResult;
@@ -32,6 +33,8 @@ public class NeedOrderServiceImpl implements NeedOrderService {
 
     @Autowired
     NeedOrderMapper needOrderMapper;
+    @Autowired
+    NeedOrderDetailMapper needOrderDetailMapper;
 
     @Override
     public SaveResult saveNeedOrder(Map<String, Object> map) {
@@ -51,41 +54,51 @@ public class NeedOrderServiceImpl implements NeedOrderService {
     }
 
     @Override
-    public List<NeedOrderVO> list(String companyCode, String needOrderNo) {
-        List<NeedOrderVO> lineVOList = new ArrayList<>();
-        List<NeedOrder> needOrderList;
+    public NeedOrderVO getNeedOrderByNeedNo(String companyCode, String needOrderNo) {
+        NeedOrderVO needOrderVO = new NeedOrderVO();
         if (StringUtils.isNotBlank(companyCode) && StringUtils.isNotBlank(needOrderNo)) {
             QueryWrapper<NeedOrder> queryWrapper = new QueryWrapper<>();
                 queryWrapper.eq("companyCode", companyCode);
-                queryWrapper.like("needNo", needOrderNo);
-            needOrderList = needOrderMapper.selectList(queryWrapper);
-            for (NeedOrder needOrder : needOrderList) {
-                NeedOrderVO needOrderVO = new NeedOrderVO();
+                queryWrapper.eq("needNo", needOrderNo);
+            NeedOrder needOrder = needOrderMapper.selectOne(queryWrapper);
+            if(needOrder !=null){
+                QueryWrapper<NeedOrderDetail> query= new QueryWrapper<>();
+                query.eq("docNum", needOrder.getDocNum());
+                List<NeedOrderDetail> needOrderDetails = needOrderDetailMapper.selectList(query);
+                if(needOrderDetails!=null && needOrderDetails.size()>0){
+                    List<NeedOrderDetailVO> needOrderDetailVOList = new ArrayList<>();
+                    for(NeedOrderDetail needOrderDetail : needOrderDetails){
+                        NeedOrderDetailVO needOrderDetailVO = new NeedOrderDetailVO();
+                        BeanUtils.copyProperties(needOrderDetail, needOrderDetailVO);
+                        needOrderDetailVOList.add(needOrderDetailVO);
+                    }
+                    needOrderVO.setList(needOrderDetailVOList);
+                }
                 BeanUtils.copyProperties(needOrder, needOrderVO);
-                lineVOList.add(needOrderVO);
             }
         }
-        return lineVOList;
+        return needOrderVO;
     }
 
 
     @Override
     public QueryResult<NeedOrderVO> page(long page, long size, NeedOrderQuery query) {
-        /*QueryWrapper<CompanyDict> queryWrapper = new QueryWrapper<>();
-        queryWrapper = queryEntity(companyDictQuery, queryWrapper);
-
-        Page<CompanyDict> pageinfo = new Page(page, size);
+        QueryWrapper<NeedOrder> queryWrapper = new QueryWrapper<>();
+        if (query != null) {
+            if (!StringUtils.isEmpty(query.getCompanyName())) {
+                queryWrapper.like("companyName", query.getCompanyName());
+            }
+            if (!StringUtils.isEmpty(query.getDocNum())) {
+                queryWrapper.eq("docNum", query.getDocNum());
+            }
+        }
+        Page<NeedOrder> pageinfo = new Page(page, size);
         pageinfo.setSearchCount(true);
-        IPage<CompanyDict> ipage = companyDictMapper.selectPage(pageinfo, queryWrapper);
+        IPage<NeedOrder> ipage = needOrderMapper.selectPage(pageinfo, queryWrapper);
 
-        QueryResult queryResult = new QueryResult<CompanyDict>();
+        QueryResult queryResult = new QueryResult<MOPIndent>();
         BeanUtils.copyProperties(ipage, queryResult);
-
-//        queryResult.setRecords(ipage.getRecords());
-//        queryResult.setTotal(ipage.getTotal());
-
-        return queryResult;*/
-        return null;
+        return queryResult;
     }
 
 

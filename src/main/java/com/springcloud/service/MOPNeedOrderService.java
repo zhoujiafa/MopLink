@@ -1,9 +1,14 @@
 package com.springcloud.service;
 
+import com.springcloud.bean.ao.MOPIndentAO;
+import com.springcloud.bean.ao.MOPNeedOrderAO;
 import com.springcloud.bean.dos.MOPNeedOrder;
 import com.springcloud.bean.query.MOPNeedOrderQuery;
 import com.springcloud.bean.vo.MOPNeedOrderVO;
+import com.springcloud.bean.vo.SaveResult;
 import com.springcloud.util.QueryResult;
+import com.springcloud.util.ResponseBean;
+import com.springcloud.util.ResponseBean2;
 
 import java.util.List;
 
@@ -23,11 +28,13 @@ public interface MOPNeedOrderService {
      */
     Boolean insert(MOPNeedOrder MOPNeedOrder);
 
-    List<MOPNeedOrderVO> getdataline(String companyCode, String needOrderNo);
+    MOPNeedOrderVO getdataline(String companyCode, String needOrderNo);
+
+    ResponseBean2<SaveResult> thirdPartyUse(MOPNeedOrderAO mopNeedOrderAO);
 
     List<MOPNeedOrderVO> getLocalInfo(String companyCode, String needOrderNo);
 
-    Boolean saveDataLine(MOPNeedOrderVO MOPNeedOrderVO);
+    ResponseBean<SaveResult> saveNeedOrder(MOPNeedOrderVO MOPNeedOrderVO);
 
     List<MOPNeedOrderVO> list(MOPNeedOrderQuery query);
 

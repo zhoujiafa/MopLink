@@ -1,6 +1,9 @@
 package com.springcloud.bean.vo;
 
+import com.springcloud.bean.dos.NeedOrderDetail;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * @Author darren.zhou
@@ -30,4 +33,7 @@ public class NeedOrderVO {
     String department;
     String saleCode;
     String baseDocNum;
+
+    /** 子项单据 */
+    private List<NeedOrderDetailVO> list;
 }

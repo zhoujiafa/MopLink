@@ -1,15 +1,22 @@
-package com.springcloud.bean.vo;
+package com.springcloud.bean.ao;
 
+import com.springcloud.bean.dos.MOPIndentDt;
 import com.springcloud.bean.dos.MOPNeedOrderDt;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.List;
 
+/**
+ * @Author darren.zhou
+ * @Description:
+ * @Param: $params
+ * @Return: ${returns}
+ * @Create: $Date $Time
+ */
 @Data
-public class MOPNeedOrderVO {
+public class MOPNeedOrderAO {
 
-    private String docNum;
     private String needStatusName;
     private String needNo;
     private String needDate;
@@ -24,16 +31,9 @@ public class MOPNeedOrderVO {
     private String createDate;
     private List<MOPNeedOrderDt> lines;
 
-    @ApiModelProperty(value = "响应状态码")
     private int code;
-
-    @ApiModelProperty(value = "响应信息")
     private String message;
-
     private Boolean IsRetransmit;
     private Boolean IsCompulsorySubmission;
-
-
-
 
 }

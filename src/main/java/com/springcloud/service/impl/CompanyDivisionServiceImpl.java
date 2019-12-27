@@ -49,7 +49,8 @@ public class CompanyDivisionServiceImpl implements CompanyDivisionService {
     public List<CompanyDivision> list(AssociateCompanyQuery query) {
         CompanyDivision searchBean = new CompanyDivision();
         BeanUtils.copyProperties(query,searchBean);
-        return companyDivisionMapper.list(searchBean);
+        List<CompanyDivision> list = companyDivisionMapper.list(searchBean);
+        return list;
     }
     @Override
     public CompanyDivision getOneBycustomerCode(String customerCode) {

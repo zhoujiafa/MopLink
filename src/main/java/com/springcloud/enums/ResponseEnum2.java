@@ -15,8 +15,10 @@ public enum ResponseEnum2 {
      */
 
     Ok(0, "操作成功"),
+    //Ok(200, "操作成功"),
     ArgumentInvalid(300, "参数不合法{0}"),
-    Custom(400, ""),
+    //Custom(400, ""),
+    Custom(-1, ""),
     Fail(500, "发生未知错误");
 
     private final int ResultInt;
