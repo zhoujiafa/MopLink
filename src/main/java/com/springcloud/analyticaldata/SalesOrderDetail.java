@@ -1,9 +1,9 @@
-package com.springcloud.analyticalData;
+package com.springcloud.analyticaldata;
+
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.reabam.sign.SignUtil;
-import com.springcloud.bean.vo.MOPNeedOrderVO;
+import com.reabam.sign.SecretUtil;
+import com.springcloud.bean.vo.SalesOrderVO;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -12,83 +12,77 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
+public class SalesOrderDetail {
 
-public class OrderDetail {
+    /**第三方Key*/
+    static final String sKey = "U1CITYCKTEST";
+    /**第三方Secret*/
+    static final String sSecret = "U1CITYCKTESTJJKIUNHB";
+    /** 接口名称*/
+    static final String sMethod = "IOpenAPI.GetSaleStock";
+    /** 返回方式[xml 或 json]*/
+    static final String sFormat = "json";
 
     public static void main(String[] args) {
-        MOPNeedOrderVO MOPNeedOrderVO = OrderDetail.DataLineVO();
+        SalesOrderVO MOPNeedOrderVO = SalesOrderDetail.DataLineVO();
     }
+    public static SalesOrderVO DataLineVO() {
 
-    static final String appId = "BC7CEC0171504DF799CB4972541C0FXS";
-    static final String key = "285e11c1e83a4094b35cc3cf320ad820";
-    static final String companyCode = "0324";
-    private static final String url = "http://test.try-shopping.com/ts-openapi";
+        String sToken = SecretUtil.MD5(Asc(sSecret + sMethod + "appKey" + sKey).replace(" ","").toLowerCase());
 
-    public static MOPNeedOrderVO DataLineVO()  {
-
-        // 测试签名结果
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("appId", appId);
-        //params.put("taskId", "20180125165130");
-        params.put("companyCode", companyCode);
-        // 具体业务参数
-        Map<String, Object> dataJson = new HashMap<String, Object>();
+        //String postData = String.format("user={0}&method={1}&token={2}&format={3}&appKey={4}", sKey, sMethod, sToken, sFormat, sKey);
+        params.put("user",sKey);
+        params.put("method",sMethod);
+        params.put("token",sToken);
+        params.put("format",sFormat);
+        params.put("appKey",sKey);
 
-        dataJson.put("needOrderNo", "301445621412");
-        params.put("dataJson", dataJson);
-        //params.put("dataJson", "{\"needOrderNo\":\"303248530001\"}");
-        String paramsJson = JSON.toJSON(SignUtil.sign(params, key)).toString();
-        //System.out.println(paramsJson);
-        String requsetUrl = url + "/openapi/needOrder/detail";
-        String resultJson = sendPost(requsetUrl, paramsJson);
+        /*测试的接口地址：http://wqbopenapi.ushopn6.com/wqbnew/api.rest
+        仓库端的第三方对接Key：U1CITYCKTEST
+        第三方对接Secert：U1CITYCKTESTJJKIUNHB*/
+        /*接口名称+Key参数名称+ Key参数值+参数名称1+参数值1+参数名称2+参数值2+接口Secert*/
+
+
+        String paramsJson = JSON.toJSON(params).toString();
+        String resultJson = sendPost("http://wqbopenapi.ushopn6.com/wqbnew/api.rest", paramsJson);
 
         System.out.println(resultJson);
-
-        MOPNeedOrderAD a = new MOPNeedOrderAD();
-        MOPNeedOrderVO bean = a.getJsonToBeanSecond(resultJson);
-
-
-        JSONObject jsonObj = JSONObject.parseObject(resultJson);
-        JSONObject dataLine = jsonObj.getJSONObject("DataLine");
-
-        //bean.setLines(a.getJsonToBeanThird(dataLine));
-        return bean;
+        return null;
     }
 
 
-    /**
-     * 生成主键(年月日+ 4位随机数) 公司
-     */
-    public static String getMopPrimaryKey(){
+    /*public static String Encrypt_MD5(String AppKey)
+    {
+        MD5 MD5 = new MD5CryptoServiceProvider();
+        byte[] datSource = Encoding.GetEncoding("gb2312").GetBytes(AppKey);
+        byte[] newSource = MD5.ComputeHash(datSource);
 
-        String str = new SimpleDateFormat("yyyyMMdd").format(new Date());
-        // 获取4位随机数 brand
-        int ranNum = (int) (new Random().nextDouble() * (9999 - 1000 + 1)) + 1000;
-        return str+ranNum;
+        StringBuilder sb = new StringBuilder(32);
+        for (int i = 0; i < newSource.length; i++)
+        {
+            sb.append(newSource[i].ToString("x").PadLeft(2, '0'));
+        }
+        String crypt = sb.toString();
+        return crypt;
+    }*/
+
+
+    //排序
+    static String Asc(String input) {
+        char[] arr = input.toCharArray();
+        Arrays.sort(arr);
+        String strAsc = "";
+        for (char item : arr) {
+            strAsc += item;
+        }
+        return strAsc;
     }
 
-    public static String getBetweenPrimaryKey(){
-
-        String str = new SimpleDateFormat("MMddyyyy").format(new Date());
-        // 获取4位随机数
-        int ranNum = (int) (new Random().nextDouble() * (9999 - 1000 + 1)) + 1000;
-        return str+ranNum;
-    }
-
-
-    /**
-     * http post请求
-     *
-     * @param url    请求地址
-     * @param params 请求参数 json格式：{'name':'ABC','age':'20'}
-     * @return
-     */
     public static String sendPost(String url, String params) {
         try {
             CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -110,4 +104,8 @@ public class OrderDetail {
         }
         return null;
     }
+
+
+
+
 }

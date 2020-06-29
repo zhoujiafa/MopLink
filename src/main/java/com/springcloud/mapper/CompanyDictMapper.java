@@ -27,6 +27,9 @@ public interface CompanyDictMapper extends BaseMapper<CompanyDict> {
      */
     Boolean batchInsert(List<CompanyDict> companyDictList);
 
+
+    Boolean save(CompanyDict companyDict);
+
     /**
      * 分页查询
      * @param map

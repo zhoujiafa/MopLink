@@ -47,6 +47,15 @@ public class UserController {
         return ResponseBean2.ok(userService.login(userAO));
     }
 
+    @ApiOperation(value = "用户登录", notes = "用户登录")
+    @PostMapping("/wechatAppLogin")
+    public ResponseBean2<UserVO> login(String username, String password) {
+        UserAO  userAO = new UserAO();
+        userAO.setUserName(username);
+        userAO.setPassword(password);
+        return ResponseBean2.ok(userService.login(userAO));
+    }
+
 
     @ApiOperation(value = "用户注册", notes = "用户注册")
     @PostMapping("/save")

@@ -1,7 +1,7 @@
 package com.springcloud.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.springcloud.analyticalData.OrderDetail;
+import com.springcloud.analyticaldata.OrderDetail;
 import com.springcloud.bean.ao.UserAO;
 import com.springcloud.bean.dos.User;
 import com.springcloud.bean.vo.UserVO;
@@ -11,8 +11,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.*;
 
 /**
  * @ClassName : UserServiceImpl

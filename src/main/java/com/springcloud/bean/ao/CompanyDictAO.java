@@ -17,4 +17,13 @@ public class CompanyDictAO {
 
     List<CompanyDict> data;
     String assoId;
+
+    String companyName;
+    String companyCode;
+    String  mopDeptCode;
+    String  mopDeptName;
+    String  customerName;
+    String  customerCode;
+    String xunsoftDeptCode;
+    String xunsoftDeptName;
 }

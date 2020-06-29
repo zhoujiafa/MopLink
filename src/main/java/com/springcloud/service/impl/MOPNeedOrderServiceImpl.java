@@ -6,19 +6,16 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.reabam.sign.SignUtil;
-import com.springcloud.analyticalData.MOPIndentAD;
-import com.springcloud.bean.ao.MOPIndentAO;
 import com.springcloud.bean.ao.MOPNeedOrderAO;
 import com.springcloud.bean.dos.*;
 import com.springcloud.bean.query.MOPNeedOrderQuery;
-import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.bean.vo.MOPNeedOrderVO;
 import com.springcloud.bean.vo.SaveResult;
 import com.springcloud.mapper.MOPNeedOrderMapper;
 import com.springcloud.mapper.MOPNeedOrderDtMapper;
 import com.springcloud.mapper.NeedOrderMapper;
-import com.springcloud.analyticalData.MOPNeedOrderAD;
-import com.springcloud.analyticalData.OrderDetail;
+import com.springcloud.analyticaldata.MOPNeedOrderAD;
+import com.springcloud.analyticaldata.OrderDetail;
 import com.springcloud.service.MOPNeedOrderService;
 import com.springcloud.util.QueryResult;
 import com.springcloud.util.ResponseBean;
@@ -283,7 +280,6 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
 
     /**
      * http post请求
-     *
      * @param url    请求地址
      * @param params 请求参数 json格式：{'name':'ABC','age':'20'}
      * @return

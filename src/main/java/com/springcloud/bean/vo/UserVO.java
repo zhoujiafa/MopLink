@@ -15,7 +15,7 @@ import java.util.Date;
 public class UserVO {
 
     /** 用户ID */
-    private Long id;
+    private String id;
     /** 姓名 */
     private String name;
     /** 用户名 */

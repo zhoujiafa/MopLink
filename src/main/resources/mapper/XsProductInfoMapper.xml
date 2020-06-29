@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.springcloud.mapper.XsProdoctInfoMapper">
+<mapper namespace="com.springcloud.mapper.XsProductInfoMapper">
     <resultMap id="XsProdoctMap" type="com.springcloud.bean.dos.XsProductInfo">
         <result property="barCode" column="BarCode"></result>
         <result property="itemCode" column="ItemCode"></result>

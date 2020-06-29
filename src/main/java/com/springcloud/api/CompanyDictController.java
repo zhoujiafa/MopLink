@@ -1,5 +1,6 @@
 package com.springcloud.api;
 
+import com.springcloud.bean.ao.CompanyDictAO;
 import com.springcloud.bean.dos.CompanyDivision;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.vo.CompanyDictVO;
@@ -52,6 +53,14 @@ public class CompanyDictController {
         return ResponseBean.ok(companyDictService.list(companyDictQuery));
     }
 
+    @ApiOperation(value = "列表查询", notes = "列表查询")
+    @PostMapping("/listbyCode")
+    public ResponseBean<List<CompanyDictVO>> listbyCode(@RequestBody Map data) {
+        CompanyDictQuery companyDictQuery = new CompanyDictQuery();
+        companyDictQuery.setCompanyName(data.get("companyName").toString());
+        return ResponseBean.ok(companyDictService.list(companyDictQuery));
+    }
+
     @ApiOperation(value = "更新信息（公司关联经销商信息）", notes = "更新信息（公司关联经销商信息）")
     @PostMapping("/update")
     public ResponseBean<Boolean> update(@RequestBody Map data) {
@@ -60,6 +69,30 @@ public class CompanyDictController {
         }
         CompanyDivision companyDivision = companyDivisionService.getOneBycustomerCode(data.get("customerCode").toString());
         return ResponseBean.ok(companyDictService.update(Integer.valueOf(data.get("companyDictID").toString()), companyDivision));
+    }
+
+    @ApiOperation(value = "新增（公司关联经销商信息）", notes = "新增（公司关联经销商信息）")
+    @PostMapping("/save")
+    public ResponseBean<Boolean> save(@RequestBody Map data) {
+        CompanyDictAO companyDictAO = new CompanyDictAO();
+        companyDictAO.setCompanyName(data.get("companyName").toString());
+        companyDictAO.setCompanyCode(data.get("companyCode").toString());
+        companyDictAO.setCustomerCode(data.get("customerCode").toString());
+        companyDictAO.setCustomerName(data.get("customerName").toString());
+        companyDictAO.setMopDeptCode(data.get("companyName").toString());
+        companyDictAO.setMopDeptName(data.get("mopDeptCode").toString());
+        companyDictAO.setXunsoftDeptCode(data.get("xunsoftDeptCode").toString());
+        //companyDictAO.setXunsoftDeptName(data.get("xunsoftDeptName").toString());
+        return ResponseBean.ok(companyDictService.save(companyDictAO));
+    }
+
+    @ApiOperation(value = "新增（公司关联经销商信息）", notes = "新增（公司关联经销商信息）")
+    @PostMapping("/delete")
+    public ResponseBean<Boolean> delete(@RequestBody Map data) {
+        CompanyDictAO companyDictAO = new CompanyDictAO();
+        companyDictAO.setCompanyCode(data.get("companyCode").toString());
+
+        return ResponseBean.ok(companyDictService.delete(companyDictAO));
     }
 
 

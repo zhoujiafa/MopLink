@@ -36,6 +36,22 @@
         </foreach>
     </insert>
 
+    <insert id="save">
+        insert into companyDict
+        (companyCode,companyName,mopDeptCode,mopDeptName,customerCode,customerName,xunsoftDeptCode,xunsoftDeptName)
+        values
+
+            ( #{companyCode},
+            #{companyName},
+            #{mopDeptCode},
+            #{mopDeptName},
+            #{customerCode},
+            #{customerName},
+            #{xunsoftDeptCode},
+            #{xunsoftDeptName})
+
+    </insert>
+
     <select id="getPageCompanyDict" parameterType="map" resultMap="BaseResultMap">
         select
           <include refid="Base_Columns" />

@@ -1,7 +1,7 @@
 package com.springcloud.service;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.springcloud.bean.ao.UserAO;
-import com.springcloud.bean.dos.User;
 import com.springcloud.bean.vo.UserVO;
 
 /**

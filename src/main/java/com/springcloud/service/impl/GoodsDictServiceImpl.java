@@ -69,7 +69,13 @@ public class GoodsDictServiceImpl extends ServiceImpl<GoodsDictMapper, GoodsDict
     public QueryResult<GoodsDict> page(long page, long size, GoodsDictQuery goodsDictQuery) {
 
         QueryWrapper<GoodsDict> queryWrapper = new QueryWrapper<>();
-        queryWrapper = queryEntity(goodsDictQuery, queryWrapper);
+        //queryWrapper = queryEntity(goodsDictQuery, queryWrapper);
+        if (!StringUtils.isEmpty(goodsDictQuery.getSkuBarcode())) {
+            queryWrapper.like("skuBarcode", goodsDictQuery.getSkuBarcode());
+        }
+        if (!StringUtils.isEmpty(goodsDictQuery.getItemCode())) {
+            queryWrapper.like("itemCode", goodsDictQuery.getItemCode());
+        }
         Page<GoodsDict> pageinfo = new Page(page, size);
         pageinfo.setSearchCount(true);
         IPage<GoodsDict> ipage = goodsDictMapper.selectPage(pageinfo, queryWrapper);

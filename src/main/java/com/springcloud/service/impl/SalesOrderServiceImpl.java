@@ -1,18 +1,20 @@
 package com.springcloud.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.springcloud.analyticalData.OrderDetail;
-import com.springcloud.bean.ao.UserAO;
-import com.springcloud.bean.dos.User;
-import com.springcloud.bean.vo.UserVO;
-import com.springcloud.mapper.UserMapper;
-import com.springcloud.service.UserService;
-import org.springframework.beans.BeanUtils;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.springcloud.analyticaldata.SystemUtil;
+import com.springcloud.bean.vo.SalesOrderVO;
+import com.springcloud.mapper.SalesOrderMapper;
+import com.springcloud.service.SalesOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.springcloud.analyticaldata.SystemUtil.invoke;
 
 /**
  * @ClassName : UserServiceImpl
@@ -22,42 +24,34 @@ import java.util.*;
  */
 @Transactional
 @Service
-public class UserServiceImpl implements UserService {
+public class SalesOrderServiceImpl implements SalesOrderService {
 
     @Autowired
-    UserMapper userMapper;
+    SalesOrderMapper salesOrderMapper;
 
 
     @Override
-    public Boolean saveUser(UserAO userAO) {
-        Boolean bool = true;
-        if (userAO != null) {
-            QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("userName",userAO.getUserName());
-            queryWrapper.eq("telePhone",userAO.getTelePhone());
-            if(userMapper.selectOne(queryWrapper)!=null){
-                return false;
-            }
-            User user = new User();
-            BeanUtils.copyProperties(userAO, user);
-            user.setId(OrderDetail.getMopPrimaryKey());
-            bool = userMapper.insert(user) > 0;
-        }
-        return bool;
-    }
+    public SalesOrderVO getSaleStock(Map data) {
 
-    @Override
-    public UserVO login(UserAO userAO) {
-        UserVO userVO = new UserVO();
-        if(userAO!=null){
-            QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("userName",userAO.getUserName());
-            queryWrapper.eq("password",userAO.getPassword());
-            User user = userMapper.selectOne(queryWrapper);
-            if(user!=null){
-                BeanUtils.copyProperties(user, userVO);
-            }
-        }
-        return userVO;
+        HashMap<String,String> map=new HashMap<String, String>();
+        map.put("appKey","U1CITYCKTEST");
+        //data.put("billNo","XSC1901241502814495");
+        //data.put("pageIndex","1");
+        map.put("pageSize","500");
+        map.put("startTime","2017-01-01");
+        map.put("endTime","2020-03-05");
+
+
+        HashMap<String,String> restJson=invoke("http://wqbopenapi.ushopn6.com/wqbnew/api.rest","IOpenAPI.GetSaleStock","U1CITYCKTEST","U1CITYCKTESTJJKIUNHB","json",data);
+        System.out.println(restJson);
+
+        String mapjson = restJson.get("result");
+        JSONObject jsonObj1 = JSONObject.parseObject(mapjson);
+        JSONArray array = jsonObj1.getJSONArray("Result");
+
+        List<SalesOrderVO> list =(SystemUtil.getJsonArrayItem(array));
+
+
+        return null;
     }
 }

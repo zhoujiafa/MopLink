@@ -11,13 +11,13 @@ import java.util.List;
  * @Date: 2020-04-30 14:02
  */
 @Data
-public class XsProdoctInfoVO {
+public class XsProductInfoVO {
 
 
     String BarCode;
     String ItemCode;
-    List<String> ItemName;
-    String ColorName;
+    String ItemName;
+    List<String> ColorName;
     List<String> Size;
     Double Price;
 

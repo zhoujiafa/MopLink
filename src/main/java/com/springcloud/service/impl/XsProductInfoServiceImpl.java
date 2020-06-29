@@ -2,14 +2,17 @@ package com.springcloud.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springcloud.bean.dos.XsProductInfo;
-import com.springcloud.mapper.XsProdoctInfoMapper;
-import com.springcloud.service.XsProdoctInfoService;
+import com.springcloud.bean.vo.XsProductInfoVO;
+import com.springcloud.mapper.XsProductInfoMapper;
+import com.springcloud.service.XsProductInfoService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName : UserServiceImpl
@@ -18,10 +21,10 @@ import java.util.List;
  * @Date: 2019/11/18 17:22
  */
 @Service
-public class XsProdoctInfoServiceImpl implements XsProdoctInfoService {
+public class XsProductInfoServiceImpl implements XsProductInfoService {
 
     @Autowired
-    XsProdoctInfoMapper xsProdoctInfoMapper;
+    XsProductInfoMapper xsProdoctInfoMapper;
 
 
     @Override
@@ -45,18 +48,38 @@ public class XsProdoctInfoServiceImpl implements XsProdoctInfoService {
     }
 
     @Override
-    public XsProductInfo detailByCode(String sectionNumber) {
+    public XsProductInfoVO detailByCode(String sectionNumber) {
+
+        XsProductInfoVO vo = new XsProductInfoVO();
 
         QueryWrapper<XsProductInfo> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("ItemCode",sectionNumber);
         List<XsProductInfo> list = xsProdoctInfoMapper.selectList(queryWrapper);
 
         List<String> strSize = new ArrayList<>();
-        strSize.add(list.stream().distinct())
+        List<String> strColorName = new ArrayList<>();
+
+
         for(XsProductInfo xsProductInfo : list){
-
+            strSize.add(xsProductInfo.getSize());
+            vo.setItemName(xsProductInfo.getItemName());
+            vo.setPrice(xsProductInfo.getPrice());
+            vo.setBarCode(xsProductInfo.getBarCode());
+            vo.setItemCode(xsProductInfo.getItemCode());
+            strColorName.add(xsProductInfo.getColorName());
         }
+        removeDuplicate(strSize);
+        removeDuplicate(strColorName);
+        vo.setSize(strSize);
+        vo.setColorName(strColorName);
+        System.out.println(vo);
+        return vo;
+    }
 
-        return null;
+    public static void removeDuplicate(List list) {
+        HashSet h = new HashSet(list);
+        list.clear();
+        list.addAll(h);
+        System.out.println(list);
     }
 }

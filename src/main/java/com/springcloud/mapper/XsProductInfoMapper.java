@@ -12,7 +12,7 @@ import java.util.List;
 * @Date: 2020-04-30 14:18
 */
 
-public interface XsProdoctInfoMapper extends BaseMapper<XsProductInfo> {
+public interface XsProductInfoMapper extends BaseMapper<XsProductInfo> {
 
     /**
      * 查询款号信息

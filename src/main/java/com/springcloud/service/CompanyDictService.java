@@ -1,6 +1,7 @@
 package com.springcloud.service;
 
 
+import com.springcloud.bean.ao.CompanyDictAO;
 import com.springcloud.bean.dos.CompanyDivision;
 import com.springcloud.bean.dos.CompanyDict;
 import com.springcloud.bean.query.CompanyDictQuery;
@@ -59,6 +60,21 @@ public interface CompanyDictService {
      * @return
      */
     Boolean update(List<Integer> companyDictID, CompanyDivision companyDivision);
+
+
+    /**
+     * 新增
+     * @param companyDictAO
+     * @return
+     */
+    Boolean save(CompanyDictAO companyDictAO);
+
+    /**
+     * 删除
+     * @param companyDictAO
+     * @return
+     */
+    Boolean delete(CompanyDictAO companyDictAO);
 
     /**
      * 单体查询

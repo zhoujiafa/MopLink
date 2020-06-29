@@ -1,6 +1,7 @@
 package com.springcloud.service;
 
 import com.springcloud.bean.dos.XsProductInfo;
+import com.springcloud.bean.vo.XsProductInfoVO;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 * @Date: 2020-04-30 13:56
 */
 
-public interface XsProdoctInfoService {
+public interface XsProductInfoService {
 
     /**
      * 获取款号价格
@@ -31,6 +32,6 @@ public interface XsProdoctInfoService {
      * @param sectionNumber
      * @return
      */
-    XsProductInfo detailByCode(String sectionNumber);
+    XsProductInfoVO detailByCode(String sectionNumber);
 
 }

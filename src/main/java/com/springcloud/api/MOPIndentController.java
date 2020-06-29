@@ -4,10 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.reabam.sign.SignUtil;
 import com.springcloud.bean.ao.MOPIndentAO;
+import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.query.MOPIndentQuery;
 import com.springcloud.bean.vo.MOPIndentVO;
+import com.springcloud.service.CompanyDictService;
 import com.springcloud.service.MOPIndentService;
 import com.springcloud.util.PageResult;
+import com.springcloud.util.QueryResult;
 import com.springcloud.util.ResponseBean;
 import com.springcloud.util.ResponseBean2;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +37,8 @@ public class MOPIndentController {
 
     @Autowired
     MOPIndentService mopIndentService;
+    @Autowired
+    CompanyDictService companyDictService;
 
     @ApiOperation(value = "根据companyCode和orderNo获取信息", notes = "根据companyCode和orderNo获取信息")
     @PostMapping("/downloadMOPIndent")
@@ -40,8 +46,26 @@ public class MOPIndentController {
         String companyCode = data.get("companyCode").toString();
         String orderNo = data.get("orderNo").toString();
         /*String companyCode = "0181";
-        String orderNo = "DO8191209190458085";/164489302C4DC802F13D3CC9AFB85C0A*/
+        String orderNo = "DO8191209190458085"*/;//164489302C4DC802F13D3CC9AFB85C0A
         //String orderNo = "DO6191211170417270"/0D4074059F042A6FC5CFE5CB34C447DC;
+        MOPIndentVO mopIndentVO = mopIndentService.downloadMOPIndent(companyCode, orderNo);
+        return ResponseBean.ok(mopIndentVO);
+    }
+
+    @ApiOperation(value = "根据companyName和orderNo获取信息", notes = "根据companyName和orderNo获取信息")
+    @PostMapping("/downloadMOPIndentFromApp")
+    public ResponseBean<MOPIndentVO> getdatalineFromApp(@RequestBody Map data) {
+        String companyName = data.get("companyName").toString();
+        String orderNo = data.get("orderNo").toString();
+
+        CompanyDictQuery query = new CompanyDictQuery();
+        query.setCompanyName(companyName);
+        String companyCode = null;
+        QueryResult<CompanyDict> queryResult = companyDictService.page(1,1,query);
+        if(queryResult.getRecords().size()>0){
+            companyCode = queryResult.getRecords().get(0).getCompanyCode();
+        }
+
         MOPIndentVO mopIndentVO = mopIndentService.downloadMOPIndent(companyCode, orderNo);
         return ResponseBean.ok(mopIndentVO);
     }

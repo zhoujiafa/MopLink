@@ -1,4 +1,4 @@
-package com.springcloud.analyticalData;
+package com.springcloud.analyticaldata;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class Solution {
+public class Solution2 {
 
     // 数组个数
     private static int arrLen1 = 5;
@@ -17,7 +17,7 @@ public class Solution {
     private static int arrLen2 = 6;
 
     // number的范围
-    //private static int maxNum = 50;
+    private static int maxNum = 50;
 
     // 二维数组集合
     private static int[][] arr = new int[arrLen1][arrLen2];
@@ -38,7 +38,8 @@ public class Solution {
     private static int primeIndex = arrLen1 + 1;
 
 
-    private static void permutation(int[][] arr) {
+    private static void permutation() {
+        // 所有质数
         primeNumber();
         // 处理数组
         recurInt(0, 0);
@@ -105,7 +106,7 @@ public class Solution {
     private static void primeNumber(){
         prime = new HashSet<Integer>();
         int i, j;
-        for (i = 2; i <= 35; i++) {
+        for (i = 2; i <= maxNum; i++) {
             for (j = 2; j <= i/2; j++) {
                 if (i%j == 0) {
                     break;
@@ -117,17 +118,17 @@ public class Solution {
         }
     }
 
-    /*private static void init(){
+    private static void init(){
         for (int i = 0; i < arrLen1; i++) {
             int[] arr2 = new int[arrLen2];
             // 记录数组已存在的数值
             Set<Integer> intSet = new HashSet<Integer>();
             for (int j = 0; j < arrLen2; j++) {
                 Random random = new Random();
-                int num = random.nextInt(35);
+                int num = random.nextInt(maxNum);
                 // 单个数组不重复数字
                 while (intSet.contains(num) || num == 0) {
-                    num = random.nextInt(35);
+                    num = random.nextInt(maxNum);
                 }
                 arr2[j] = num;
                 intSet.add(num);
@@ -141,7 +142,7 @@ public class Solution {
             }
             arr[i] = arr2;
         }
-    }*/
+    }
 
     /**
      * 打印
@@ -160,10 +161,10 @@ public class Solution {
     public static void main(String[] args) {
 
         // 初始化数组
-        //init();
+        init();
 
         // 计算结果
-        permutation(arr);
+        permutation();
 
         System.out.println();
         System.out.println("*******结果***********");

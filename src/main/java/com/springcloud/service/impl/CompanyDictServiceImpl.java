@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.springcloud.bean.ao.CompanyDictAO;
 import com.springcloud.bean.dos.CompanyDivision;
 import com.springcloud.bean.dos.CompanyDict;
 import com.springcloud.bean.query.CompanyDictQuery;
@@ -62,17 +63,21 @@ public class CompanyDictServiceImpl extends ServiceImpl<CompanyDictMapper, Compa
     public QueryResult<CompanyDict> page(long page, long size, CompanyDictQuery companyDictQuery) {
 
         QueryWrapper<CompanyDict> queryWrapper = new QueryWrapper<>();
-        queryWrapper = queryEntity(companyDictQuery, queryWrapper);
-
+        //queryWrapper = queryEntity(companyDictQuery, queryWrapper);
+        if (!StringUtils.isEmpty(companyDictQuery.getCompanyName())) {
+            queryWrapper.like("companyName", companyDictQuery.getCompanyName());
+        }
+        if (!StringUtils.isEmpty(companyDictQuery.getCompanyCode())) {
+            queryWrapper.like("companyCode",companyDictQuery.getCompanyCode());
+        }
         Page<CompanyDict> pageinfo = new Page(page, size);
         pageinfo.setSearchCount(true);
+
         IPage<CompanyDict> ipage = companyDictMapper.selectPage(pageinfo, queryWrapper);
 
         QueryResult queryResult = new QueryResult<CompanyDict>();
         BeanUtils.copyProperties(ipage, queryResult);
 
-//        queryResult.setRecords(ipage.getRecords());
-//        queryResult.setTotal(ipage.getTotal());
 
         return queryResult;
     }
@@ -108,6 +113,22 @@ public class CompanyDictServiceImpl extends ServiceImpl<CompanyDictMapper, Compa
             updateModel.setXunsoftDeptCode(searchModel.getXunsoftDeptCode());
         }
         return companyDictMapper.updateById(updateModel) > 0;
+    }
+
+    @Override
+    public Boolean save(CompanyDictAO companyDictAO) {
+
+        CompanyDict companyDict = new CompanyDict();
+        BeanUtils.copyProperties(companyDictAO,companyDict);
+        return companyDictMapper.save(companyDict);
+    }
+
+    @Override
+    public Boolean delete(CompanyDictAO companyDictAO) {
+
+        QueryWrapper<CompanyDict> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("companyCode", companyDictAO.getCompanyCode());
+        return companyDictMapper.delete(queryWrapper) > 0;
     }
 
     @Override

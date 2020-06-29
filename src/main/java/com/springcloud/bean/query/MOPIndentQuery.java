@@ -12,6 +12,7 @@ import lombok.Data;
 @Data
 public class MOPIndentQuery {
 
+    private String companyName;
     private String companyCode;
     private String orderNo;
 }
