@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.XsProdoctInfoMapper">
+    <resultMap id="XsProdoctMap" type="com.springcloud.bean.dos.XsProductInfo">
+        <result property="barCode" column="BarCode"></result>
+        <result property="itemCode" column="ItemCode"></result>
+        <result property="itemName" column="ItemName"></result>
+        <result property="colorName" column="ColorName"></result>
+        <result property="size" column="Size"></result>
+        <result property="price" column="Price"></result>
+    </resultMap>
+
+    <sql id="Base_Columns">
+        barCode,itemCode,itemName,colorName,size,price
+    </sql>
+
+    <select id="list" resultMap="XsProdoctMap">
+        select
+        DISTINCT xsProductInfo.ItemCode,price
+        from
+        xsProductInfo
+        <if test="itemCode !=null and itemCode != ''">
+            where itemCode like '%'+#{itemCode}+'%'
+        </if>
+    </select>
+
+    <select id="allItemCode" resultMap="XsProdoctMap">
+        select
+          DISTINCT xsProductInfo.ItemCode
+        from
+        XsProductInfo
+
+    </select>
+
+
+</mapper>
