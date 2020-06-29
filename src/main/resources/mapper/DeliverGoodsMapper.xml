@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.DeliverGoodsMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.DeliverGoods">
+        <result property="docNum" column="唯一码"></result>
+        <result property="skuBarcode" column="SKU"></result>
+        <result property="designNumber" column="款号"></result>
+        <result property="designName" column="款名"></result>
+        <result property="color" column="颜色"></result>
+        <result property="size" column="尺码"></result>
+        <result property="priceTag" column="吊牌价"></result>
+        <result property="outboundPrice" column="出库价"></result>
+    </resultMap>
+
+    <select id="getDeliverGoods" statementType="CALLABLE" parameterType="string"
+            resultMap="userMap">
+          {call
+            MOP_GET_DeliveryOrder(
+            #{docNum,mode=IN,jdbcType=VARCHAR}
+        )}
+    </select>
+
+
+</mapper>
