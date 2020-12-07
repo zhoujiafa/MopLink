@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.IndentDetailMapper">
+
+    <resultMap id="ResultMap" type="com.springcloud.bean.dos.IndentDetail">
+        <id property="iD" column="iD"></id>
+        <result property="docNum" column="docNum"></result>
+        <result property="itemName" column="itemName"></result>
+        <result property="quantity" column="quantity"></result>
+        <result property="itemCode" column="itemCode"></result>
+        <result property="specCode" column="specCode"></result>
+        <result property="itemUnit" column="itemUnit"></result>
+        <result property="remark" column="remark"></result>
+        <result property="skuBarcode" column="skuBarcode"></result>
+        <result property="unit" column="unit"></result>
+        <result property="price" column="price"></result>
+        <result property="subtotal" column="subtotal"></result>
+        <result property="barCode" column="barCode"></result>
+        <result property="lineNum" column="lineNum"></result>
+        <result property="itemNum" column="itemNum"></result>
+        <result property="realPrice" column="realPrice"></result>
+        <result property="needsCount" column="needsCount"></result>
+        <result property="realTotal" column="realTotal"></result>
+        <result property="listPrice" column="listPrice"></result>
+        <result property="lineTotal" column="lineTotal"></result>
+        <result property="promotionMoney" column="promotionMoney"></result>
+        <result property="totalExpressFee" column="totalExpressFee"></result>
+        <result property="realPriceLineTotal" column="realPriceLineTotal"></result>
+        <result property="itemQuantity" column="itemQuantity"></result>
+        <result property="specName" column="specName"></result>
+
+
+    </resultMap>
+
+
+
+
+    <insert id="batchInsert" parameterType="List">
+        insert into indentDetail
+        (docNum,itemName,quantity,itemCode,specCode,itemUnit,remark,skuBarcode,unit,price,
+        subtotal,barCode,lineNum,itemNum,realPrice,needsCount,realTotal,listPrice,
+        lineTotal,promotionMoney,totalExpressFee,realPriceLineTotal,itemQuantity,specName)
+        values
+        <foreach collection="list" item="item"  separator=",">
+            (
+            #{item.docNum},
+            #{item.itemName},
+            #{item.quantity},
+            #{item.itemCode},
+            #{item.specCode},
+            #{item.itemUnit},
+            #{item.remark},
+            #{item.skuBarcode},
+            #{item.unit},
+            #{item.price},
+            #{item.subtotal},
+            #{item.barCode},
+            #{item.lineNum},
+            #{item.itemNum},
+            #{item.realPrice},
+            #{item.needsCount},
+            #{item.realTotal},
+            #{item.listPrice},
+            #{item.lineTotal},
+            #{item.promotionMoney},
+            #{item.totalExpressFee},
+            #{item.realPriceLineTotal},
+            #{item.itemQuantity},
+            #{item.specName}
+            )
+        </foreach>
+    </insert>
+
+
+</mapper>

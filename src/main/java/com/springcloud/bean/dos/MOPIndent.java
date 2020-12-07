@@ -3,6 +3,9 @@ package com.springcloud.bean.dos;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.Date;
+
+
 /**
  * @ClassName : MOPIndent
  * @Description :
@@ -22,7 +25,7 @@ public class MOPIndent {
     /**  订货单号 */
     private String orderNo;
     /**  到货日期 */
-    private String deliveryDate;
+    private Date deliveryDate;
     /**  单据类型编码 */
     private String orderType;
     /**  单据类型名称 */
@@ -34,7 +37,7 @@ public class MOPIndent {
     /**  订货单状态名称 */
     private String orderStatusName;
     /**  单据创建时间 */
-    private String createDate;
+    private Date createDate;
     /**  单据创建人 */
     private String createName;
 

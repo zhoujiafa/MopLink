@@ -20,7 +20,7 @@ public class IndentDetail {
     /** 商品名称 */
     private String itemName;
     /** 商品数量 */
-    private String quantity;
+    private Double quantity;
     /** 商品编码 */
     private String itemCode;
     /** 规格编码 */
@@ -34,14 +34,34 @@ public class IndentDetail {
     /** 单位 */
     private String unit;
     /** 单价 */
-    private String price;
+    private Double price;
     /** 小计 */
-    private String subtotal;
+    private Double subtotal;
     /** 卡号 */
     private String barCode;
     /** 条码 */
     private String lineNum;
     /** 商品编码 */
     private String itemNum;
+    /** 实付单价 */
+    private Double realPrice;
+    /** 商品总数量 */
+    private Double needsCount;
+    /** 单据实付金额 */
+    private Double realTotal;
+    /** 调拨数量 订货价 */
+    private Double listPrice;
+    /** 调拨数量	商品总额 */
+    private Double lineTotal;
+    /** 调拨数量	优惠金额 */
+    private Double promotionMoney;
+    /** 运费 */
+    private Double totalExpressFee;
+    /** 实付总额 */
+    private Double realPriceLineTotal;
+    /** 商品当前单位数量 */
+    private Double itemQuantity;
+    /** 商品规格名称 */
+    private String specName;
 
 }

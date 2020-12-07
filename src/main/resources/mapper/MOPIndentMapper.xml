@@ -21,4 +21,18 @@
     (companyCode = #{companyCode} AND orderNo = #{orderNo})order by createDate desc
     </select>
 
+    <select id="saveMopIndent" statementType="CALLABLE" parameterType="java.util.Map"
+            resultType="com.springcloud.bean.vo.SaveResult">
+          {call
+            Insert_mopindent(
+            #{companyCode,mode=IN,jdbcType=VARCHAR},
+            #{docNum,mode=IN,jdbcType=VARCHAR},
+            #{createName,jdbcType=INTEGER},
+            #{IsRetransmit,jdbcType=BIT},
+            #{IsCompulsorySubmission,jdbcType=BIT},
+            #{ResultInt,jdbcType=INTEGER},
+            #{ResultString,jdbcType=VARCHAR}
+        )}
+    </select>
+
 </mapper>

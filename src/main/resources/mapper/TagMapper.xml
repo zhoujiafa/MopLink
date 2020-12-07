@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.TagMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.Tag">
+
+        <result property="tagNo" column="tagNo"></result>
+        <result property="count" column="count"></result>
+        <result property="creator" column="creator"></result>
+        <result property="address" column="address"></result>
+        <result property="createtime" column="createtime"></result>
+        <result property="remark" column="remark"></result>
+    </resultMap>
+
+    <select id="tagListByPhone"  resultMap="userMap">
+      select * from tag where tag.creator in
+      (select sysUser.userName from sysUser where telephone = #{phone})
+
+    </select>
+
+</mapper>

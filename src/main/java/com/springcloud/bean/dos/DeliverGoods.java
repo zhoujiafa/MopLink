@@ -14,9 +14,13 @@ import lombok.Data;
 public class DeliverGoods {
 
    private String docNum;
+   private String orderNo;
    private String skuBarcode;
    private String designNumber;
    private String designName;
+   private String remark;
+   private String unit;
+   private String baseDocNum;
    private String color;
    private String size;
    private String priceTag;

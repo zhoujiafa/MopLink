@@ -9,6 +9,7 @@
         <result property="barCode" column="barCode"></result>
         <result property="barName" column="barName"></result>
         <result property="price" column="price"></result>
+        <result property="count" column="count"></result>
     </resultMap>
 
     <sql id="Base_Columns">
@@ -40,5 +41,29 @@
               where  companyName like '%'+#{companyName}+'%'
           </if>
     </select>-->
+
+   <select id="selectBatchItemCode" parameterType="java.util.List" resultMap="BaseResultMap">
+        SELECT skuBarcode,specName,itemCode,barName,COUNT(itemCode)
+         FROM goodsDict
+         WHERE skuBarcode
+         IN
+       <foreach collection="itemCode" item="skuBarcode" index="index" close=")" open="(" separator=",">
+           #{skuBarcode}
+       </foreach>
+        group by skuBarcode,specName,itemCode,barName
+        order by itemCode
+   </select>
+
+    <select id="selectBatchItemCode2" parameterType="java.util.List" resultMap="BaseResultMap">
+        SELECT itemCode,barName,COUNT(itemCode) count
+        FROM goodsDict
+        WHERE skuBarcode
+        IN
+        <foreach collection="itemCode" item="skuBarcode" index="index" close=")" open="(" separator=",">
+            #{skuBarcode}
+        </foreach>
+        group by itemCode,barName
+        order by itemCode
+    </select>
 
 </mapper>

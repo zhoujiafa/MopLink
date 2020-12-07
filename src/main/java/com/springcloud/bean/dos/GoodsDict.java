@@ -44,4 +44,6 @@ public class GoodsDict  implements Serializable{
     @TableField("price")
     Double price;
 
+    int count;
+
 }

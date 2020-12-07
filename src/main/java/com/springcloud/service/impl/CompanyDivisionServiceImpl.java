@@ -22,7 +22,10 @@ import java.util.List;
 * @Author : Joe
 * @Date: 2019/11/18 10:51
 */
-@DS("jzn_wms_test")
+/*测试数据库
+/ @DS("jzn_wms_test")
+*/
+@DS("jzn_wms")
 @Service
 @Transactional(readOnly = true)
 public class CompanyDivisionServiceImpl implements CompanyDivisionService {

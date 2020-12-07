@@ -47,15 +47,39 @@ public class UserController {
         return ResponseBean2.ok(userService.login(userAO));
     }
 
+    /**
+     * 小程序登录
+     * @param userAO
+     * @return
+     */
+    @ApiOperation(value = "用户登录", notes = "用户登录")
+    @PostMapping("/xcxlogin")
+    public ResponseBean2<UserVO> xcxlogin(@RequestBody UserAO userAO) {
+        return ResponseBean2.ok(userService.xcxlogin(userAO));
+    }
+
+//    @ApiOperation(value = "用户登录", notes = "用户登录")
+//    @PostMapping("/wechatAppLogin")
+//    public ResponseBean2<UserVO> login(String username, String password) {
+//        UserAO  userAO = new UserAO();
+//        userAO.setUserName(username);
+//        userAO.setPassword(password);
+//        return ResponseBean2.ok(userService.login(userAO));
+//    }
+
     @ApiOperation(value = "用户登录", notes = "用户登录")
     @PostMapping("/wechatAppLogin")
-    public ResponseBean2<UserVO> login(String username, String password) {
-        UserAO  userAO = new UserAO();
-        userAO.setUserName(username);
-        userAO.setPassword(password);
+    public ResponseBean2<UserVO> wechatAppLogin(UserAO userAO) {
+
         return ResponseBean2.ok(userService.login(userAO));
     }
 
+    @ApiOperation(value = "用户注册", notes = "用户注册")
+    @PostMapping("/wechatAppRegister")
+    public ResponseBean2<UserVO> wechatAppRegister(UserAO userAO) {
+
+        return ResponseBean2.ok(userService.wechatAppRegister(userAO));
+    }
 
     @ApiOperation(value = "用户注册", notes = "用户注册")
     @PostMapping("/save")

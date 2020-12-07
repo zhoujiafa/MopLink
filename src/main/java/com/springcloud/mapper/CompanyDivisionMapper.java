@@ -14,7 +14,7 @@ import java.util.List;
 * @Author : Joe
 * @Date: 2019/11/20 16:58
 */
-@DS(value = "jzn_wms_test")
+@DS(value = "jzn_wms")
 @Mapper
 public interface CompanyDivisionMapper extends BaseMapper<CompanyDivision> {
 

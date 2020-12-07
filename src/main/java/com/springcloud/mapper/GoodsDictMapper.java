@@ -3,6 +3,7 @@ package com.springcloud.mapper;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.springcloud.bean.dos.GoodsDict;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -24,6 +25,20 @@ public interface GoodsDictMapper extends BaseMapper<GoodsDict> {
      * @return
      */
     Boolean batchInsert(List<GoodsDict> companyDictList);
+
+    /**
+     * 吊牌查询（颜色分组）
+     * @param itemCode
+     * @return
+     */
+    List<GoodsDict>  selectBatchItemCode(@Param("itemCode")List<String> itemCode);
+
+    /**
+     * 吊牌查询（款式分组）
+     * @param itemCode
+     * @return
+     */
+    List<GoodsDict>  selectBatchItemCode2(@Param("itemCode")List<String> itemCode);
 
 
 }

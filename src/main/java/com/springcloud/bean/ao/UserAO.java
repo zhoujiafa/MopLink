@@ -13,6 +13,10 @@ public class UserAO {
 
     /** 姓名 */
     private String name;
+    /** 电话*/
+    private String phone;
+    /** 密码*/
+    private String pwd;
     /** 用户名 */
     private String userName;
      /** 登录密码 */
@@ -20,7 +24,9 @@ public class UserAO {
     /** 联系电话 */
     private String telePhone;
     /** 性别 */
-    private Long sex;
+    private String sex;
     /** 邮箱 */
     private String email;
+    /** 地址 */
+    private String address;
 }

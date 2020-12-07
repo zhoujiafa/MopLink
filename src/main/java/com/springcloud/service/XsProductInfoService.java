@@ -1,5 +1,6 @@
 package com.springcloud.service;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.springcloud.bean.dos.XsProductInfo;
 import com.springcloud.bean.vo.XsProductInfoVO;
 
@@ -12,6 +13,7 @@ import java.util.List;
 * @Date: 2020-04-30 13:56
 */
 
+@DS("stock")
 public interface XsProductInfoService {
 
     /**

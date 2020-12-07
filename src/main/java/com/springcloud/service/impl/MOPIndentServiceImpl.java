@@ -13,6 +13,7 @@ import com.springcloud.bean.dos.*;
 import com.springcloud.bean.query.MOPIndentQuery;
 import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.bean.vo.SaveResult;
+import com.springcloud.mapper.IndentDetailMapper;
 import com.springcloud.mapper.IndentMapper;
 import com.springcloud.mapper.MOPIndentDtMapper;
 import com.springcloud.mapper.MOPIndentMapper;
@@ -56,6 +57,8 @@ public class MOPIndentServiceImpl implements MOPIndentService {
     MOPIndentDtMapper mopIndentDtMapper;
     @Autowired
     IndentMapper indentMapper;
+    @Autowired
+    IndentDetailMapper indentDetailMapper;
 
 
     @Override
@@ -107,8 +110,8 @@ public class MOPIndentServiceImpl implements MOPIndentService {
         map.put("IsCompulsorySubmission", false);
         map.put("docNum", addMOPIndent.getDocNum());
         BeanUtils.copyProperties(mopIndentAO, addMOPIndent);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        addMOPIndent.setCreateDate(dateFormat.format(new Date()));
+        //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        addMOPIndent.setCreateDate(new Date());
         List<MOPIndentDt> mopIndentDts = mopIndentAO.getLines();
         if (mopIndentDts.size() > 0 && mopIndentDts != null) {
             for (MOPIndentDt mopIndentDt : mopIndentDts) {
@@ -155,8 +158,11 @@ public class MOPIndentServiceImpl implements MOPIndentService {
     @Override
     public ResponseBean2<SaveResult> thirdPartyUse(MOPIndentAO mopIndentAO) {
         SaveResult saveResult = new SaveResult();
+
         MOPIndent addMOPIndent = new MOPIndent();
+        Indent addIndent = new Indent();
         Map<String, Object> map = new HashMap<String, Object>();
+        addIndent.setDocNum(OrderDetail.getMopPrimaryKey());
         addMOPIndent.setDocNum(OrderDetail.getMopPrimaryKey());
         map.put("companyCode", mopIndentAO.getCompanyCode());
         map.put("ResultString", "success");
@@ -165,31 +171,32 @@ public class MOPIndentServiceImpl implements MOPIndentService {
         map.put("IsRetransmit", false);
         map.put("IsCompulsorySubmission", false);
         map.put("docNum", addMOPIndent.getDocNum());
-        QueryWrapper<Indent> queryWrapper = new QueryWrapper<>();
+        //检查 MOP 数据重复
+        QueryWrapper<MOPIndent> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("orderNo", mopIndentAO.getOrderNo());
         queryWrapper.eq("companyCode", mopIndentAO.getCompanyCode());
-        Indent searchModel = indentMapper.selectOne(queryWrapper);
+        List<MOPIndent> searchModels = mopIndentMapper.selectList(queryWrapper);
         //转换已存在的订货单
-        if (searchModel != null) {
+        if (searchModels.size()> 0) {
             return ResponseBean2.fail("此订单已存在，请勿重复操作!");
-            /*saveResult.setResultString("此订单已存在，请勿重复操作!");*/
         }else{
             BeanUtils.copyProperties(mopIndentAO, addMOPIndent);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            addMOPIndent.setCreateDate(dateFormat.format(new Date()));
+            //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            addMOPIndent.setCreateDate(new Date());
             mopIndentMapper.insert(addMOPIndent);
             List<MOPIndentDt> mopIndentDts = mopIndentAO.getLines();
             if (mopIndentDts.size() > 0 && mopIndentDts != null) {
                 for (MOPIndentDt mopIndentDt : mopIndentDts) {
                     mopIndentDt.setDocNum(addMOPIndent.getDocNum());
                 }
+
                 boolean bool = mopIndentDtMapper.batchInsert(mopIndentDts);
                 if (!bool) {
                     return ResponseBean2.fail("订单明细数据异常，录入失败!");
                 }
             }
         }
-        saveResult = indentMapper.saveIndent(map);
+        saveResult = mopIndentMapper.saveMopIndent(map);
         return ResponseBean2.ok(saveResult.getResultString());
     }
 
@@ -269,6 +276,7 @@ public class MOPIndentServiceImpl implements MOPIndentService {
             HttpPost httpPost = new HttpPost(url);
             StringEntity sEntity = new StringEntity(params, "UTF-8");
             httpPost.setEntity(sEntity);
+            httpPost.setHeader("Content-Type", "application/json");
             CloseableHttpResponse response = httpClient.execute(httpPost);
             try {
                 HttpEntity entity = response.getEntity();

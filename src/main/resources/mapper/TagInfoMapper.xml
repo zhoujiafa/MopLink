@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloud.mapper.TagInfoMapper">
+    <resultMap id="userMap" type="com.springcloud.bean.dos.TagInfo">
+
+        <result property="tagNo" column="tagNo"></result>
+        <result property="uniquecode" column="uniquecode"></result>
+        <result property="productcode" column="productcode"></result>
+    </resultMap>
+
+    <insert id="batchInsert" parameterType="List">
+        insert into taginfo
+        (tagNo,uniquecode,productcode)
+        values
+        <foreach collection="list" item="item"  separator=",">
+            (
+            #{item.tagNo},
+            #{item.uniquecode},
+            #{item.productcode}
+            )
+        </foreach>
+    </insert>
+
+    <select id="tagColorByPerson" resultMap="userMap">
+        select * from tagInfo
+        where tagNo in
+        (select tagNo from tag where tag.creator in
+        (select sysUser.userName from sysUser where telephone = #{phone}))
+
+    </select>
+
+</mapper>

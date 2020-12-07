@@ -64,7 +64,7 @@ public class MOPIndentAD {
     /**
      * 依次取出JSONArray中的值
      */
-    private List<MOPIndentDt> getJsonArrayItem(JSONArray array)  {
+    public static List<MOPIndentDt> getJsonArrayItem(JSONArray array)  {
         List<MOPIndentDt> mopIndentDts = new ArrayList<>();
         if (array != null) {
             for (int i=0;i<array.size();i++) {
@@ -87,6 +87,8 @@ public class MOPIndentAD {
                 mopIndentDt.setLineTotal(jsonObj1.getDouble("lineTotal"));
                 mopIndentDt.setPromotionMoney(jsonObj1.getDouble("promotionMoney"));
                 mopIndentDt.setTotalExpressFee(jsonObj1.getDouble("totalExpressFee"));
+                mopIndentDt.setRealTotal(jsonObj1.getDouble("realTotal"));
+                mopIndentDt.setNeedsCount(jsonObj1.getDouble("needsCount"));
                 mopIndentDts.add(mopIndentDt);
             }
         }

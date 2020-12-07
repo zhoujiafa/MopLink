@@ -3,7 +3,10 @@ package com.springcloud.mapper;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.springcloud.bean.dos.MOPIndent;
+import com.springcloud.bean.vo.SaveResult;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.Map;
 
 /**
  * @ClassName : MOPIndentMapper
@@ -16,5 +19,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MOPIndentMapper extends BaseMapper<MOPIndent> {
 
     MOPIndent  getOne(String companyCode,String orderNo);
+
+    SaveResult saveMopIndent(Map<String, Object> map);
 
 }

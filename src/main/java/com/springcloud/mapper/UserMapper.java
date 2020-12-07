@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @ClassName: $ClassName$
  * @Create: $Date$ $Time$
  */
-@DS(value = "stock")
+@DS(value = "stock_test")
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 

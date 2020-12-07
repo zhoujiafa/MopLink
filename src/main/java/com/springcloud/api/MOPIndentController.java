@@ -1,10 +1,13 @@
 package com.springcloud.api;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.reabam.sign.SignUtil;
+import com.springcloud.analyticaldata.MOPIndentAD;
 import com.springcloud.bean.ao.MOPIndentAO;
 import com.springcloud.bean.dos.CompanyDict;
+import com.springcloud.bean.dos.MOPIndentDt;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.query.MOPIndentQuery;
 import com.springcloud.bean.vo.MOPIndentVO;
@@ -21,9 +24,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 
 /**
  * @ClassName : MOPIndentController
@@ -155,6 +157,96 @@ public class MOPIndentController {
         if (mopIndentVO != null) {
             MOPIndentAO mopIndentAO = new MOPIndentAO();
             BeanUtils.copyProperties(mopIndentVO, mopIndentAO);
+            responseBean2 = mopIndentService.thirdPartyUse(mopIndentAO);
+            if (responseBean2.getResultInt() != 0) {
+                responseBean2.setResultInt(-1);
+            }
+        }
+
+        return responseBean2;
+    }
+
+
+    @Transactional
+    @ApiOperation(value = "提供第三方接口（第三方下订单直接上传单据：下单事件）")
+    @RequestMapping(value = "/PlaceAnMOPIndents", method = {RequestMethod.POST,RequestMethod.GET})
+    public ResponseBean2 PlaceAnOrders(HttpServletResponse response, @RequestBody Map data) {
+            response.setHeader("Access-Control-Allow-Origin", "*");
+        ResponseBean2 responseBean2 = new ResponseBean2();
+        String companyCode = data.get("companyCode").toString();
+        JSONObject dataJson = JSONObject.parseObject(data.get("dataJson").toString());
+        //postman测试
+        //JSONObject dataJson = (JSONObject) JSON.toJSON(data.get("dataJson"));
+
+
+        String orderNo = dataJson.getString("orderNo");
+        String sign = data.get("sign").toString();
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("orderNo", orderNo);
+        map.put("companyName", dataJson.getString("companyName"));
+        map.put("deliveryDate", dataJson.getString("deliveryDate"));
+        map.put("orderType", dataJson.getString("orderType"));
+        map.put("orderTypeName", dataJson.getString("orderTypeName"));
+        map.put("payStatusName", dataJson.getString("payStatusName"));
+        map.put("orderStatus", dataJson.getString("orderStatus"));
+        map.put("orderStatusName", dataJson.getString("orderStatusName"));
+        map.put("createDate", dataJson.getString("createDate"));
+        map.put("createName", dataJson.getString("createName"));
+
+        //JSONArray array = dataJson.getJSONArray(dataJson.getString("array"));
+        JSONArray array = dataJson.getJSONArray("array");
+
+        //JSONObject line = JSONObject.parseObject(dataJson.getString("lines"));
+        //JSONArray array = new JSONArray();
+        //array.add(line);
+        List<Map> mapList = new LinkedList<>();
+        for (Object maps:array){
+            Map<String, Object> linesMaps = new HashMap<>();
+            linesMaps = (Map<String, Object>) maps;
+            mapList.add(linesMaps);
+        }
+
+        map.put("array", mapList);
+
+        //map.put("lines", array);
+        String json=JSON.toJSONString(map);
+        String key = "A1DF1E59090EAFF035C3091003A05CFC";
+        String appId = "94916115E6732C11D5984075C4DB588B";
+        Map<String, Object> params = new HashMap<>();
+        params.put("appId", appId);
+        params.put("companyCode", companyCode);
+        params.put("dataJson", json);
+        String newSign = JSON.toJSON(SignUtil.sign(params, key).get("sign")).toString();
+        /*String MD5Str = MD5Util.getMD5(newSign);*/
+
+        MOPIndentVO mopIndentVOs = new MOPIndentVO();
+        mopIndentVOs.setCompanyName(dataJson.getString("companyName"));
+        mopIndentVOs.setCompanyCode(companyCode);
+        mopIndentVOs.setOrderNo(dataJson.getString("orderNo"));
+        mopIndentVOs.setDeliveryDate(dataJson.getString("deliveryDate"));
+        mopIndentVOs.setOrderType(dataJson.getString("orderType"));
+        mopIndentVOs.setOrderTypeName(dataJson.getString("orderTypeName"));
+        mopIndentVOs.setPayStatusName(dataJson.getString("payStatusName"));
+        mopIndentVOs.setOrderStatus(dataJson.getString("orderStatus"));
+        mopIndentVOs.setOrderStatusName(dataJson.getString("orderStatusName"));
+        mopIndentVOs.setCreateDate(dataJson.getString("createDate"));
+        mopIndentVOs.setCreateName(dataJson.getString("createName"));
+
+        List<MOPIndentDt> mopIndentDts = new ArrayList<>();
+        //JSONArray dataLine = dataJson.getJSONArray(dataJson.getString("lines"));
+
+
+        mopIndentDts = MOPIndentAD.getJsonArrayItem(array);
+
+        mopIndentVOs.setLines(mopIndentDts);
+
+        if (!newSign.equals(sign)) {
+            return ResponseBean2.fail("签名无效，请检查和核实签名信息");
+            /*saveResult.setResultString("签名无效，请检查和核实签名信息");*/
+        }
+        if (mopIndentVOs != null) {
+            MOPIndentAO mopIndentAO = new MOPIndentAO();
+            BeanUtils.copyProperties(mopIndentVOs, mopIndentAO);
             responseBean2 = mopIndentService.thirdPartyUse(mopIndentAO);
             if (responseBean2.getResultInt() != 0) {
                 responseBean2.setResultInt(-1);

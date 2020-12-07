@@ -42,7 +42,8 @@ public class User {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date createDate;
     /** 删除标识 */
-    private Long deleted;
+    private Integer deleted;
 
-
+    /** 注册状态 */
+    private String status;
 }

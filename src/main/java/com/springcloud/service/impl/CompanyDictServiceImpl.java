@@ -78,7 +78,6 @@ public class CompanyDictServiceImpl extends ServiceImpl<CompanyDictMapper, Compa
         QueryResult queryResult = new QueryResult<CompanyDict>();
         BeanUtils.copyProperties(ipage, queryResult);
 
-
         return queryResult;
     }
 
