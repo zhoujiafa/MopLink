@@ -14,7 +14,7 @@
     <select id="tagListByPhone"  resultMap="userMap">
       select * from tag where tag.creator in
       (select sysUser.userName from sysUser where telephone = #{phone})
-
+      order by createtime desc
     </select>
 
 </mapper>

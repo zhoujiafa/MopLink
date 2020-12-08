@@ -1,5 +1,6 @@
 package com.springcloud.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springcloud.bean.dos.GoodsDict;
 import com.springcloud.bean.dos.Tag;
 import com.springcloud.bean.dos.TagInfo;
@@ -41,5 +42,20 @@ public class TagServiceImpl implements TagService {
         List<Tag> list = tagMapper.tagListByPhone(phone);
 
         return list;
+    }
+
+    @Override
+    public List<Tag> tagListByTagNoAndDate(String userName,String tagNo, String date, String date2) {
+
+        QueryWrapper<Tag> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("creator",userName);
+        if(!tagNo.equals("")&& tagNo!=null){
+            queryWrapper.eq("tagNo",tagNo);
+        }
+        queryWrapper.ge("createtime",date);
+        queryWrapper.le("createtime",date2);
+        queryWrapper.orderByDesc("createtime");
+        List<Tag> tagList = tagMapper.selectList(queryWrapper);
+        return tagList;
     }
 }

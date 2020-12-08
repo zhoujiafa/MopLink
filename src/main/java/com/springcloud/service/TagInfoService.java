@@ -43,4 +43,13 @@ public interface TagInfoService {
      */
     List<TagInfo> tagColorByPerson(String phone);
 
+    /**
+     * 根据吊牌扫描人信息查询以往记录
+     * @param uniqueCode
+     * @return
+     */
+    TagInfo tagInfodoesItExist(String uniqueCode);
+
+
+
 }

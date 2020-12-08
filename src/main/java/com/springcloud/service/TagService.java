@@ -26,4 +26,13 @@ public interface TagService {
      */
     List<Tag> tagListByPhone(String phone);
 
+    /**
+     * 根据单号和日期查询以往记录
+     * @param tagNo
+     * @param date
+     * @param date2
+     * @return
+     */
+    List<Tag> tagListByTagNoAndDate(String userName,String tagNo,String date,String date2);
+
 }

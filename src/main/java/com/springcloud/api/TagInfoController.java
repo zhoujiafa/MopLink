@@ -62,7 +62,7 @@ public class TagInfoController {
         return ResponseBean.ok(voList);
     }
 
-    @ApiOperation(value = "检查吊牌是否存在(单条查询)", notes = "检查吊牌是否存在")
+    @ApiOperation(value = "检查吊牌颜色是否存在(单条查询)", notes = "检查吊牌颜色是否存在")
     @PostMapping("/tagColorByCode")
     public ResponseBean<TagInfoVo> tagColorByCode(@RequestParam("listdata") String listdata) {
 
@@ -87,8 +87,18 @@ public class TagInfoController {
 //            return ResponseBean.fail("请录入数据！");
 //        }
 
-        List<TagInfo> tagInfoList = tagInfoService.tagColorByPerson("15876318997");
+        List<TagInfo> tagInfoList = tagInfoService.tagColorByPerson(phone);
         return ResponseBean.ok(tagInfoList);
+    }
+
+
+    @ApiOperation(value = "检查吊牌是否被扫过(单条查询)", notes = "检查吊牌是否被扫过")
+    @PostMapping("/tagInfodoesItExist")
+    public ResponseBean<TagInfoVo> tagInfodoesItExist(@RequestParam("uniqueCode") String uniqueCode) {
+
+        TagInfo vo = tagInfoService.tagInfodoesItExist(uniqueCode);
+
+        return ResponseBean.ok(vo);
     }
 
 }

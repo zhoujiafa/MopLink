@@ -14,8 +14,6 @@ import com.springcloud.bean.vo.SaveResult;
 import com.springcloud.mapper.MOPNeedOrderMapper;
 import com.springcloud.mapper.MOPNeedOrderDtMapper;
 import com.springcloud.mapper.NeedOrderMapper;
-import com.springcloud.analyticaldata.MOPNeedOrderAD;
-import com.springcloud.analyticaldata.OrderDetail;
 import com.springcloud.service.MOPNeedOrderService;
 import com.springcloud.util.QueryResult;
 import com.springcloud.util.ResponseBean;
@@ -90,7 +88,7 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
             String message = jsonObj.getString("ResultString");
             response.setMessage(message);
         } else {
-            MOPNeedOrderAD a = new MOPNeedOrderAD();
+            com.springcloud.analyticaldata.MOPNeedOrderAD a = new com.springcloud.analyticaldata.MOPNeedOrderAD();
             response = a.getJsonToBeanSecond(resultJson);
             JSONObject jsonObj2 = JSONObject.parseObject(resultJson);
             JSONObject dataLine = jsonObj2.getJSONObject("DataLine");
@@ -124,7 +122,7 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
         MOPNeedOrder addMOPNeedOrder = new MOPNeedOrder();
         BeanUtils.copyProperties(mopNeedOrderAO, addMOPNeedOrder);
         addMOPNeedOrder.setNeedNo(mopNeedOrderAO.getNeedNo());
-        addMOPNeedOrder.setDocNum(OrderDetail.getMopPrimaryKey());
+        addMOPNeedOrder.setDocNum(com.springcloud.analyticaldata.OrderDetail.getMopPrimaryKey());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         addMOPNeedOrder.setCreateDate(dateFormat.format(new Date()));
 
@@ -231,7 +229,7 @@ public class MOPNeedOrderServiceImpl implements MOPNeedOrderService {
         SaveResult saveResult = new SaveResult();
         MOPNeedOrder addMOPNeedOrder = new MOPNeedOrder();
         Map<String, Object> map = new HashMap<String, Object>();
-        addMOPNeedOrder.setDocNum(OrderDetail.getMopPrimaryKey());
+        addMOPNeedOrder.setDocNum(com.springcloud.analyticaldata.OrderDetail.getMopPrimaryKey());
         map.put("companyCode", mopNeedOrderAO.getCompanyCode());
         map.put("ResultString", "success");
         map.put("createName", mopNeedOrderAO.getCreateName());

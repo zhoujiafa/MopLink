@@ -43,4 +43,13 @@ public class TagController {
         return ResponseBean.ok(tagList);
     }
 
+    @ApiOperation(value = "记录列表(按个人手机号查询)", notes = "记录列表(按个人手机号查询)")
+    @PostMapping("/tagListByTagNoAndDate")
+    public ResponseBean<Tag> tagListByTagNoAndDate(@RequestParam("userName")String userName,@RequestParam("tagNo") String tagNo,@RequestParam("date") String date,@RequestParam("date2") String date2) {
+
+        List<Tag> tagList = tagService.tagListByTagNoAndDate(userName,tagNo,date,date2);
+        return ResponseBean.ok(tagList);
+    }
+
+
 }
