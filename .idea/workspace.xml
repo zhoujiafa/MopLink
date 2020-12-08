@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MOP.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MOP_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,16 +58,48 @@
     <favorites_list name="MOP" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DeliverGoodsServiceImpl.java" pinned="false" current-in-tab="true">
+    <leaf>
+      <file leaf-file-name="DeliverGoodsController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeliverGoodsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeliverGoodsServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="272" lean-forward="true" selection-start-line="272" selection-end-line="272" />
-              <folding>
-                <element signature="e#12168#12184#0" expanded="true" />
-                <element signature="e#13121#13137#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="110">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeliverGoodsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DeliverGoodsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeliverGoodsMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeliverGoodsMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="42" column="22" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -203,11 +230,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="350" />
-    <option name="y" value="111" />
-    <option name="width" value="945" />
-    <option name="height" value="726" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="1935" />
+    <option name="height" value="1029" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -217,34 +243,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -252,7 +280,7 @@
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -261,7 +289,7 @@
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -270,121 +298,24 @@
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-              <item name="dos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
+              <item name="MOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MopLink" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springcloud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="openapi-sdk-1.0.0" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="openapi-sdk-1.0.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="openapi-sdk-1.0.0.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="openapi-sdk-1.0.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="openapi-sdk-1.0.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,12 +340,12 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Debugger" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.springcloud.bean.vo" />
-      <recent name="com.springcloud.bean.query" />
-      <recent name="com.springcloud.mapper" />
-      <recent name="com.springcloud.service" />
-      <recent name="com.springcloud.bean.ao" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\MopLink\src\main\resources\mapper" />
+      <recent name="G:\MopLink\src\main\java\com\springcloud\service\impl" />
+      <recent name="G:\MopLink\src\main\java\com\springcloud\bean\dos" />
+      <recent name="G:\MopLink\src\main\java\com\springcloud\mapper" />
+      <recent name="G:\MopLink\src\main\java\com\springcloud\api" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.springcloud.service.impl" />
@@ -423,133 +354,27 @@
       <recent name="com.springcloud.api" />
       <recent name="com.springcloud" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\MopLink\src\main\resources\mapper" />
-      <recent name="G:\MopLink\src\main\java\com\springcloud\service\impl" />
-      <recent name="G:\MopLink\src\main\java\com\springcloud\bean\dos" />
-      <recent name="G:\MopLink\src\main\java\com\springcloud\mapper" />
-      <recent name="G:\MopLink\src\main\java\com\springcloud\api" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springcloud.bean.vo" />
+      <recent name="com.springcloud.bean.query" />
+      <recent name="com.springcloud.mapper" />
+      <recent name="com.springcloud.service" />
+      <recent name="com.springcloud.bean.ao" />
     </key>
   </component>
   <component name="RestServicesNavigator">
     <treeState>
       <expand>
         <path>
-          <item name="Found 61 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 59 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 59 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="MOP" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
       <select />
     </treeState>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -564,17 +389,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MopApplication">
-    <configuration name="Test" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.springcloud.Test" />
-      <module name="MOP" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.springcloud.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="Test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.springcloud.Test2" />
       <module name="MOP" />
@@ -586,8 +400,16 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
+    <configuration name="Test" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.springcloud.Test" />
+      <module name="MOP" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.springcloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -631,10 +453,11 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
     <list>
-      <item itemvalue="Application.Test" />
       <item itemvalue="Spring Boot.MopApplication" />
-      <item itemvalue="Application.Test2" />
     </list>
   </component>
   <component name="StructureViewFactory">
@@ -827,7 +650,7 @@
       <workItem from="1606530912472" duration="598000" />
       <workItem from="1607041942854" duration="7259000" />
       <workItem from="1607301716410" duration="8861000" />
-      <workItem from="1607387776343" duration="10730000" />
+      <workItem from="1607387776343" duration="13989000" />
     </task>
     <task id="LOCAL-00001" summary="实现分页数据查询">
       <created>1574150386919</created>
@@ -913,11 +736,25 @@
       <option name="project" value="LOCAL" />
       <updated>1607411251870</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="修复微信App吊牌重复扫描问题3">
+      <created>1607411347840</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607411347840</updated>
+    </task>
+    <task id="LOCAL-00014" summary="编写对接MOP条码变更的方法">
+      <created>1607413392100</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1607413392100</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1355014000" />
+    <option name="totallyTimeSpent" value="1349430000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,82 +766,53 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-6" y="0" width="1548" height="823" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="11" />
-      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.054166667" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12013889" side_tool="true" visible="true" weight="0.41076115" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.18767908" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="right" id="Word Book" order="7" sideWeight="0.12361111" side_tool="true" weight="0.25721785" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="8" />
-      <window_info anchor="right" x="731" y="390" width="170" height="47" id="Database" order="9" type="WINDOWED" weight="0.26742628" />
-      <window_info id="Structure" order="1" sideWeight="0.27826086" side_tool="true" weight="0.26944444" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8798611" visible="true" weight="0.41076115" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.48958334" weight="0.2664042" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" sideWeight="0.49856734" weight="0.40054128" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.6215278" weight="0.32545933" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86891115" weight="0.37753722" />
-      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49928367" weight="0.32882273" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32882273" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7738516" visible="true" weight="0.24305555" />
-      <window_info anchor="right" id="Bean Validation" order="10" weight="0.12868632" />
-      <window_info id="Web" order="6" sideWeight="0.22614841" side_tool="true" weight="0.98680556" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="7" sideWeight="0.15686275" side_tool="true" weight="0.24597855" />
-      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49928367" weight="0.32882273" />
-      <window_info anchor="right" id="数据库" order="2" />
-      <window_info anchor="right" id="Word Book" order="7" sideWeight="0.12361111" side_tool="true" weight="0.25721785" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" x="731" y="390" width="170" height="47" id="Database" order="9" type="WINDOWED" weight="0.26742628" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32882273" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="JRebel" order="9" sideWeight="0.20159681" side_tool="true" weight="0.24262735" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7738516" visible="true" weight="0.23794003" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Palette" order="11" />
-      <window_info anchor="bottom" id="JRebel Console" order="19" sideWeight="0.118644066" side_tool="true" visible="true" weight="0.35825107" />
-      <window_info id="Structure" order="1" sideWeight="0.27826086" side_tool="true" weight="0.26944444" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="right" id="控制板" order="13" />
-      <window_info id="设计师" order="3" />
-      <window_info anchor="bottom" id="JRebel Executor" order="18" />
-      <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.49674478" weight="0.32968536" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49097222" weight="0.2664042" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Bean Validation" order="10" weight="0.12868632" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.18767908" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="MyBatis Log" order="20" weight="0.32905984" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="7" sideWeight="0.15686275" side_tool="true" weight="0.24597855" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="bottom" id="调试" order="16" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49861112" weight="0.009186352" />
+      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.22555411" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.11805555" side_tool="true" weight="0.42519686" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info id="Designer" order="8" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" sideWeight="0.49856734" weight="0.40054128" />
-      <window_info anchor="bottom" id="消息" order="14" sideWeight="0.49934897" weight="0.26812586" />
+      <window_info anchor="bottom" id="JRebel Console" order="19" sideWeight="0.118644066" side_tool="true" visible="true" weight="0.33286318" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.18767908" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.62249285" weight="0.5629229" />
-      <window_info id="Web" order="6" sideWeight="0.22614841" side_tool="true" weight="0.98680556" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86891115" weight="0.37753722" />
+      <window_info anchor="bottom" id="JRebel Executor" order="18" />
+      <window_info anchor="bottom" id="MyBatis Log" order="20" weight="0.32905984" />
       <window_info id="Capture Tool" order="2" />
+      <window_info id="设计师" order="3" />
+      <window_info anchor="right" x="731" y="390" width="170" height="47" id="Database" order="9" type="WINDOWED" weight="0.26742628" />
+      <window_info id="Structure" order="1" sideWeight="0.27826086" side_tool="true" weight="0.26944444" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.88135594" visible="true" weight="0.33286318" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49097222" weight="0.2664042" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" sideWeight="0.49856734" weight="0.40054128" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.62249285" weight="0.5629229" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86891115" weight="0.37753722" />
+      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49928367" weight="0.32882273" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32882273" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7738516" visible="true" weight="0.23794003" />
+      <window_info anchor="right" id="Bean Validation" order="10" weight="0.12868632" />
+      <window_info id="Web" order="6" sideWeight="0.22614841" side_tool="true" weight="0.98680556" />
+      <window_info id="JRebel" order="9" sideWeight="0.20159681" side_tool="true" weight="0.24262735" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="7" sideWeight="0.15686275" side_tool="true" weight="0.24597855" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="调试" order="16" />
+      <window_info id="Designer" order="8" />
+      <window_info anchor="right" id="控制板" order="13" />
       <window_info anchor="bottom" id="运行" order="15" sideWeight="0.9036458" weight="0.5471956" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.88135594" visible="true" weight="0.35825107" />
-      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.17926988" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49861112" weight="0.009186352" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.49674478" weight="0.32968536" />
+      <window_info anchor="right" id="Word Book" order="7" sideWeight="0.12361111" side_tool="true" weight="0.25721785" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="消息" order="14" sideWeight="0.49934897" weight="0.26812586" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="数据库" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1049,7 +857,9 @@
     <MESSAGE value="20201208更新App" />
     <MESSAGE value="修复微信App吊牌重复扫描问题" />
     <MESSAGE value="修复微信App吊牌重复扫描问题2" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复微信App吊牌重复扫描问题2" />
+    <MESSAGE value="修复微信App吊牌重复扫描问题3" />
+    <MESSAGE value="编写对接MOP条码变更的方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写对接MOP条码变更的方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1062,45 +872,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>237</line>
+          <line>240</line>
           <properties />
-          <option name="timeStamp" value="1214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>236</line>
-          <properties />
-          <option name="timeStamp" value="1215" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>244</line>
-          <properties />
-          <option name="timeStamp" value="1216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>266</line>
-          <properties />
-          <option name="timeStamp" value="1217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="1219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>269</line>
-          <properties />
-          <option name="timeStamp" value="1220" />
+          <option name="timeStamp" value="1203" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1221" />
+      <option name="time" value="1204" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1127,17 +907,11 @@
         <watch expression="companyDictAO.getAssoId()" language="JAVA" />
         <watch expression="companyDictAO.getAssoId()" language="JAVA" />
         <watch expression="companyDictAO.getAssoId()" language="JAVA" />
-        <watch expression="collect" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
-      <expression>
-        <expression-string>collect</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
       <expression>
         <expression-string>list1</expression-string>
         <language-id>JAVA</language-id>
@@ -1180,6 +954,11 @@
       </expression>
       <expression>
         <expression-string>responseBean2.getBody()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>newSign</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1284,13 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeliverGoodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
@@ -1305,20 +1077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/springcloud/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3116">
@@ -1330,13 +1088,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="931">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DeliverGoodsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1344,6 +1098,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/TagInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1368,6 +1129,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/DeliverGoods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/DeliverGoodsCount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -1375,10 +1143,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/GoodsDict.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-179">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/GoodsDivision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/Indent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPNeedOrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1410,17 +1202,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="245">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -1431,17 +1216,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="62" column="47" lean-forward="true" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="315">
+          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1454,99 +1232,102 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+        <state relative-caret-position="161">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/TagController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="418">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+        <state relative-caret-position="633">
+          <caret line="168" column="66" lean-forward="true" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/TagInfoMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="560">
+          <caret line="62" column="47" lean-forward="true" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TagInfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="397">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/GoodsDict.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/GoodsDictController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="17" column="10" selection-start-line="17" selection-end-line="17" selection-end-column="23" />
+        <state>
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="276">
+          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/GoodsDivision.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeliverGoodsCountMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="157">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/Indent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/DeliverGoodsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="257">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/GoodsDictServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeliverGoodsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/jdk11/lib/src.zip!/java.base/java/util/function/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/DeliverGoods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="342">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="272" lean-forward="true" selection-start-line="272" selection-end-line="272" />
-          <folding>
-            <element signature="e#12168#12184#0" expanded="true" />
-            <element signature="e#13121#13137#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="110">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
