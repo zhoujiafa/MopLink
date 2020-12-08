@@ -11,11 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +60,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TagInfoController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TagInfoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -82,18 +78,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TagInfoServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1081">
-              <caret line="167" column="24" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TagInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TagMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/TagMapper.java">
+      <file leaf-file-name="TagInfoService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="161">
+              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -117,6 +101,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TagInfoServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -243,10 +239,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/TagController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -741,7 +737,7 @@
       <workItem from="1606530912472" duration="598000" />
       <workItem from="1607041942854" duration="7259000" />
       <workItem from="1607301716410" duration="8861000" />
-      <workItem from="1607387776343" duration="10218000" />
+      <workItem from="1607387776343" duration="10730000" />
     </task>
     <task id="LOCAL-00001" summary="实现分页数据查询">
       <created>1574150386919</created>
@@ -813,11 +809,25 @@
       <option name="project" value="LOCAL" />
       <updated>1607396045274</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="修复微信App吊牌重复扫描问题">
+      <created>1607410874157</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607410874157</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修复微信App吊牌重复扫描问题2">
+      <created>1607411251870</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607411251870</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1345659000" />
+    <option name="totallyTimeSpent" value="1346171000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,7 +856,7 @@
       <window_info id="Structure" order="1" sideWeight="0.27826086" side_tool="true" weight="0.26944444" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.88135594" visible="true" weight="0.35825107" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.88135594" visible="true" weight="0.35825107" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49097222" weight="0.2664042" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -857,7 +867,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86891115" weight="0.37753722" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49928367" weight="0.32882273" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32882273" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7738516" visible="true" weight="0.23794003" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7738516" visible="true" weight="0.23794003" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.12868632" />
       <window_info id="Web" order="6" sideWeight="0.22614841" side_tool="true" weight="0.98680556" />
       <window_info id="JRebel" order="9" sideWeight="0.20159681" side_tool="true" weight="0.24262735" />
@@ -919,7 +929,9 @@
     <MESSAGE value="测试更新" />
     <MESSAGE value="更新20200629 16:40" />
     <MESSAGE value="20201208更新App" />
-    <option name="LAST_COMMIT_MESSAGE" value="20201208更新App" />
+    <MESSAGE value="修复微信App吊牌重复扫描问题" />
+    <MESSAGE value="修复微信App吊牌重复扫描问题2" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复微信App吊牌重复扫描问题2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1019,13 +1031,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/analyticalData/MOPIndentAD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1653">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/GoodsDictController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1305,13 +1310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/mapper/TagMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1347,16 +1345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="167" column="24" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1371,6 +1359,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/com/baomidou/mybatis-plus-core/3.2.0/mybatis-plus-core-3.2.0.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/TagInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/TagController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1378,10 +1387,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/TagInfoController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+        <state relative-caret-position="215">
+          <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

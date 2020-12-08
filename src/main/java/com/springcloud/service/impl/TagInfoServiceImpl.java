@@ -165,6 +165,7 @@ public class TagInfoServiceImpl implements TagInfoService {
     @Override
     public List<TagInfo> tagInfoListBytagNo(String tagNo) {
 
+
         QueryWrapper<TagInfo> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("tagNo",tagNo);
         List<TagInfo> list = tagInfoMapper.selectList(queryWrapper);
