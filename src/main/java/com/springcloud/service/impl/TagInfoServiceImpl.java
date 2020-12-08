@@ -156,9 +156,19 @@ public class TagInfoServiceImpl implements TagInfoService {
     @Override
     public TagInfo tagInfodoesItExist(String uniqueCode) {
 
-        QueryWrapper queryWrapper = new QueryWrapper();
+        QueryWrapper<TagInfo> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("uniqueCode",uniqueCode);
 
         return tagInfoMapper.selectOne(queryWrapper);
+    }
+
+    @Override
+    public List<TagInfo> tagInfoListBytagNo(String tagNo) {
+
+        QueryWrapper<TagInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("tagNo",tagNo);
+        List<TagInfo> list = tagInfoMapper.selectList(queryWrapper);
+
+        return list;
     }
 }

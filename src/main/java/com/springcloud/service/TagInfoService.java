@@ -50,6 +50,12 @@ public interface TagInfoService {
      */
     TagInfo tagInfodoesItExist(String uniqueCode);
 
+    /**
+     * 根据tagNo查询扫描详情列表
+     * @param tagNo
+     * @return
+     */
+    List<TagInfo> tagInfoListBytagNo(String tagNo);
 
 
 }

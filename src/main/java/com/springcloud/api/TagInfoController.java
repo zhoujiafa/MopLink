@@ -101,4 +101,13 @@ public class TagInfoController {
         return ResponseBean.ok(vo);
     }
 
+    @ApiOperation(value = "根据tagNo查询扫描详情列表(单条查询)", notes = "根据tagNo查询扫描详情列表")
+    @PostMapping("/tagInfoListBytagNo")
+    public ResponseBean<List<TagInfo>> tagInfoListBytagNo(@RequestParam("tagNo") String tagNo) {
+
+        List<TagInfo> volist = tagInfoService.tagInfoListBytagNo(tagNo);
+
+        return ResponseBean.ok(volist);
+    }
+
 }

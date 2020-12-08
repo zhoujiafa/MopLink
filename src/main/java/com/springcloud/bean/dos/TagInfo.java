@@ -1,5 +1,6 @@
 package com.springcloud.bean.dos;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
  * @Date: 2020-10-15 13:49
  */
 @Data
+@TableName("tagInfo")
 public class TagInfo {
 
     String tagNo;
