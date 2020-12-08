@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static com.springcloud.service.impl.MOPIndentServiceImpl.sendPost;
 
@@ -228,6 +229,15 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
         JSONObject jsonObject = JSON.parseObject(resultJson);
         if(jsonObject.getString("resultInt").equals(0)){
             //条码变更
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("docNum",shipmentOrderNo);
+            map.put("customer",customer);
+            List<DeliverGoods> delist = deliverGoodsMapper.getDeliveryOrderUniqueCode(map);
+            if(delist.size()>0 && delist!=null){
+                Map<String, List<DeliverGoods>> collect = delist.stream().collect(Collectors.groupingBy(DeliverGoods::getDesignNumber));
+
+            }
             Map<String, Object> paramsTm = new HashMap<String, Object>();
             Map<String, Object> dataJsonTm = new HashMap<String, Object>();
             List<Map> mapListTM = new LinkedList<>();
