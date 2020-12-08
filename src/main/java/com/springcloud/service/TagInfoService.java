@@ -51,7 +51,7 @@ public interface TagInfoService {
     TagInfo tagInfodoesItExist(String uniqueCode);
 
     /**
-     * 根据tagNo查询扫描详情列表
+     * 根据tagNo查询扫描详情列表信息
      * @param tagNo
      * @return
      */
