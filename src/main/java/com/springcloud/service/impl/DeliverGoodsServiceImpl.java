@@ -13,6 +13,7 @@ import com.springcloud.mapper.DeliverGoodsJznMapper;
 import com.springcloud.mapper.DeliverGoodsMapper;
 import com.springcloud.response.ResponseDeliverGoods;
 import com.springcloud.service.DeliverGoodsService;
+import com.springcloud.util.ResponseBean;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -227,7 +228,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
         String requsetUrl = url + "/openapi/supply/orderItem/change";
         String resultJson = sendPost(requsetUrl, paramsJson);
         JSONObject jsonObject = JSON.parseObject(resultJson);
-        if(jsonObject.getString("resultInt").equals(0)){
+        if(jsonObject.getString("ResultInt").equals("0")){
             //条码变更
 
             Map<String, Object> map = new HashMap<>();
@@ -235,16 +236,40 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
             map.put("customer",customer);
             List<DeliverGoods> delist = deliverGoodsMapper.getDeliveryOrderUniqueCode(map);
             if(delist.size()>0 && delist!=null){
+                Map<String, Object> parms = new HashMap<String, Object>();
+                parms.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
+                //存dataJson下的各个款号
+                List<Map> Isck = new LinkedList<>();
+
+                //按款号分组
                 Map<String, List<DeliverGoods>> collect = delist.stream().collect(Collectors.groupingBy(DeliverGoods::getDesignNumber));
+                //collect.entrySet()等于分组后的数量，entry为分组后的款号代表
+                for(Map.Entry<String, List<DeliverGoods>> entry : collect.entrySet()){
+                     //循环一次添加一个分组到dataJson的集合里
+                     Map<String, Object> icsk = new HashMap<String, Object>();
+                     icsk.put("itemCode",entry.getKey());
+                     icsk.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
+
+                    List<Map> Bdcdslist = new LinkedList<>();
+                    for( int i=0;i<entry.getValue().size();i++){
+                        Map<String, Object> bdcds = new HashMap<String, Object>();
+                          bdcds.put("barcode",entry.getValue().get(i).getDocNum());
+                          bdcds.put("isAvailableForSale",1);
+                        Bdcdslist.add(bdcds);
+                    }
+                     //存当前款号下的唯一码
+                     icsk.put("barcodeChangeDetails",Bdcdslist);
+                     Isck.add(icsk);
+
+
+                }
+                parms.put("dataJson",Isck);
+                String paramsJsons = JSON.toJSON(SignUtil.sign(parms, key)).toString();
+                String requsetUrls = url + "/openapi/mitemBarcode/change";
+                String resultJsons = sendPost(requsetUrls, paramsJsons);
+                JSONObject jsonObjects = JSON.parseObject(resultJsons);
 
             }
-            Map<String, Object> paramsTm = new HashMap<String, Object>();
-            Map<String, Object> dataJsonTm = new HashMap<String, Object>();
-            List<Map> mapListTM = new LinkedList<>();
-
-            paramsTm.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
-            paramsTm.put("dataJson",mapListTM);
-
 
         }
         return null;

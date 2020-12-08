@@ -94,11 +94,13 @@ public class TagInfoController {
 
     @ApiOperation(value = "检查吊牌是否被扫过(单条查询)", notes = "检查吊牌是否被扫过")
     @PostMapping("/tagInfodoesItExist")
-    public ResponseBean<TagInfoVo> tagInfodoesItExist(@RequestParam("uniqueCode") String uniqueCode) {
+    public ResponseBean<Boolean> tagInfodoesItExist(@RequestParam("uniqueCode") String uniqueCode) {
 
         TagInfo vo = tagInfoService.tagInfodoesItExist(uniqueCode);
-
-        return ResponseBean.ok(vo);
+        if(vo==null){
+            return ResponseBean.ok(true);
+        }
+        return ResponseBean.ok(false);
     }
 
     @ApiOperation(value = "根据tagNo查询扫描详情列表(单条查询)", notes = "根据tagNo查询扫描详情列表")

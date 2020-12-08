@@ -157,7 +157,7 @@ public class TagInfoServiceImpl implements TagInfoService {
     public TagInfo tagInfodoesItExist(String uniqueCode) {
 
         QueryWrapper<TagInfo> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("uniqueCode",uniqueCode);
+        queryWrapper.eq("uniquecode",uniqueCode);
 
         return tagInfoMapper.selectOne(queryWrapper);
     }
