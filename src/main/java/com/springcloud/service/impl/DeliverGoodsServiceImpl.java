@@ -197,6 +197,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
 
     @Override
     public String updateSalesOrderDetails(List<DeliverGoods> list, String shipmentOrderNo, String destineOrderNo, String customer) {
+        Double priceSubtotal = 0.00;
         Map<String, Object> params = new HashMap<String, Object>();
         Map<String, Object> dataJson = new HashMap<String, Object>();
         List<Map> mapList = new LinkedList<>();
@@ -215,6 +216,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     map.put( "quantity",String.valueOf(deliveryorderDetailcount));
                     map.put( "itemName",deliverGoods.getDesignName());
                     map.put( "priceSubtotal",String.valueOf(deliveryorderDetailcount*deliverGoodsoutboundPrice));
+                    priceSubtotal = deliveryorderDetailcount*deliverGoodsoutboundPrice;
                 }
             }
             mapList.add(map);
@@ -230,7 +232,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
         JSONObject jsonObject = JSON.parseObject(resultJson);
         if(jsonObject.getString("ResultInt").equals("0")){
             //条码变更
-
             Map<String, Object> map = new HashMap<>();
             map.put("docNum",shipmentOrderNo);
             map.put("customer",customer);
@@ -240,15 +241,21 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                 parms.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
                 //存dataJson下的各个款号
                 List<Map> Isck = new LinkedList<>();
-
+                List<Map> Iscks = new LinkedList<>();
                 //按款号分组
                 Map<String, List<DeliverGoods>> collect = delist.stream().collect(Collectors.groupingBy(DeliverGoods::getDesignNumber));
                 //collect.entrySet()等于分组后的数量，entry为分组后的款号代表
                 for(Map.Entry<String, List<DeliverGoods>> entry : collect.entrySet()){
                      //循环一次添加一个分组到dataJson的集合里
                      Map<String, Object> icsk = new HashMap<String, Object>();
+
                      icsk.put("itemCode",entry.getKey());
                      icsk.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
+                     //给最后销售交货接口使用
+                    Map<String, Object> icsks = new HashMap<String, Object>();
+                    icsks.put("itemCode",entry.getKey());
+                    icsks.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
+                    icsks.put("quantity",entry.getValue().size());
 
                     List<Map> Bdcdslist = new LinkedList<>();
                     for( int i=0;i<entry.getValue().size();i++){
@@ -260,14 +267,55 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                      //存当前款号下的唯一码
                      icsk.put("barcodeChangeDetails",Bdcdslist);
                      Isck.add(icsk);
-
-
+                     Iscks.add(icsks);
                 }
                 parms.put("dataJson",Isck);
                 String paramsJsons = JSON.toJSON(SignUtil.sign(parms, key)).toString();
                 String requsetUrls = url + "/openapi/mitemBarcode/change";
                 String resultJsons = sendPost(requsetUrls, paramsJsons);
                 JSONObject jsonObjects = JSON.parseObject(resultJsons);
+                if(jsonObjects.getString("ResultInt").equals("0")){
+                    //账户余额充值和扣减
+                    Map<String, Object> balanceLiftparams = new HashMap<String, Object>();
+                    Map<String, Object> dJmap = new HashMap<String, Object>();
+                    //@TODO 确定distrCode
+                    dJmap.put("distrCode","DT0000001");
+                    dJmap.put("TransAmount",priceSubtotal);
+                    dJmap.put("TranCode",shipmentOrderNo);
+                    //@TODO 确定是否写死Deposit03
+                    dJmap.put("TransTypeCode","Deposit03");
+                    //dJmap.put("Remark","测试");
+                    balanceLiftparams.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
+                    balanceLiftparams.put("companyCode",customer);
+                    balanceLiftparams.put("dataJson",dJmap);
+
+                    String blparamsJson = JSON.toJSON(SignUtil.sign(balanceLiftparams, key)).toString();
+                    String blrequsetUrl = url + "/openapi/distributor/accountBalance/change";
+                    String blresultJson = sendPost(blrequsetUrl, blparamsJson);
+                    JSONObject bljsonObject = JSON.parseObject(blresultJson);
+                    if(jsonObjects.getString("ResultInt").equals("0")){
+                        //销售交货
+                        Map<String, Object> saleDeliveryparams = new HashMap<String, Object>();
+                        Map<String, Object> dataJsonSDP = new HashMap<String, Object>();
+                        //List<Map> linesList = new LinkedList<>();
+                        dataJsonSDP.put("orderNo",destineOrderNo);
+                        //@TODO 确定是否写死0
+                        dataJsonSDP.put("type",0);
+                        //@TODO 无法获取物流单号
+                        //dataJsonSDP.put("logisticsNumber",null);
+                        dataJsonSDP.put("lines",Iscks);
+                        saleDeliveryparams.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
+                        saleDeliveryparams.put("companyCode",customer);
+                        saleDeliveryparams.put("dataJson",dataJsonSDP);
+
+                        String sdparamsJson = JSON.toJSON(SignUtil.sign(saleDeliveryparams, key)).toString();
+                        String sdrequsetUrl = url + "/openapi/supply/order/delivery";
+                        String sdresultJson = sendPost(sdrequsetUrl, sdparamsJson);
+                        JSONObject sdjsonObject = JSON.parseObject(sdresultJson);
+
+                    }
+                }
+
 
             }
 
