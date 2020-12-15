@@ -18,5 +18,6 @@ public class TagInfo {
     String tagNo;
     String uniquecode;
     String productcode;
+    String color;
 
 }

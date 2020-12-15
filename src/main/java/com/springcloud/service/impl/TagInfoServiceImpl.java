@@ -49,6 +49,23 @@ public class TagInfoServiceImpl implements TagInfoService {
 
         List<TagInfo> list = new ArrayList<>();
         String now = format.format(new Date());
+
+        List<String> sukList = tagInfo.stream().map(TagInfo::getProductcode).collect(Collectors.toList());
+        List<GoodsDict> colorList = goodsDictMapper.selectBatchItemCode2(sukList);
+
+        List<TagInfo> tagInfoList = tagInfo.stream()
+                .map(t -> colorList.stream()
+                        .filter(g -> t.getProductcode().equals(g.getSkuBarcode()))
+                        .findFirst()
+                        .map(g -> {
+                            t.setColor(g.getSpecName());
+                            return t;
+                        }).orElse(null))
+                .collect(Collectors.toList());
+        System.out.println(tagInfoList.toString());
+
+
+
         for (TagInfo tagInfos : tagInfo) {
             TagInfo addmodel = new TagInfo();
             BeanUtils.copyProperties(tagInfos, addmodel);
