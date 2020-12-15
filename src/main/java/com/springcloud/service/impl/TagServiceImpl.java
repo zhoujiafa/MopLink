@@ -52,6 +52,22 @@ public class TagServiceImpl implements TagService {
     public List<Tag> tagListByTagNoAndDate(String userName,String tagNo, String date, String date2) {
 
 
+        //String   d= "2004-01-01 ";
+        DateFormat   format=new   SimpleDateFormat( "yyyy-MM-dd");
+        java.util.Date dd= null;
+        try {
+            dd = format.parse(date2);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar   calendar=Calendar.getInstance();
+        calendar.setTime(dd);
+        calendar.add(Calendar.DAY_OF_MONTH,1);
+
+        String newdate2 = format.format(calendar.getTime());
+        System.out.println(newdate2);
+
+
         QueryWrapper<Tag> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("creator",userName);
         if(!tagNo.equals("")&& tagNo!=null){
@@ -59,7 +75,7 @@ public class TagServiceImpl implements TagService {
         }
 
         queryWrapper.ge("createtime",date);
-        queryWrapper.le("createtime",date);
+        queryWrapper.le("createtime",newdate2);
         queryWrapper.orderByDesc("createtime");
         List<Tag> tagList = tagMapper.selectList(queryWrapper);
         return tagList;

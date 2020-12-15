@@ -41,7 +41,7 @@ public class DeliverGoodsController {
         String appId = "94916115E6732C11D5984075C4DB588B";
         //String shipmentOrderNo = data.get("orderNo").toString();
         //String customer = data.get("customer").toString();
-        String  shipmentOrderNo = "201100000001";
+        String  shipmentOrderNo = "201200000001";
         String customer = "0181";
 
         Map<String, Object> params = new HashMap<String, Object>();

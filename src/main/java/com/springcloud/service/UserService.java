@@ -16,7 +16,7 @@ public interface UserService {
 
    Boolean saveUser(UserAO userAO);
 
-   UserVO login(UserAO userAO);
+   ResponseBean login(UserAO userAO);
 
    ResponseBean<String> wechatAppRegister(UserAO userAO);
 

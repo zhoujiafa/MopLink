@@ -192,6 +192,8 @@ public class MOPIndentController {
         map.put("orderStatusName", dataJson.getString("orderStatusName"));
         map.put("createDate", dataJson.getString("createDate"));
         map.put("createName", dataJson.getString("createName"));
+        //添加经销商编码
+        map.put("distrCode", dataJson.getString("distrCode"));
 
         //JSONArray array = dataJson.getJSONArray(dataJson.getString("array"));
         JSONArray array = dataJson.getJSONArray("array");
@@ -231,6 +233,9 @@ public class MOPIndentController {
         mopIndentVOs.setOrderStatusName(dataJson.getString("orderStatusName"));
         mopIndentVOs.setCreateDate(dataJson.getString("createDate"));
         mopIndentVOs.setCreateName(dataJson.getString("createName"));
+
+        mopIndentVOs.setDistrCode(dataJson.getString("distrCode"));
+
 
         List<MOPIndentDt> mopIndentDts = new ArrayList<>();
         //JSONArray dataLine = dataJson.getJSONArray(dataJson.getString("lines"));

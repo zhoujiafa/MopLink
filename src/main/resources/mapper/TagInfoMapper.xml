@@ -6,17 +6,19 @@
         <result property="tagNo" column="tagNo"></result>
         <result property="uniquecode" column="uniquecode"></result>
         <result property="productcode" column="productcode"></result>
+        <result property="color" column="color"></result>
     </resultMap>
 
     <insert id="batchInsert" parameterType="List">
         insert into taginfo
-        (tagNo,uniquecode,productcode)
+        (tagNo,uniquecode,productcode,color)
         values
         <foreach collection="list" item="item"  separator=",">
             (
             #{item.tagNo},
             #{item.uniquecode},
-            #{item.productcode}
+            #{item.productcode},
+            #{item.color}
             )
         </foreach>
     </insert>

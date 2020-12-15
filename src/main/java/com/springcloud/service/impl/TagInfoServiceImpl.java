@@ -51,7 +51,7 @@ public class TagInfoServiceImpl implements TagInfoService {
         String now = format.format(new Date());
 
         List<String> sukList = tagInfo.stream().map(TagInfo::getProductcode).collect(Collectors.toList());
-        List<GoodsDict> colorList = goodsDictMapper.selectBatchItemCode2(sukList);
+        List<GoodsDict> colorList = goodsDictMapper.selectBatchItemCode(sukList);
 
         List<TagInfo> tagInfoList = tagInfo.stream()
                 .map(t -> colorList.stream()
@@ -66,7 +66,7 @@ public class TagInfoServiceImpl implements TagInfoService {
 
 
 
-        for (TagInfo tagInfos : tagInfo) {
+        for (TagInfo tagInfos : tagInfoList) {
             TagInfo addmodel = new TagInfo();
             BeanUtils.copyProperties(tagInfos, addmodel);
             addmodel.setTagNo(now.trim());

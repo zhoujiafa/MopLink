@@ -41,5 +41,8 @@ public class MOPIndent {
     /**  单据创建人 */
     private String createName;
 
+    /** 经销商编码 */
+    private String distrCode;
+
 
 }

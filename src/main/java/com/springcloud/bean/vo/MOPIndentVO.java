@@ -41,6 +41,9 @@ public class MOPIndentVO {
     /**  单据创建人 */
     private String createName;
 
+    /** 经销商编码 */
+    private String distrCode;
+
 
     @ApiModelProperty(value = "响应状态码")
     private int code;

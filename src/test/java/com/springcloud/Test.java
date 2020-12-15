@@ -155,8 +155,13 @@ public class Test {
         String requsetUrl = "http://localhost:8087/MOPIndent/PlaceAnMOPIndents";
         //String requsetUrl = "http://14.17.96.21:8087/MOPIndent/PlaceAnMOPIndents";
         //String requsetUrl = "https://gzshuangzhi.com/MOPIndent/PlaceAnMOPIndents";
-        String paramsJson2 = "{\"companyCode\":\"0181\",\"sign\":\"D5C2D8C2D666CAD1E4CFFE83BCA23DB8\",\"dataJson\":\"{\\\"orderType\\\":1,\\\"orderStatusName\\\":\\\"待发货\\\",\\\"orderNo\\\":\\\"S01810049\\\",\\\"array\\\":[{\\\"realPriceLineTotal\\\":480.6,\\\"itemQuantity\\\":3,\\\"quantity\\\":3,\\\"lineTotal\\\":480.6,\\\"itemCode\\\":\\\"SP000001\\\",\\\"itemUnit\\\":\\\"件\\\",\\\"needsCount\\\":3,\\\"promotionMoney\\\":\\\"0\\\",\\\"remark\\\":551,\\\"realTotal\\\":480.6,\\\"itemName\\\":\\\"双芝 可外穿休闲家居舒适 运动内衣#S3198（唯一码）\\\",\\\"unit\\\":\\\"件\\\",\\\"totalExpressFee\\\":\\\"0\\\",\\\"skuBarcode\\\":\\\"3198B8070\\\",\\\"listPrice\\\":160.2,\\\"realPrice\\\":160.2}],\\\"companyName\\\":\\\"广州（旗舰店）戴芝蒂/吉芝奴\\\",\\\"payStatusName\\\":\\\"已付款\\\",\\\"orderStatus\\\":0,\\\"deliveryDate\\\":\\\"\\\",\\\"createName\\\":\\\"小橘子\\\",\\\"orderTypeName\\\":\\\"订货\\\",\\\"createDate\\\":\\\"2020-11-24 18:05:13\\\"}\",\"appId\":\"94916115E6732C11D5984075C4DB588B\"}";
-        String resultJson = sendPost(requsetUrl, paramsJson);
+        String paramsJson2 = "{\n" +
+                "    \"companyCode\": \"0181\",\n" +
+                "    \"sign\": \"17C22F310D44F5E2B88FE5AA6B6E8361\",\n" +
+                "    \"dataJson\": \"{\\\"orderType\\\":\\\"1\\\",\\\"orderStatusName\\\":\\\"待发货\\\",\\\"orderNo\\\":\\\"S01810054\\\",\\\"array\\\":[{\\\"realPriceLineTotal\\\":640.8,\\\"itemQuantity\\\":4,\\\"quantity\\\":4,\\\"lineTotal\\\":640.8,\\\"itemCode\\\":\\\"SP000001\\\",\\\"itemUnit\\\":\\\"件\\\",\\\"needsCount\\\":4,\\\"promotionMoney\\\":0,\\\"remark\\\":621,\\\"realTotal\\\":640.8,\\\"itemName\\\":\\\"双芝 可外穿休闲家居舒适 运动内衣#S3198（唯一码）\\\",\\\"unit\\\":\\\"件\\\",\\\"specName\\\":\\\"灰色 70B\\\",\\\"totalExpressFee\\\":0,\\\"skuBarcode\\\":\\\"3198B8070\\\",\\\"listPrice\\\":160.2,\\\"realPrice\\\":160.2}],\\\"companyName\\\":\\\"广州（旗舰店）戴芝蒂/吉芝奴\\\",\\\"payStatusName\\\":\\\"已付款\\\",\\\"orderStatus\\\":\\\"0\\\",\\\"deliveryDate\\\":\\\"\\\",\\\"createName\\\":\\\"广州吉芝奴服饰有限公司\\\",\\\"orderTypeName\\\":\\\"订货\\\",\\\"createDate\\\":\\\"2020-12-15 14:17:28\\\"}\",\n" +
+                "    \"appId\": \"94916115E6732C11D5984075C4DB588B\"\n" +
+                "  }";
+        String resultJson = sendPost(requsetUrl, paramsJson2);
         JSONObject jsonObj1 = JSONObject.parseObject(resultJson);
         if (!jsonObj1.getString("ResultInt").equals("0")) {
             Integer error;

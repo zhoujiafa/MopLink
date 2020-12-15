@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserVO login(UserAO userAO) {
+    public ResponseBean login(UserAO userAO) {
         UserVO userVO = new UserVO();
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         if(userAO.getUserName()!=null && userAO.getPassword()!=null){
@@ -56,15 +56,20 @@ public class UserServiceImpl implements UserService {
         }else if(userAO.getPhone()!=null && userAO.getPwd()!=null){
             queryWrapper.eq("telephone",userAO.getPhone());
             queryWrapper.eq("password",userAO.getPwd());
-            queryWrapper.eq("status","已审核");
+            //queryWrapper.eq("status","已审核");
         }else {
-            return null;
+            return ResponseBean.fail("请输入正确的账号与密码！");
         }
             User user = userMapper.selectOne(queryWrapper);
-            if(user!=null){
-                BeanUtils.copyProperties(user, userVO);
+        if(user!=null){
+            if(!user.getStatus().equals(audited)){
+                return ResponseBean.fail("此账号正在审核中！");
             }
-        return userVO;
+        }else{
+            return ResponseBean.fail("账号或密码有误！");
+        }
+        BeanUtils.copyProperties(user, userVO);
+        return ResponseBean.ok(userVO);
     }
 
     @Override

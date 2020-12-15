@@ -253,8 +253,9 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                      icsk.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
                      //给最后销售交货接口使用
                     Map<String, Object> icsks = new HashMap<String, Object>();
-                    icsks.put("itemCode",entry.getKey());
-                    icsks.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
+                    //icsks.put("itemCode",entry.getKey().trim());
+                    icsks.put("itemCode","SP000001");
+                    icsks.put("skuBarcode",entry.getValue().iterator().next().getSkuBarcode().trim());
                     icsks.put("quantity",entry.getValue().size());
 
                     List<Map> Bdcdslist = new LinkedList<>();
@@ -279,7 +280,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     Map<String, Object> balanceLiftparams = new HashMap<String, Object>();
                     Map<String, Object> dJmap = new HashMap<String, Object>();
                     //@TODO 确定distrCode
-                    dJmap.put("distrCode","DT0000001");
+                    dJmap.put("distrCode","GY002312");
                     dJmap.put("TransAmount",priceSubtotal);
                     dJmap.put("TranCode",shipmentOrderNo);
                     //@TODO 确定是否写死Deposit03

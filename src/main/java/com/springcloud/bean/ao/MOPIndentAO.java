@@ -39,6 +39,10 @@ public class MOPIndentAO {
     private String createName;
     /**  本地单据创建人（备用） */
     private String newCreateName;
+
+    /** 经销商编码 */
+    private String distrCode;
+
     /*子项单据*/
     private List<MOPIndentDt> lines;
 
