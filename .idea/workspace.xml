@@ -10,26 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MOP.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MOP_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/ao/MOPIndentAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/ao/MOPIndentAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/MOPIndent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/MOPIndentVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/bean/vo/MOPIndentVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MOPIndentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MOPIndentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TagInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TagInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/springcloud/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/springcloud/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/MOPIndentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/MOPIndentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/MOPIndentAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/ao/MOPIndentAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/MOPIndent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/dos/MOPIndent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/MOPIndentVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/bean/vo/MOPIndentVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/api/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/api/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/MOPIndentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/MOPIndentMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,8 +68,8 @@
       <file leaf-file-name="DeliverGoodsServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="320" column="13" lean-forward="true" selection-start-line="320" selection-start-column="13" selection-end-line="320" selection-end-column="13" />
+            <state relative-caret-position="717">
+              <caret line="305" column="66" lean-forward="true" selection-start-line="305" selection-start-column="66" selection-end-line="305" selection-end-column="66" />
               <folding>
                 <element signature="e#1665#1681#0" expanded="true" />
                 <element signature="e#3027#3043#0" expanded="true" />
@@ -116,11 +103,8 @@
       <file leaf-file-name="MOPIndentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="131" column="42" lean-forward="true" selection-start-line="131" selection-start-column="42" selection-end-line="131" selection-end-column="42" />
-              <folding>
-                <element signature="e#7881#7897#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3002">
+              <caret line="182" column="50" selection-start-line="182" selection-start-column="50" selection-end-line="182" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -128,8 +112,8 @@
       <file leaf-file-name="DeliverGoodsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
+            <state relative-caret-position="369">
+              <caret line="58" column="61" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -137,7 +121,7 @@
       <file leaf-file-name="DeliverGoodsService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="327">
               <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
             </state>
           </provider>
@@ -231,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/MOPIndentMapper.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/springcloud/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -510,117 +494,6 @@
       </expand>
       <select />
     </treeState>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/springcloud/bean/dos/TagInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/TagInfoServiceImpl.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -904,7 +777,9 @@
       <workItem from="1607587446424" duration="599000" />
       <workItem from="1607734719549" duration="925000" />
       <workItem from="1607926875555" duration="258000" />
-      <workItem from="1607993055596" duration="12275000" />
+      <workItem from="1607993055596" duration="12392000" />
+      <workItem from="1608080109971" duration="2609000" />
+      <workItem from="1608183119941" duration="3730000" />
     </task>
     <task id="LOCAL-00001" summary="实现分页数据查询">
       <created>1574150386919</created>
@@ -1004,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1607413392100</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="更新代码">
+      <created>1608026313225</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608026313225</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1378298000" />
+    <option name="totallyTimeSpent" value="1384754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1024,7 +906,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="11" />
-      <window_info anchor="right" id="RestServices" order="12" visible="true" weight="0.225" />
+      <window_info anchor="right" id="RestServices" order="12" weight="0.225" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.11805555" side_tool="true" weight="0.42519686" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.18767908" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -1035,7 +917,7 @@
       <window_info id="Structure" order="1" sideWeight="0.27826086" side_tool="true" weight="0.26944444" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.87874836" visible="true" weight="0.38976377" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.87874836" visible="true" weight="0.2664042" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49097222" weight="0.2664042" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -1051,22 +933,22 @@
       <window_info id="Web" order="6" sideWeight="0.22614841" side_tool="true" weight="0.98680556" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="7" sideWeight="0.15686275" side_tool="true" weight="0.24597855" />
-      <window_info id="设计师" order="3" />
-      <window_info anchor="right" id="数据库" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="JRebel Executor" order="18" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="调试" order="16" />
+      <window_info anchor="right" id="数据库" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="控制板" order="13" />
       <window_info anchor="bottom" id="MyBatis Log" order="20" weight="0.32905984" />
       <window_info anchor="bottom" id="运行" order="15" sideWeight="0.9036458" weight="0.5471956" />
+      <window_info id="设计师" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info id="JRebel" order="9" sideWeight="0.20159681" side_tool="true" weight="0.24262735" />
       <window_info anchor="bottom" id="消息" order="14" sideWeight="0.49934897" weight="0.26812586" />
       <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.49674478" weight="0.32968536" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49861112" weight="0.009186352" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="调试" order="16" />
       <window_info anchor="bottom" id="JRebel Console" order="19" sideWeight="0.12125163" side_tool="true" visible="true" weight="0.31549296" />
     </layout>
   </component>
@@ -1114,7 +996,8 @@
     <MESSAGE value="修复微信App吊牌重复扫描问题2" />
     <MESSAGE value="修复微信App吊牌重复扫描问题3" />
     <MESSAGE value="编写对接MOP条码变更的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="编写对接MOP条码变更的方法" />
+    <MESSAGE value="更新代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1215,11 +1098,17 @@
           <properties />
           <option name="timeStamp" value="1265" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
+          <line>247</line>
+          <properties />
+          <option name="timeStamp" value="1266" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1266" />
+      <option name="time" value="1267" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1635,32 +1524,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/MOPIndentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="131" column="42" lean-forward="true" selection-start-line="131" selection-start-column="42" selection-end-line="131" selection-end-column="42" />
-          <folding>
-            <element signature="e#7881#7897#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3002">
+          <caret line="182" column="50" selection-start-line="182" selection-start-column="50" selection-end-line="182" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
+        <state relative-caret-position="369">
+          <caret line="58" column="61" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="327">
           <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="320" column="13" lean-forward="true" selection-start-line="320" selection-start-column="13" selection-end-line="320" selection-end-column="13" />
+        <state relative-caret-position="717">
+          <caret line="305" column="66" lean-forward="true" selection-start-line="305" selection-start-column="66" selection-end-line="305" selection-end-column="66" />
           <folding>
             <element signature="e#1665#1681#0" expanded="true" />
             <element signature="e#3027#3043#0" expanded="true" />

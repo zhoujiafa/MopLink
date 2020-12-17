@@ -14,6 +14,7 @@
         <result property="orderStatusName" column="orderStatusName"></result>
         <result property="createDate" column="createDate"></result>
         <result property="createName" column="createName"></result>
+        <result property="distrCode" column="distrCode"></result>
     </resultMap>
 
     <select id="getOne" resultMap="userMap" parameterType="string">

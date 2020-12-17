@@ -280,7 +280,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     Map<String, Object> balanceLiftparams = new HashMap<String, Object>();
                     Map<String, Object> dJmap = new HashMap<String, Object>();
                     //@TODO 确定distrCode
-                    dJmap.put("distrCode","GY002312");
+                    dJmap.put("distrCode","DT0000001");
                     dJmap.put("TransAmount",priceSubtotal);
                     dJmap.put("TranCode",shipmentOrderNo);
                     //@TODO 确定是否写死Deposit03
@@ -301,7 +301,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                         //List<Map> linesList = new LinkedList<>();
                         dataJsonSDP.put("orderNo",destineOrderNo);
                         //@TODO 确定是否写死0
-                        dataJsonSDP.put("type",0);
+                        dataJsonSDP.put("type",1);
                         //@TODO 无法获取物流单号
                         //dataJsonSDP.put("logisticsNumber",null);
                         dataJsonSDP.put("lines",Iscks);
