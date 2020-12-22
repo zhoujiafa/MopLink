@@ -196,7 +196,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
     }
 
     @Override
-    public String updateSalesOrderDetails(List<DeliverGoods> list, String shipmentOrderNo, String destineOrderNo, String customer) {
+    public String updateSalesOrderDetails(List<DeliverGoods> list, String shipmentOrderNo, String destineOrderNo, String customer, String distrCode) {
         Double priceSubtotal = 0.00;
         Map<String, Object> params = new HashMap<String, Object>();
         Map<String, Object> dataJson = new HashMap<String, Object>();
@@ -280,7 +280,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     Map<String, Object> balanceLiftparams = new HashMap<String, Object>();
                     Map<String, Object> dJmap = new HashMap<String, Object>();
                     //@TODO 确定distrCode
-                    dJmap.put("distrCode","DT0000001");
+                    dJmap.put("distrCode",distrCode);
                     dJmap.put("TransAmount",priceSubtotal);
                     dJmap.put("TranCode",shipmentOrderNo);
                     //@TODO 确定是否写死Deposit03

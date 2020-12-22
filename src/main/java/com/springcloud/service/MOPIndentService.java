@@ -36,6 +36,8 @@ public interface MOPIndentService {
 
     MOPIndentVO getMOPIndentByDocNum(String companyCode, String docNum);
 
+    MOPIndentVO getdistrCode(String orderNo);
+
 
 
 }

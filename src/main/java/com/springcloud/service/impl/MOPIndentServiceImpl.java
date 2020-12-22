@@ -263,6 +263,18 @@ public class MOPIndentServiceImpl implements MOPIndentService {
         return mopIndentVO;
     }
 
+    @Override
+    public MOPIndentVO getdistrCode(String orderNo) {
+        QueryWrapper<MOPIndent> query = new QueryWrapper<>();
+        query.eq("orderNo", orderNo);
+        MOPIndent response = mopIndentMapper.selectOne(query);
+        MOPIndentVO mopIndentVO = new MOPIndentVO();
+        if(response != null){
+            BeanUtils.copyProperties(response,mopIndentVO);
+        }
+        return mopIndentVO;
+    }
+
     /**
      * http post请求
      *

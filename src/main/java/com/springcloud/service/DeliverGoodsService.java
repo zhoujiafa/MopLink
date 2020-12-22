@@ -59,6 +59,6 @@ public interface DeliverGoodsService {
      * @param customer
      * @return String
      */
-    String updateSalesOrderDetails(List<DeliverGoods> list,String shipmentOrderNo,String destineOrderNo, String customer);
+    String updateSalesOrderDetails(List<DeliverGoods> list,String shipmentOrderNo,String destineOrderNo, String customer, String distrCode);
 
 }

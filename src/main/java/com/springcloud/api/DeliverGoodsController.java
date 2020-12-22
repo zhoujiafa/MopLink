@@ -5,10 +5,13 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.reabam.sign.SignUtil;
 import com.springcloud.bean.dos.DeliverGoods;
+import com.springcloud.bean.dos.MOPIndent;
 import com.springcloud.bean.query.CompanyDictQuery;
 import com.springcloud.bean.query.Query;
+import com.springcloud.bean.vo.MOPIndentVO;
 import com.springcloud.response.ResponseDeliverGoods;
 import com.springcloud.service.DeliverGoodsService;
+import com.springcloud.service.MOPIndentService;
 import com.springcloud.util.ResponseBean2;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +34,8 @@ public class DeliverGoodsController {
 
     @Autowired
     DeliverGoodsService deliverGoodsService;
-
+    @Autowired
+    MOPIndentService mopIndentService;
 
     @ApiOperation(value = "提供第三方信息接口（提供发货单）", notes = "提供第三方信息接口")
     @PostMapping("/DeliverGoodsList")
@@ -41,7 +45,7 @@ public class DeliverGoodsController {
         String appId = "94916115E6732C11D5984075C4DB588B";
         //String shipmentOrderNo = data.get("orderNo").toString();
         //String customer = data.get("customer").toString();
-        String  shipmentOrderNo = "201200000002";
+        String  shipmentOrderNo = "201200000003";
         String customer = "0181";
 
         Map<String, Object> params = new HashMap<String, Object>();
@@ -54,9 +58,11 @@ public class DeliverGoodsController {
             return ResponseBean2.fail("无此发货单信息，请检查订单号是否错误");
         }else{
             String  destineOrderNo = list.iterator().next().getOrderNo();
+
+            MOPIndentVO mopIndentVO = mopIndentService.getdistrCode(destineOrderNo);
             //修改订单明细接口01
             //String jsonStr = deliverGoodsService.responseTorequest(list,shipmentOrderNo,destineOrderNo,customer);
-            String jsonStr = deliverGoodsService.updateSalesOrderDetails(list,shipmentOrderNo,destineOrderNo,customer);
+            String jsonStr = deliverGoodsService.updateSalesOrderDetails(list,shipmentOrderNo,destineOrderNo,customer,mopIndentVO.getDistrCode());
 
             JSONObject jsonObject = JSON.parseObject(jsonStr);
 
