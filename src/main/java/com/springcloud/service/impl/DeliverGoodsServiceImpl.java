@@ -206,6 +206,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
         ddmap.put("docNum", shipmentOrderNo);
         ddmap.put("customer", customer);
         List<DeliverGoodsCount> getDeliveryorderDetail = deliverGoodsMapper.getDeliveryorderDetail(ddmap);
+        Double TransAmount = 0.00;
         for(DeliverGoodsCount deliveryorderDetail : getDeliveryorderDetail){
             Map<String, Object> map = new HashMap<String, Object>();
             for(DeliverGoods deliverGoods : list){
@@ -217,6 +218,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     map.put( "itemName",deliverGoods.getDesignName());
                     map.put( "priceSubtotal",String.valueOf(deliveryorderDetailcount*deliverGoodsoutboundPrice));
                     priceSubtotal = deliveryorderDetailcount*deliverGoodsoutboundPrice;
+                    TransAmount += Double.valueOf(deliverGoods.getOutboundPrice());
                 }
             }
             mapList.add(map);
@@ -253,8 +255,8 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                      icsk.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
                      //给最后销售交货接口使用
                     Map<String, Object> icsks = new HashMap<String, Object>();
-                    //icsks.put("itemCode",entry.getKey().trim());
-                    icsks.put("itemCode","SP000001");
+                    icsks.put("itemCode",entry.getKey().trim());
+                    //icsks.put("itemCode","SP000001");
                     icsks.put("skuBarcode",entry.getValue().iterator().next().getSkuBarcode().trim());
                     icsks.put("quantity",entry.getValue().size());
 
@@ -281,10 +283,10 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     Map<String, Object> dJmap = new HashMap<String, Object>();
                     //@TODO 确定distrCode
                     dJmap.put("distrCode",distrCode);
-                    dJmap.put("TransAmount",priceSubtotal);
+                    dJmap.put("TransAmount",TransAmount);
                     dJmap.put("TranCode",shipmentOrderNo);
                     //@TODO 确定是否写死Deposit03
-                    dJmap.put("TransTypeCode","Deposit03");
+                    dJmap.put("TransTypeCode","Consume02");
                     //dJmap.put("Remark","测试");
                     balanceLiftparams.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
                     balanceLiftparams.put("companyCode",customer);

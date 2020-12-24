@@ -12,10 +12,9 @@
     <list default="true" id="6ee43c64-ccf7-4400-9d9b-fc3c1039a3b5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/MOPIndentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/MOPIndentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/MOPIndentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/springcloud/service/impl/MOPIndentServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +66,8 @@
       <file leaf-file-name="DeliverGoodsServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="244" column="23" lean-forward="true" selection-start-line="244" selection-start-column="23" selection-end-line="244" selection-end-column="23" />
+            <state relative-caret-position="40">
+              <caret line="266" column="60" lean-forward="true" selection-start-line="266" selection-start-column="60" selection-end-line="266" selection-end-column="60" />
               <folding>
                 <element signature="e#1665#1681#0" expanded="true" />
                 <element signature="e#3027#3043#0" expanded="true" />
@@ -82,18 +81,18 @@
                 <element signature="e#5453#5469#0" expanded="true" />
                 <element signature="e#8340#8356#0" expanded="true" />
                 <element signature="e#9047#9063#0" expanded="true" />
-                <element signature="e#9912#9928#0" expanded="true" />
-                <element signature="e#9982#9998#0" expanded="true" />
-                <element signature="e#10098#10114#0" expanded="true" />
-                <element signature="e#10438#10454#0" expanded="true" />
-                <element signature="e#12305#12321#0" expanded="true" />
-                <element signature="e#12951#12967#0" expanded="true" />
-                <element signature="e#13220#13236#0" expanded="true" />
-                <element signature="e#13722#13738#0" expanded="true" />
-                <element signature="e#14671#14687#0" expanded="true" />
-                <element signature="e#14750#14766#0" expanded="true" />
-                <element signature="e#15889#15905#0" expanded="true" />
-                <element signature="e#15978#15994#0" expanded="true" />
+                <element signature="e#9930#9946#0" expanded="true" />
+                <element signature="e#10000#10016#0" expanded="true" />
+                <element signature="e#10116#10132#0" expanded="true" />
+                <element signature="e#10465#10481#0" expanded="true" />
+                <element signature="e#12332#12348#0" expanded="true" />
+                <element signature="e#12978#12994#0" expanded="true" />
+                <element signature="e#13247#13263#0" expanded="true" />
+                <element signature="e#13749#13765#0" expanded="true" />
+                <element signature="e#14698#14714#0" expanded="true" />
+                <element signature="e#14777#14793#0" expanded="true" />
+                <element signature="e#15914#15930#0" expanded="true" />
+                <element signature="e#16003#16019#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,8 +101,8 @@
       <file leaf-file-name="DeliverGoodsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+            <state relative-caret-position="222">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -195,9 +194,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/MOPIndentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/MOPIndentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/DeliverGoodsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -248,8 +247,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -415,7 +415,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -764,7 +763,9 @@
       <workItem from="1608252476102" duration="3227000" />
       <workItem from="1608338314025" duration="1216000" />
       <workItem from="1608512969241" duration="598000" />
-      <workItem from="1608600348167" duration="5311000" />
+      <workItem from="1608600348167" duration="5595000" />
+      <workItem from="1608683413357" duration="5649000" />
+      <workItem from="1608769782204" duration="6097000" />
     </task>
     <task id="LOCAL-00001" summary="实现分页数据查询">
       <created>1574150386919</created>
@@ -871,11 +872,18 @@
       <option name="project" value="LOCAL" />
       <updated>1608026313225</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="更新代码2020-12-22测试销售交货（多itemCode测试）">
+      <created>1608630798283</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608630798283</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1395106000" />
+    <option name="totallyTimeSpent" value="1407136000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -902,7 +910,7 @@
       <window_info id="Structure" order="1" sideWeight="0.27826086" side_tool="true" weight="0.26944444" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.87874836" visible="true" weight="0.4015748" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.87874836" visible="true" weight="0.25328085" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49097222" weight="0.2664042" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -918,22 +926,22 @@
       <window_info id="Web" order="6" sideWeight="0.22614841" side_tool="true" weight="0.98680556" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="7" sideWeight="0.15686275" side_tool="true" weight="0.24597855" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="设计师" order="3" />
+      <window_info anchor="right" id="数据库" order="2" />
       <window_info anchor="bottom" id="JRebel Executor" order="18" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="数据库" order="2" />
+      <window_info anchor="bottom" id="调试" order="16" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="控制板" order="13" />
       <window_info anchor="bottom" id="MyBatis Log" order="20" weight="0.32905984" />
       <window_info anchor="bottom" id="运行" order="15" sideWeight="0.9036458" weight="0.5471956" />
-      <window_info id="设计师" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info id="JRebel" order="9" sideWeight="0.20159681" side_tool="true" weight="0.24262735" />
       <window_info anchor="bottom" id="消息" order="14" sideWeight="0.49934897" weight="0.26812586" />
       <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.49674478" weight="0.32968536" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49861112" weight="0.009186352" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="调试" order="16" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="JRebel Console" order="19" sideWeight="0.12125163" side_tool="true" visible="true" weight="0.31549296" />
     </layout>
   </component>
@@ -982,38 +990,39 @@
     <MESSAGE value="修复微信App吊牌重复扫描问题3" />
     <MESSAGE value="编写对接MOP条码变更的方法" />
     <MESSAGE value="更新代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新代码" />
+    <MESSAGE value="更新代码2020-12-22测试销售交货（多itemCode测试）" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新代码2020-12-22测试销售交货（多itemCode测试）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>295</line>
+          <line>297</line>
           <properties />
           <option name="timeStamp" value="1218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>294</line>
+          <line>296</line>
           <properties />
           <option name="timeStamp" value="1219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>312</line>
+          <line>314</line>
           <properties />
           <option name="timeStamp" value="1223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>313</line>
+          <line>315</line>
           <properties />
           <option name="timeStamp" value="1224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>314</line>
+          <line>316</line>
           <properties />
           <option name="timeStamp" value="1225" />
         </line-breakpoint>
@@ -1049,13 +1058,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>230</line>
-          <properties />
-          <option name="timeStamp" value="1262" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>231</line>
+          <line>233</line>
           <properties />
           <option name="timeStamp" value="1265" />
         </line-breakpoint>
@@ -1073,15 +1076,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
-          <line>247</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="1280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
+          <line>277</line>
+          <properties />
+          <option name="timeStamp" value="1282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
+          <line>278</line>
+          <properties />
+          <option name="timeStamp" value="1284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
+          <line>209</line>
+          <properties />
+          <option name="timeStamp" value="1285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
+          <line>211</line>
+          <properties />
+          <option name="timeStamp" value="1287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java</url>
+          <line>276</line>
+          <properties />
+          <option name="timeStamp" value="1291" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1281" />
+      <option name="time" value="1292" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1511,15 +1544,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/api/DeliverGoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+        <state relative-caret-position="222">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springcloud/service/impl/DeliverGoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="244" column="23" lean-forward="true" selection-start-line="244" selection-start-column="23" selection-end-line="244" selection-end-column="23" />
+        <state relative-caret-position="40">
+          <caret line="266" column="60" lean-forward="true" selection-start-line="266" selection-start-column="60" selection-end-line="266" selection-end-column="60" />
           <folding>
             <element signature="e#1665#1681#0" expanded="true" />
             <element signature="e#3027#3043#0" expanded="true" />
@@ -1533,18 +1566,18 @@
             <element signature="e#5453#5469#0" expanded="true" />
             <element signature="e#8340#8356#0" expanded="true" />
             <element signature="e#9047#9063#0" expanded="true" />
-            <element signature="e#9912#9928#0" expanded="true" />
-            <element signature="e#9982#9998#0" expanded="true" />
-            <element signature="e#10098#10114#0" expanded="true" />
-            <element signature="e#10438#10454#0" expanded="true" />
-            <element signature="e#12305#12321#0" expanded="true" />
-            <element signature="e#12951#12967#0" expanded="true" />
-            <element signature="e#13220#13236#0" expanded="true" />
-            <element signature="e#13722#13738#0" expanded="true" />
-            <element signature="e#14671#14687#0" expanded="true" />
-            <element signature="e#14750#14766#0" expanded="true" />
-            <element signature="e#15889#15905#0" expanded="true" />
-            <element signature="e#15978#15994#0" expanded="true" />
+            <element signature="e#9930#9946#0" expanded="true" />
+            <element signature="e#10000#10016#0" expanded="true" />
+            <element signature="e#10116#10132#0" expanded="true" />
+            <element signature="e#10465#10481#0" expanded="true" />
+            <element signature="e#12332#12348#0" expanded="true" />
+            <element signature="e#12978#12994#0" expanded="true" />
+            <element signature="e#13247#13263#0" expanded="true" />
+            <element signature="e#13749#13765#0" expanded="true" />
+            <element signature="e#14698#14714#0" expanded="true" />
+            <element signature="e#14777#14793#0" expanded="true" />
+            <element signature="e#15914#15930#0" expanded="true" />
+            <element signature="e#16003#16019#0" expanded="true" />
           </folding>
         </state>
       </provider>
