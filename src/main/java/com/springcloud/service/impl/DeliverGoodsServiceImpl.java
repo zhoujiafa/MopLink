@@ -197,11 +197,10 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
 
     @Override
     public String updateSalesOrderDetails(List<DeliverGoods> list, String shipmentOrderNo, String destineOrderNo, String customer, String distrCode) {
-        Double priceSubtotal = 0.00;
+        String result = "";
         Map<String, Object> params = new HashMap<String, Object>();
         Map<String, Object> dataJson = new HashMap<String, Object>();
         List<Map> mapList = new LinkedList<>();
-
         Map<String, Object> ddmap = new HashMap<String, Object>();
         ddmap.put("docNum", shipmentOrderNo);
         ddmap.put("customer", customer);
@@ -217,7 +216,7 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     map.put( "quantity",String.valueOf(deliveryorderDetailcount));
                     map.put( "itemName",deliverGoods.getDesignName());
                     map.put( "priceSubtotal",String.valueOf(deliveryorderDetailcount*deliverGoodsoutboundPrice));
-                    priceSubtotal = deliveryorderDetailcount*deliverGoodsoutboundPrice;
+                    //priceSubtotal = deliveryorderDetailcount*deliverGoodsoutboundPrice;
                     TransAmount += Double.valueOf(deliverGoods.getOutboundPrice());
                 }
             }
@@ -241,7 +240,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
             if(delist.size()>0 && delist!=null){
                 Map<String, Object> parms = new HashMap<String, Object>();
                 parms.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
-                //存dataJson下的各个款号
                 List<Map> Isck = new LinkedList<>();
                 List<Map> Iscks = new LinkedList<>();
                 //按款号分组
@@ -250,7 +248,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                 for(Map.Entry<String, List<DeliverGoods>> entry : collect.entrySet()){
                      //循环一次添加一个分组到dataJson的集合里
                      Map<String, Object> icsk = new HashMap<String, Object>();
-
                      icsk.put("itemCode",entry.getKey());
                      icsk.put("skubarcode",entry.getValue().iterator().next().getSkuBarcode());
                      //给最后销售交货接口使用
@@ -259,7 +256,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     //icsks.put("itemCode","SP000001");
                     icsks.put("skuBarcode",entry.getValue().iterator().next().getSkuBarcode().trim());
                     icsks.put("quantity",entry.getValue().size());
-
                     List<Map> Bdcdslist = new LinkedList<>();
                     for( int i=0;i<entry.getValue().size();i++){
                         Map<String, Object> bdcds = new HashMap<String, Object>();
@@ -281,7 +277,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     //账户余额充值和扣减
                     Map<String, Object> balanceLiftparams = new HashMap<String, Object>();
                     Map<String, Object> dJmap = new HashMap<String, Object>();
-                    //@TODO 确定distrCode
                     dJmap.put("distrCode",distrCode);
                     dJmap.put("TransAmount",TransAmount);
                     dJmap.put("TranCode",shipmentOrderNo);
@@ -291,7 +286,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                     balanceLiftparams.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
                     balanceLiftparams.put("companyCode",customer);
                     balanceLiftparams.put("dataJson",dJmap);
-
                     String blparamsJson = JSON.toJSON(SignUtil.sign(balanceLiftparams, key)).toString();
                     String blrequsetUrl = url + "/openapi/distributor/accountBalance/change";
                     String blresultJson = sendPost(blrequsetUrl, blparamsJson);
@@ -300,30 +294,24 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
                         //销售交货
                         Map<String, Object> saleDeliveryparams = new HashMap<String, Object>();
                         Map<String, Object> dataJsonSDP = new HashMap<String, Object>();
-                        //List<Map> linesList = new LinkedList<>();
                         dataJsonSDP.put("orderNo",destineOrderNo);
-                        //@TODO 确定是否写死0
                         dataJsonSDP.put("type",1);
-                        //@TODO 无法获取物流单号
-                        //dataJsonSDP.put("logisticsNumber",null);
                         dataJsonSDP.put("lines",Iscks);
                         saleDeliveryparams.put("appId","BC7CEC0171504DF799CB4972541C0FXS");
                         saleDeliveryparams.put("companyCode",customer);
                         saleDeliveryparams.put("dataJson",dataJsonSDP);
-
                         String sdparamsJson = JSON.toJSON(SignUtil.sign(saleDeliveryparams, key)).toString();
                         String sdrequsetUrl = url + "/openapi/supply/order/delivery";
                         String sdresultJson = sendPost(sdrequsetUrl, sdparamsJson);
                         JSONObject sdjsonObject = JSON.parseObject(sdresultJson);
 
+                            result = sdjsonObject.getString("ResultSting");
+
                     }
                 }
-
-
             }
-
         }
-        return null;
+        return result;
     }
 
     /**

@@ -37,21 +37,21 @@ public class DeliverGoodsController {
     @Autowired
     MOPIndentService mopIndentService;
 
-    @ApiOperation(value = "提供第三方信息接口（提供发货单）", notes = "提供第三方信息接口")
+    @ApiOperation(value = "发货单信息（触发一键收货）", notes = "发货单信息（触发一键收货）")
     @PostMapping("/DeliverGoodsList")
     public ResponseBean2<List<DeliverGoods>> DeliverGoodsList(@RequestBody Map data) {
-        String sign = data.get("sign").toString();
-        String key = "A1DF1E59090EAFF035C3091003A05CFC";
-        String appId = "94916115E6732C11D5984075C4DB588B";
-        //String shipmentOrderNo = data.get("orderNo").toString();
-        //String customer = data.get("customer").toString();
-        String  shipmentOrderNo = "201200000005";
-        String customer = "0181";
+        //String sign = data.get("sign").toString();
+        //String key = "A1DF1E59090EAFF035C3091003A05CFC";
+        //String appId = "94916115E6732C11D5984075C4DB588B";
+        String shipmentOrderNo = data.get("orderNo").toString();
+        String customer = data.get("companyCode").toString();
+        //String  shipmentOrderNo = "201200000005";
+        //String customer = "0181";
 
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put("orderNo", shipmentOrderNo);
-        params.put("appId", appId);
-        params.put("customer", customer);
+//        Map<String, Object> params = new HashMap<String, Object>();
+//        params.put("orderNo", shipmentOrderNo);
+//        params.put("appId", appId);
+//        params.put("customer", customer);
 
         List<DeliverGoods> list = deliverGoodsService.listByneedNo(shipmentOrderNo, customer);
         if (list == null || list.size() == 0) {
@@ -67,10 +67,10 @@ public class DeliverGoodsController {
             JSONObject jsonObject = JSON.parseObject(jsonStr);
 
         }
-        String newSign = JSON.toJSON(SignUtil.sign(params, key).get("sign")).toString();
-        if (!newSign.equals(sign)) {
-            return ResponseBean2.fail("签名无效，请检查和核实签名信息");
-        }
+//        String newSign = JSON.toJSON(SignUtil.sign(params, key).get("sign")).toString();
+//        if (!newSign.equals(sign)) {
+//            return ResponseBean2.fail("签名无效，请检查和核实签名信息");
+//        }
 
         //计算总价格和总件数
         Integer total = 0;
